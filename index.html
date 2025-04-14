@@ -137,10 +137,31 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/api/placeholder/1200/800") center/cover;
-            color: #fff;
             text-align: center;
             padding: 150px 0;
+          background-image: url('/path/to/your-image.jpg');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          color: white; /* Make text light on dark backgrounds */
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: adds shadow to make text readable */
+          position: relative;
+        }
+        
+        .hero::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5); /* Dark overlay - adjust opacity as needed */
+          z-index: 1;
+        }
+
+        .hero .container {
+          position: relative;
+          z-index: 2; /* Place content above the overlay */
         }
 
         .hero h1 {
@@ -181,7 +202,20 @@
         }
 
         .about-image {
-            flex: 1;
+          flex: 1;
+          position: relative;
+          width: 100%;
+          padding-bottom: 56.25%; /* This equals 9/16 (height/width) for a 16:9 ratio */
+          overflow: hidden;
+        }
+        
+        .about-image img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
         }
 
         .about-text {
@@ -422,7 +456,6 @@
             .about-image, .about-text {
                 flex: auto;
                 width: 100%;
-                height: 50%;
             }
             h1 {
                 font-size: 2.2rem;
