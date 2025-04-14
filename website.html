@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portfolio - Science & Engineering</title>
+    <style>
+        /* CSS Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            color: #1a1a1a;
+            margin-bottom: 0.8rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 1rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #004080;
+            text-decoration: underline;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title:after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: #0066cc;
+            margin: 15px auto;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1a1a1a;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/api/placeholder/1200/800") center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 150px 0;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #0066cc;
+            color: #fff;
+            border-radius: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #004080;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about-image {
+            flex: 1;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .skill-bars {
+            margin-top: 20px;
+        }
+
+        .skill {
+            margin-bottom: 15px;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .skill-bar {
+            height: 10px;
+            background: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .skill-level {
+            height: 100%;
+            background: #0066cc;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .project-info {
+            padding: 20px;
+        }
+
+        .project-category {
+            color: #0066cc;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .project-title {
+            margin: 10px 0;
+        }
+
+        /* Leadership Section */
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .leadership-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .leadership-icon {
+            font-size: 2.5rem;
+            color: #0066cc;
+            margin-bottom: 15px;
+        }
+
+        /* Awards Section */
+        .awards-list {
+            margin-top: 30px;
+        }
+
+        .award-item {
+            display: flex;
+            margin-bottom: 20px;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .award-year {
+            background: #0066cc;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            min-width: 120px;
+        }
+
+        .award-details {
+            padding: 20px;
+            flex: 1;
+        }
+
+        .award-title {
+            margin-bottom: 5px;
+        }
+
+        /* Contact Section */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            margin: 20px 0;
+        }
+
+        .social-links a {
+            color: #fff;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #0066cc;
+        }
+
+        .footer-nav {
+            margin-bottom: 20px;
+        }
+
+        .footer-nav a {
+            color: #fff;
+            margin: 0 15px;
+        }
+
+        .footer-bottom {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #0066cc;
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s, background 0.3s;
+            z-index: 999;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+        }
+
+        .back-to-top:hover {
+            background: #004080;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            .about-image, .about-text {
+                flex: auto;
+                width: 100%;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                margin-top: 15px;
+                display: none;
+            }
+            .nav-links.show {
+                display: flex;
+            }
+            .nav-links li {
+                margin: 10px 0;
+                margin-left: 0;
+            }
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                right: 20px;
+                top: 23px;
+            }
+            .projects-grid, .leadership-grid {
+                grid-template-columns: 1fr;
+            }
+            .award-item {
+                flex-direction: column;
+            }
+            .award-year {
+                min-width: 100%;
+                padding: 10px;
+            }
+            .hero {
+                padding: 100px 0;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">Your Name</div>
+            <button class="mobile-menu-btn">≡</button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#leadership">Leadership</a></li>
+                <li><a href="#awards">Awards</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Student Engineer & Scientist</h1>
+            <p>Robotics Enthusiast | Rocketry Designer | Scientific Researcher</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="/api/placeholder/500/600" alt="Profile Picture">
+                </div>
+                <div class="about-text">
+                    <h3>Hello, I'm Your Name</h3>
+                    <p>I'm a high school student with a passion for science and engineering. With over 5 years of robotics experience, I've not only built numerous projects but also competed internationally. My interest in engineering extends to rocketry, where I've designed and built custom model rockets and motors.</p>
+                    <p>Beyond engineering, I'm deeply passionate about scientific research, particularly in physics and biology. At school, I serve as the Vice President of the Student Council, where I help organize events and represent student interests.</p>
+                    
+                    <div class="skill-bars">
+                        <div class="skill">
+                            <div class="skill-name">Robotics</div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">Rocketry</div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">Scientific Research</div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-name">Programming</div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1: Robotics -->
+                <div class="project-card fade-in">
+                    <div class="project-img" style="background-image: url('/api/placeholder/400/300');"></div>
+                    <div class="project-info">
+                        <div class="project-category">Robotics</div>
+                        <h3 class="project-title">International Competition Robot</h3>
+                        <p>Designed and built an autonomous robot that competed in [Competition Name]. The robot utilized advanced sensors and custom programming to navigate complex obstacle courses.</p>
+                        <a href="#" class="btn">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Project 2: Rocketry -->
+                <div class="project-card fade-in">
+                    <div class="project-img" style="background-image: url('/api/placeholder/400/300');"></div>
+                    <div class="project-info">
+                        <div class="project-category">Rocketry</div>
+                        <h3 class="project-title">Custom Model Rocket Design</h3>
+                        <p>Developed a fully custom model rocket with innovative aerodynamic features. The rocket achieved an altitude of [X] feet and incorporated telemetry systems for data collection.</p>
+                        <a href="#" class="btn">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Project 3: Scientific Research -->
+                <div class="project-card fade-in">
+                    <div class="project-img" style="background-image: url('/api/placeholder/400/300');"></div>
+                    <div class="project-info">
+                        <div class="project-category">Scientific Research</div>
+                        <h3 class="project-title">Physics Experiment</h3>
+                        <p>Conducted research on [specific physics topic] and presented findings at the school science fair. The experiment demonstrated [key finding] using custom-built equipment.</p>
+                        <a href="#" class="btn">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Project 4: Engineering -->
+                <div class="project-card fade-in">
+                    <div class="project-img" style="background-image: url('/api/placeholder/400/300');"></div>
+                    <div class="project-info">
+                        <div class="project-category">Engineering</div>
+                        <h3 class="project-title">Model Rocket Motor Development</h3>
+                        <p>Designed and tested custom model rocket motors with various propellant formulations. Documented thrust curves and performance characteristics for different designs.</p>
+                        <a href="#" class="btn">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Project 5: Robotics -->
+                <div class="project-card fade-in">
+                    <div class="project-img" style="background-image: url('/api/placeholder/400/300');"></div>
+                    <div class="project-info">
+                        <div class="project-category">Robotics</div>
+                        <h3 class="project-title">Automated Greenhouse System</h3>
+                        <p>Created an IoT-based automated greenhouse system that monitors and controls temperature, humidity, and water levels. The system uses Arduino and custom sensors.</p>
+                        <a href="#" class="btn">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Project 6: Biology Research -->
+                <div class="project-card fade-in">
+                    <div class="project-img" style="background-image: url('/api/placeholder/400/300');"></div>
+                    <div class="project-info">
+                        <div class="project-category">Biology</div>
+                        <h3 class="project-title">Cellular Response Study</h3>
+                        <p>Conducted research on cellular responses to [specific stimuli] with applications in [field]. The study involved microscopy and data analysis techniques.</p>
+                        <a href="#" class="btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section id="leadership" class="leadership">
+        <div class="container">
+            <h2 class="section-title">Leadership & Activities</h2>
+            <div class="leadership-grid">
+                <div class="leadership-card fade-in">
+                    <div class="leadership-icon">👨‍💼</div>
+                    <h3>Vice President</h3>
+                    <p>Student Council</p>
+                    <p>Led initiatives to improve student experience and organized school-wide events. Represented student interests in administrative meetings.</p>
+                </div>
+                
+                <div class="leadership-card fade-in">
+                    <div class="leadership-icon">🤖</div>
+                    <h3>Team Captain</h3>
+                    <p>Robotics Team</p>
+                    <p>Coordinated team efforts for robotics competitions. Mentored junior team members and managed project timelines.</p>
+                </div>
+                
+                <div class="leadership-card fade-in">
+                    <div class="leadership-icon">🔬</div>
+                    <h3>Research Assistant</h3>
+                    <p>Science Department</p>
+                    <p>Assisted teachers with laboratory setup and experimental procedures. Contributed to curriculum development for hands-on science activities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section id="awards" class="awards">
+        <div class="container">
+            <h2 class="section-title">Awards & Recognition</h2>
+            <div class="awards-list">
+                <div class="award-item fade-in">
+                    <div class="award-year">2024</div>
+                    <div class="award-details">
+                        <h3 class="award-title">1st Place - International Robotics Competition</h3>
+                        <p>Won first place in [specific category] at the international robotics competition for innovative design and functionality.</p>
+                    </div>
+                </div>
+                
+                <div class="award-item fade-in">
+                    <div class="award-year">2023</div>
+                    <div class="award-details">
+                        <h3 class="award-title">Science Innovation Award</h3>
+                        <p>Recognized for outstanding contribution to scientific research in [specific field] at the regional science fair.</p>
+                    </div>
+                </div>
+                
+                <div class="award-item fade-in">
+                    <div class="award-year">2022</div>
+                    <div class="award-details">
+                        <h3 class="award-title">Young Engineer of the Year</h3>
+                        <p>Selected as the Young Engineer of the Year for exceptional work in rocketry and propulsion systems.</p>
+                    </div>
+                </div>
+                
+                <div class="award-item fade-in">
+                    <div class="award-year">2021</div>
+                    <div class="award-details">
+                        <h3 class="award-title">Leadership Excellence Award</h3>
+                        <p>Awarded for outstanding leadership and initiative as Vice President of the Student Council.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-form fade-in">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" id="name" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject" class="form-label">Subject</label>
+                        <input type="text" id="subject" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" class="form-input form-textarea" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">Your Name</div>
+                <div class="social-links">
+                    <a href="#"><span>LinkedIn</span></a>
+                    <a href="#"><span>GitHub</span></a>
+                    <a href="#"><span>Instagram</span></a>
+                </div>
+                <div class="footer-nav">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Your Name. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">↑</div>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+                
+                // Close mobile menu if open
+                if (navLinks.classList.contains('show')) {
+                    navLinks.classList.remove('show');
+                }
+            });
+        });
+
+        // Back to Top Button
+        const backToTopBtn = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Form Submission (Placeholder)
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // In a real implementation, you would send the form data to a server
+            // Here we're just showing an alert
+            alert('Thank you for your message! This is a placeholder. In a real implementation, your message would be sent to me.');
+            contactForm.reset();
+        });
+
+        // Scroll Animation
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementBottom = element.getBoundingClientRect().bottom;
+                const isVisible = (elementTop < window.innerHeight - 100) && (elementBottom > 0);
+                
+                if (isVisible) {
+                    element.classList.add('appear');
+                }
+            });
+        };
+        
+        // Run on load
+        fadeInOnScroll();
+        
+        // Run on scroll
+        window.addEventListener('scroll', fadeInOnScroll);
+    </script>
+</body>
+</html>

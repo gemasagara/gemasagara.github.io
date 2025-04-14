@@ -1,1 +1,0 @@
-# gemasagara.github.io
