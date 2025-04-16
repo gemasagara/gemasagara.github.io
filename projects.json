@@ -1,0 +1,29 @@
+[
+    {
+      "id": "example-project",
+      "title": "Example Project",
+      "date": "2025-04-10",
+      "category": "Robotics",
+      "media": "/images/project1.jpg",
+      "summary": "Deserunt dolore veniam minim voluptate fugiat do veniam minim sint.",
+      "featured": true
+    },
+    {
+      "id": "automated-greenhouse",
+      "title": "Automated Greenhouse System",
+      "date": "2025-03-15",
+      "category": "Robotics",
+      "media": "/images/greenhouse.jpg",
+      "summary": "Created an IoT-based automated greenhouse system that monitors and controls temperature, humidity, and water levels.",
+      "featured": true
+    },
+    {
+      "id": "rocket-motor",
+      "title": "Model Rocket Motor Development",
+      "date": "2025-02-20",
+      "category": "Engineering",
+      "media": "/images/rocket.jpg",
+      "summary": "Designed and tested custom model rocket motors with various propellant formulations.",
+      "featured": false
+    }
+  ]
