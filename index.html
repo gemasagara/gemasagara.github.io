@@ -50,7 +50,6 @@
 
         a:hover {
             color: #004080;
-            text-decoration: underline;
         }
 
         img {
@@ -104,7 +103,8 @@
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
-            color: #1a1a1a;
+            color: #0066cc;
+            margin-left: 15px;
         }
 
         .nav-links {
@@ -113,7 +113,8 @@
         }
 
         .nav-links li {
-            margin-left: 30px;
+            margin-left: 20px;
+            margin-right: 10px;
         }
 
         .nav-links a {
@@ -137,15 +138,17 @@
 
         /* Hero Section */
         .hero {
-            text-align: center;
-            padding: 150px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            height: 100vh;
           background-image: url('/images/four.png');
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;
           color: white; /* Make text light on dark backgrounds */
           text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: adds shadow to make text readable */
-          position: relative;
         }
         
         .hero::before {
@@ -162,6 +165,7 @@
         .hero .container {
           position: relative;
           z-index: 2; /* Place content above the overlay */
+          max-width: 700px;
         }
 
         .hero h1 {
@@ -170,10 +174,14 @@
             color: #fff;
         }
 
-        .hero p {
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-description{
             font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 30px;
+            margin-bottom: 2rem;
         }
 
         .btn {
@@ -205,7 +213,7 @@
           flex: 1;
           position: relative;
           width: 100%;
-          padding-bottom: 40%; /* This equals 9/16 (height/width) for a 16:9 ratio */
+          padding-bottom: 40%;
           overflow: hidden;
         }
         
@@ -263,7 +271,7 @@
         }
 
         .project-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
 
@@ -288,6 +296,32 @@
             margin: 10px 0;
         }
 
+        /* Skills & Experiences Section */
+        .exp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .exp-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .exp-card:hover{
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .exp-icon {
+            font-size: 2.5rem;
+            color: #0066cc;
+            margin-bottom: 15px;
+        }
+
         /* Leadership Section */
         .leadership-grid {
             display: grid;
@@ -301,6 +335,11 @@
             padding: 25px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             text-align: center;
+        }
+
+        .leadership-card:hover{
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
 
         .leadership-icon {
@@ -321,6 +360,12 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .award-item:hover{
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
 
         .award-year {
@@ -341,6 +386,14 @@
 
         .award-title {
             margin-bottom: 5px;
+        }
+
+        .award-title:hover{
+            color: #0066cc;
+        }
+
+        .award-description{
+            color: #1a1a1a;
         }
 
         /* Contact Section */
@@ -489,7 +542,7 @@
                 right: 20px;
                 top: 23px;
             }
-            .projects-grid, .leadership-grid {
+            .projects-grid, .leadership-grid, .exp-grid {
                 grid-template-columns: 1fr;
             }
             .award-item {
@@ -509,14 +562,12 @@
 
         /* Animation */
         .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
+        opacity: 0;
+        transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
         }
 
         .fade-in.appear {
-            opacity: 1;
-            transform: translateY(0);
+        opacity: 1;
         }
     </style>
 </head>
@@ -541,7 +592,10 @@
     <section id="home" class="hero">
         <div class="container">
             <h1>Gema Sagara</h1>
-            <p>High School Student | Robotics | Amateur Rocketry</p>
+            <b>
+                <p class="hero-subtitle">Robotics & ML | Rocketry | Scientific Research</p>
+            </b>
+            <p class="hero-description">High school student passionate about exploring the intersection of science and engineering to solve tomorrow's challenges.</p>
             <a href="#projects" class="btn">View My Work</a>
         </div>
     </section>
@@ -585,6 +639,35 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Experience Section -->
+    <section id="exp" class="exp">
+        <div class="container">
+            <h2 class="section-title">Skills & Experience</h2>
+            <div class="exp-grid">
+                <div class="exp-card fade-in">
+                    <div class="exp-icon">👨‍💼</div>
+                    <h3>Vice President</h3>
+                    <p>Student Council</p>
+                    <p>Led initiatives to improve student experience and organized school-wide events. Represented student interests in administrative meetings.</p>
+                </div>
+                
+                <div class="exp-card fade-in">
+                    <div class="exp-icon">🤖</div>
+                    <h3>Team Captain</h3>
+                    <p>Robotics Team</p>
+                    <p>Coordinated team efforts for robotics competitions. Mentored junior team members and managed project timelines.</p>
+                </div>
+                
+                <div class="exp-card fade-in">
+                    <div class="exp-icon">🔬</div>
+                    <h3>Research Assistant</h3>
+                    <p>Science Department</p>
+                    <p>Assisted teachers with laboratory setup and experimental procedures. Contributed to curriculum development for hands-on science activities.</p>
                 </div>
             </div>
         </div>
@@ -698,37 +781,24 @@
         <div class="container">
             <h2 class="section-title">Awards & Recognition</h2>
             <div class="awards-list">
-                <div class="award-item fade-in">
-                    <div class="award-year">2024</div>
-                    <div class="award-details">
-                        <h3 class="award-title">1st Place - International Robotics Competition</h3>
-                        <p>Won first place in [specific category] at the international robotics competition for innovative design and functionality.</p>
+                <a href="#">
+                    <div class="award-item fade-in">
+                        <div class="award-year">2024</div>
+                        <div class="award-details">
+                            <h3 class="award-title">1st Place - International Robotics Competition</h3>
+                            <p class="award-description">Won first place in [specific category] at the international robotics competition for innovative design and functionality.</p>
+                        </div>
+                    </div>    
+                </a>              
+                <a href="#">
+                    <div class="award-item fade-in">
+                        <div class="award-year">2023</div>
+                        <div class="award-details">
+                            <h3 class="award-title">Science Innovation Award</h3>
+                            <p class="award-description">Recognized for outstanding contribution to scientific research in [specific field] at the regional science fair.</p>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="award-item fade-in">
-                    <div class="award-year">2023</div>
-                    <div class="award-details">
-                        <h3 class="award-title">Science Innovation Award</h3>
-                        <p>Recognized for outstanding contribution to scientific research in [specific field] at the regional science fair.</p>
-                    </div>
-                </div>
-                
-                <div class="award-item fade-in">
-                    <div class="award-year">2022</div>
-                    <div class="award-details">
-                        <h3 class="award-title">Young Engineer of the Year</h3>
-                        <p>Selected as the Young Engineer of the Year for exceptional work in rocketry and propulsion systems.</p>
-                    </div>
-                </div>
-                
-                <div class="award-item fade-in">
-                    <div class="award-year">2021</div>
-                    <div class="award-details">
-                        <h3 class="award-title">Leadership Excellence Award</h3>
-                        <p>Awarded for outstanding leadership and initiative as Vice President of the Student Council.</p>
-                    </div>
-                </div>
+                </a>  
             </div>
         </div>
     </section>
@@ -767,9 +837,9 @@
             <div class="footer-content">
                 <div class="logo">Gema Sagara</div>
                 <div class="social-links">
-                    <a href="#"><span>LinkedIn</span></a>
-                    <a href="#"><span>GitHub</span></a>
-                    <a href="#"><span>Instagram</span></a>
+                    <a href="https://www.linkedin.com/in/gema-sagara-a828a92a2/" target="_blank"><span>LinkedIn</span></a>
+                    <a href="https://github.com/gemasagara" target="_blank"><span>GitHub</span></a>
+                    <a href="https://www.instagram.com/gema.sagara/" target="_blank"><span>Instagram</span></a>
                 </div>
                 <div class="footer-nav">
                     <a href="#home">Home</a>
@@ -778,7 +848,7 @@
                     <a href="#contact">Contact</a>
                 </div>
                 <div class="footer-bottom">
-                    <p>&copy; 2025 Gema Sagara. All rights reserved.</p>
+                    <p>2025 Gema Sagara.</p>
                 </div>
             </div>
         </div>
