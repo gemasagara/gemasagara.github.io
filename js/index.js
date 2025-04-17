@@ -97,73 +97,85 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
     const featuredGrid = document.querySelector('.featured-grid');
-    const cards = featuredGrid.querySelectorAll('.featured-card');
-    let cardWidth = 330; // Width including gap
+    const originalCards = featuredGrid.querySelectorAll('.featured-card');
+    const cardWidth = originalCards[0].offsetWidth + parseInt(window.getComputedStyle(featuredGrid).gap || 30);
     let scrollPosition = 0;
     let autoScrollSpeed = 1;
     let animationFrameId;
+    let isHovered = false;
     
+    // Clone cards only once during initialization
     function setupCarousel() {
-        // Calculate actual card width including gap
-        const card = cards[0];
-        const gap = window.getComputedStyle(featuredGrid).gap.slice(0, -2) || 30;
-        cardWidth = card.offsetWidth + parseInt(gap);
+        // Clear any existing clones
+        featuredGrid.querySelectorAll('.cloned-card').forEach(clone => clone.remove());
         
-        // Clone cards dynamically based on viewport width
-        const viewportWidth = window.innerWidth;
-        const numClonesNeeded = Math.ceil(viewportWidth / cardWidth) + 1;
+        // Calculate how many sets of cards we need to clone
+        const containerWidth = featuredGrid.parentElement.offsetWidth;
+        const totalCardsWidth = originalCards.length * cardWidth;
+        const setsNeeded = Math.ceil(containerWidth / totalCardsWidth) + 2;
         
-        // Clear existing clones
-        const existingClones = featuredGrid.querySelectorAll('.cloned-card');
-        existingClones.forEach(clone => clone.remove());
-        
-        // Add new clones
-        for (let i = 0; i < numClonesNeeded; i++) {
-            cards.forEach(card => {
+        // Clone the cards set multiple times
+        for (let i = 0; i < setsNeeded; i++) {
+            originalCards.forEach(card => {
                 const clone = card.cloneNode(true);
                 clone.classList.add('cloned-card');
                 featuredGrid.appendChild(clone);
             });
         }
+        
+        // Reset scroll position
+        scrollPosition = 0;
+        featuredGrid.scrollLeft = 0;
     }
     
     function autoScroll() {
-        // Calculate total scrollable width
-        const totalScrollWidth = cards.length * cardWidth;
-        
-        // If we've scrolled past the original cards, reset position seamlessly
-        if (scrollPosition >= totalScrollWidth) {
-            scrollPosition = 0;
-            featuredGrid.scrollLeft = 0;
+        if (!isHovered) {
+            scrollPosition += autoScrollSpeed;
+            
+            // Reset scroll when we've passed the original set
+            if (scrollPosition >= originalCards.length * cardWidth) {
+                scrollPosition -= originalCards.length * cardWidth;
+                featuredGrid.scrollLeft = scrollPosition;
+            } else {
+                featuredGrid.scrollLeft = scrollPosition;
+            }
         }
-        
-        scrollPosition += autoScrollSpeed;
-        featuredGrid.scrollLeft = scrollPosition;
         
         animationFrameId = requestAnimationFrame(autoScroll);
     }
     
-    // Initialize carousel
-    setupCarousel();
-    autoScroll();
-    
-    // Pause on hover
-    featuredGrid.addEventListener('mouseover', () => {
-        autoScrollSpeed = 0;
+    // Set up hover behavior
+    featuredGrid.addEventListener('mouseenter', () => {
+        isHovered = true;
     });
     
-    featuredGrid.addEventListener('mouseout', () => {
-        autoScrollSpeed = 1;
+    featuredGrid.addEventListener('mouseleave', () => {
+        isHovered = false;
     });
     
-    // Reinitialize on window resize
+    // Handle window resize
     let resizeTimeout;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(() => {
+            cancelAnimationFrame(animationFrameId);
             setupCarousel();
+            autoScroll();
         }, 250);
     });
+    
+    // Handle page visibility (when user switches tabs)
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            cancelAnimationFrame(animationFrameId);
+        } else {
+            requestAnimationFrame(autoScroll);
+        }
+    });
+    
+    // Initialize carousel
+    setupCarousel();
+    autoScroll();
 });
 
 function scrollCards(which, direction) {
