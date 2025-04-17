@@ -75,7 +75,10 @@ async function loadProject() {
         document.getElementById('project-date').textContent = metadata.date || '';
         document.getElementById('project-category').textContent = metadata.category || '';
         document.getElementById('project-tagline').textContent = metadata.tagline || '';
-        
+        const projectLink = document.getElementById('project-link');
+        projectLink.href = metadata.link || '';
+        projectLink.textContent = metadata.link ? 'Docs / PDF / Related Site' : ''; // Optional: You can set custom link text
+                
         // Update main media
         if (metadata.media) {
             const mediaImg = document.getElementById('project-media');
