@@ -398,54 +398,75 @@ nav {
   .scroll-btn:hover {
     background: #0055aa;
   }
-
-.featured-img {
-    height: 300px;
-    background-size: cover;
-    background-position: center;
+  .featured-card {
+    flex: 0 0 auto;
+    width: 200px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: visible;
+    /* Prevent layout shift during hover */
+    will-change: transform;
 }
 
-.featured-container {
+.featured-card:hover {
+    transform: translateY(-10px);
+  }
+
+  .featured-info {
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px;
+    flex: 1;
+  }
+
+  .featured-container {
     position: relative;
     overflow: hidden;
     padding: 0 20px;
   }
-
-  .featured-card {
-    overflow: hidden;
-    flex: 0 0 auto;
-    width: 300px;
+  
+  .featured-img-wrapper {
+    position: relative;
+    width: 200px;
+    height: 200px;
     border-radius: 10px;
-    background: #fff;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    margin-bottom: 10px;
   }
   
-  .featured-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  .featured-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
   }
-
+  
+  .featured-name {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+  }
 
   .featured-grid {
     display: flex;
     overflow-x: auto;
+    overflow-y: hidden;
     gap: 30px;
     padding: 20px 0;
-    scroll-behavior: smooth;
-    /* Hide scrollbar for Chrome, Safari and Opera */
+    position: relative;
+    /* Hide scrollbars across browsers */
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
-    position: relative;
-    
-    /* Ensure continuous scrolling without visible reset */
-    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    /* Use transform for mask instead of mask-image for better compatibility */
+    -webkit-mask: linear-gradient(to right, transparent, black 40px, black calc(100% - 40px), transparent);
+    mask: linear-gradient(to right, transparent, black 40px, black calc(100% - 40px), transparent);
 }
 
 .featured-grid::-webkit-scrollbar {
     display: none;
-  }
+}
+
 
 .featured-container::before {
     left: 0;
