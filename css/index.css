@@ -96,7 +96,7 @@ nav {
 .nav-logo {
     display: flex;
     align-items: center;
-    height: 60px; /* Reduced height to be more proportional */
+    height: 40px; /* Reduced height to be more proportional */
   }
   
   .logo-container {
@@ -105,7 +105,7 @@ nav {
   }
   
   .logo {
-    height: 40px; /* Set a specific height for the logo */
+    height: 35px; /* Set a specific height for the logo */
     width: auto; /* Width will adjust proportionally */
     object-fit: contain;
   }
