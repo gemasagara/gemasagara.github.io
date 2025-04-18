@@ -93,12 +93,30 @@ nav {
     padding: 15px 0;
 }
 
-.logo {
+.nav-logo {
+    display: flex;
+    align-items: center;
+    height: 60px; /* Reduced height to be more proportional */
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 40px; /* Set a specific height for the logo */
+    width: auto; /* Width will adjust proportionally */
+    object-fit: contain;
+  }
+  
+  .logo-name {
     font-size: 1.5rem;
     font-weight: bold;
     color: #0066cc;
     margin-left: 15px;
-}
+    text-decoration: none; /* For the anchor tag */
+  }
 
 .nav-links {
     display: flex;
