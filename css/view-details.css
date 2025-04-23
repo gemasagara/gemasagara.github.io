@@ -71,6 +71,7 @@ nav {
     z-index: 1000;
 }
 
+
 .nav-container {
     display: flex;
     justify-content: space-between;
@@ -78,13 +79,29 @@ nav {
     padding: 15px 0;
 }
 
-.logo {
+.nav-logo {
+    display: flex;
+    align-items: center;
+    height: 40px; /* Reduced height to be more proportional */
+  }
+  
+  .logo-container {
+    display: flex;
+  }
+  
+  .logo {
+    height: 35px; /* Set a specific height for the logo */
+    width: auto; /* Width will adjust proportionally */
+    object-fit: contain;
+  }
+  
+  .logo-name {
     font-size: 1.5rem;
     font-weight: bold;
     color: #0066cc;
     margin-left: 15px;
-}
-
+    text-decoration: none; /* For the anchor tag */
+  }
 .nav-links {
     display: flex;
     list-style: none;
