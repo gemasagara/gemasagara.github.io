@@ -101,7 +101,6 @@ nav {
   
   .logo-container {
     display: flex;
-    align-items: center;
   }
   
   .logo {
@@ -154,7 +153,7 @@ nav {
     align-items: center;
     position: relative;
     height: 100vh;
-  background-image: url('../images/four.png');
+  background-image: url('../images/cakrawala2.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
