@@ -609,13 +609,13 @@ nav {
 
 /* Contact Section */
 .contact-form {
+    flex: 2;
     max-width: 600px;
-    margin: 0 auto;
     background: #fff;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
+  }
 
 .form-group {
     margin-bottom: 20px;
@@ -639,6 +639,84 @@ nav {
     min-height: 150px;
     resize: vertical;
 }
+
+/* Contact Section Layout */
+.contact-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin: 40px auto;
+    align-items: stretch;
+    justify-content: center;
+    max-width: 1000px;
+  }
+  
+  /* Social Media Updates Section */
+  .social-updates {
+    flex: 1;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .social-updates h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+  }
+  
+  .update-text {
+    margin-bottom: 25px;
+    color: #555;
+  }
+  
+  .social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: auto;
+  }
+  
+  .social-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .social-link:hover {
+    background-color: #f5f5f5;
+    transform: translateY(-2px);
+  }
+  
+  .social-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+  }
+
+  .social-img {
+    height: 250px;
+    width: 250px; /* Added to make it a perfect circle */
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%; /* This creates the circle effect */
+    overflow: hidden; /* Ensures the image stays within the circle */
+    margin: 0 auto; /* Centers the circle if needed */
+    
+    /* Optional: Add a border */
+    border: 3px solid #fff; /* White border */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
 
 /* Footer */
 footer {
@@ -738,6 +816,7 @@ footer {
     }
 }
 
+
 @media (max-width: 768px) {
     .nav-container {
         flex-direction: column;
@@ -777,6 +856,20 @@ footer {
     }
     .hero h1 {
         font-size: 2.2rem;
+    }
+
+    .contact-wrapper {
+        flex-direction: column;
+    }
+    
+    .social-updates {
+    max-width: 100%;
+    }
+    
+    .social-icons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     }
 }
 
