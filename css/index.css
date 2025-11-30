@@ -585,6 +585,7 @@ nav {
 .award-year {
     position: relative;
     width: 200px;
+    min-height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
