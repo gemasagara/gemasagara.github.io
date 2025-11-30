@@ -1,14 +1,4 @@
----
-title: International Robotics Competition Entry
-date: 2025-03-15
-category: Robotics
-media: /images/robot-competition-main.jpg
-gallery_1: /images/robot-design-process.jpg
-gallery_2: /images/robot-testing-phase.jpg
-gallery_3: /images/robot-competition-day.jpg
-tagline: Building an autonomous robot that navigated complex obstacle courses and performed precision tasks.
-link: ../resources/SCN_W8.pdf
----
+
 
 
 ## Project Overview
