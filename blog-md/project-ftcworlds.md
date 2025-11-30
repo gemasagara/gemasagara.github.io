@@ -10,6 +10,7 @@ tagline: Building an autonomous robot that navigated complex obstacle courses an
 link: ../resources/SCN_W8.pdf
 ---
 
+
 ## Project Overview
 
 Our team designed and built an autonomous robot for the International Robotics Competition 2025. The robot was required to navigate through a complex obstacle course, identify and collect specific objects, and place them in designated areas - all while competing against the clock and other teams from around the world.
