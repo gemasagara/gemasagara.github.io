@@ -60,7 +60,7 @@ async function loadProject() {
     }
     
     try {
-        const response = await fetch(`./content/${projectName}.md`);
+        const response = await fetch(`./blog-md/${projectName}.md`);
         
         if (!response.ok) {
             throw new Error(`Failed to load project: ${response.statusText}`);
@@ -138,7 +138,7 @@ function displayError(message) {
 async function loadRelatedProjects(category) {
     try {
         const currentProjectId = getProjectParam();
-        const response = await fetch('./content/projects.json');
+        const response = await fetch('./blog-md/projects.json');
         
         if (!response.ok) {
             throw new Error('Failed to load projects');
