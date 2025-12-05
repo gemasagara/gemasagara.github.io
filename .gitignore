@@ -1,0 +1,5 @@
+node_modules/
+LEGACY/
+.DS_Store
+.env
+*.log
