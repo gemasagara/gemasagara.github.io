@@ -6,10 +6,22 @@
     "Beyond engineering, I'm passionate about scientific research, particularly in physics and biology. Last year, I serve as the President of the Student Council, where I help organize events and represent student interests."
   ],
   "skills": [
-    { "name": "Robotics", "level": 90 },
-    { "name": "Programming", "level": 80 },
-    { "name": "Rocketry", "level": 60 },
-    { "name": "Scientific Research", "level": 80 }
+    {
+      "name": "Robotics",
+      "level": 90
+    },
+    {
+      "name": "Programming",
+      "level": 80
+    },
+    {
+      "name": "Rocketry",
+      "level": 60
+    },
+    {
+      "name": "Scientific Research",
+      "level": 80
+    }
   ],
   "visibility": "published",
   "createdAt": "2024-01-01T00:00:00Z",

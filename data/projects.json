@@ -7,7 +7,12 @@
     "thumbnail": "./data/images/rover2.png",
     "tagline": "Develop a fully autonomous cropfield monitoring and care robot for root-vegetables to optimize harvest quality and quantity. ML-powered, with a dedicated mobile app.",
     "featured": true,
-    "tags": ["Robotics", "Machine Learning", "Agriculture", "IoT"],
+    "tags": [
+      "Robotics",
+      "Machine Learning",
+      "Agriculture",
+      "IoT"
+    ],
     "detailsPage": "view-details.html?project=project-rover",
     "order": 1,
     "visibility": "published",
@@ -22,7 +27,12 @@
     "thumbnail": "./data/images/ftcworlds.jpeg",
     "tagline": "Built an International-Level competition robot that utilizes autonomous processes including machine learning to do intricate tasks while navigating through courses.",
     "featured": true,
-    "tags": ["Robotics", "Competition", "Autonomous Systems", "Machine Learning"],
+    "tags": [
+      "Robotics",
+      "Competition",
+      "Autonomous Systems",
+      "Machine Learning"
+    ],
     "detailsPage": "view-details.html?project=project-ftcworlds",
     "order": 2,
     "visibility": "published",
@@ -37,7 +47,12 @@
     "thumbnail": "./data/images/eight.JPG",
     "tagline": "Develop from the ground up a fully custom model rocket with custom motors and flight computer, utilizing CAD and simulations* throughout the process.",
     "featured": true,
-    "tags": ["Rocketry", "CAD", "Electronics", "Simulations"],
+    "tags": [
+      "Rocketry",
+      "CAD",
+      "Electronics",
+      "Simulations"
+    ],
     "detailsPage": "view-details.html?project=project-rocket",
     "order": 3,
     "visibility": "published",
@@ -52,7 +67,11 @@
     "thumbnail": "./data/images/six.JPG",
     "tagline": "Designed and built a fully custom manufactured robot with complex mechanics and system control.",
     "featured": false,
-    "tags": ["Robotics", "Mechanical Design", "Control Systems"],
+    "tags": [
+      "Robotics",
+      "Mechanical Design",
+      "Control Systems"
+    ],
     "detailsPage": "view-details.html?project=project-ftc2425",
     "order": 4,
     "visibility": "published",
@@ -67,7 +86,12 @@
     "thumbnail": "./data/images/ai.jpeg",
     "tagline": "Creating machine learning models for Lobster detection and behaviour analytics; Creating real-time monitoring interface.",
     "featured": false,
-    "tags": ["Machine Learning", "Computer Vision", "Aquaculture", "IoT"],
+    "tags": [
+      "Machine Learning",
+      "Computer Vision",
+      "Aquaculture",
+      "IoT"
+    ],
     "detailsPage": "view-details.html?project=project-ai",
     "order": 5,
     "visibility": "published",
@@ -82,7 +106,12 @@
     "thumbnail": "./data/images/iot.jpeg",
     "tagline": "Create a monitoring device and system interface for Orchid Acclimatization process.",
     "featured": false,
-    "tags": ["IoT", "Agriculture", "Monitoring", "Sensors"],
+    "tags": [
+      "IoT",
+      "Agriculture",
+      "Monitoring",
+      "Sensors"
+    ],
     "detailsPage": "view-details.html?project=project-iot",
     "order": 6,
     "visibility": "published",
@@ -97,7 +126,12 @@
     "thumbnail": "./data/images/twentytwo.png",
     "tagline": "Developing game mechanics and visual implementation for Gremlin Games current title, Rapid Fire.",
     "featured": false,
-    "tags": ["Game Development", "Unity", "C#", "Programming"],
+    "tags": [
+      "Game Development",
+      "Unity",
+      "C#",
+      "Programming"
+    ],
     "detailsPage": "view-details.html?project=project-video",
     "order": 7,
     "visibility": "published",
@@ -112,7 +146,11 @@
     "thumbnail": "./data/images/water.png",
     "tagline": "",
     "featured": false,
-    "tags": ["Research", "Environmental Science", "Water Management"],
+    "tags": [
+      "Research",
+      "Environmental Science",
+      "Water Management"
+    ],
     "detailsPage": "view-details.html?project=project-9thgrade",
     "order": 8,
     "visibility": "published",
@@ -127,7 +165,11 @@
     "thumbnail": "./data/images/solarpanel.png",
     "tagline": "",
     "featured": false,
-    "tags": ["Research", "Renewable Energy", "Solar Technology"],
+    "tags": [
+      "Research",
+      "Renewable Energy",
+      "Solar Technology"
+    ],
     "detailsPage": "view-details.html?project=project-9thgrade",
     "order": 9,
     "visibility": "published",
@@ -142,7 +184,11 @@
     "thumbnail": "./data/images/fuelcell.png",
     "tagline": "",
     "featured": false,
-    "tags": ["Research", "Hydrogen", "Alternative Energy"],
+    "tags": [
+      "Research",
+      "Hydrogen",
+      "Alternative Energy"
+    ],
     "detailsPage": "view-details.html?project=project-9thgrade",
     "order": 10,
     "visibility": "published",
@@ -157,7 +203,11 @@
     "thumbnail": "./data/images/atom.png",
     "tagline": "",
     "featured": false,
-    "tags": ["Research", "Chemistry", "Physics"],
+    "tags": [
+      "Research",
+      "Chemistry",
+      "Physics"
+    ],
     "detailsPage": "view-details.html?project=project-9thgrade",
     "order": 11,
     "visibility": "published",
@@ -172,7 +222,11 @@
     "thumbnail": "./data/images/carbon.png",
     "tagline": "",
     "featured": false,
-    "tags": ["Research", "Environmental Science", "Chemistry"],
+    "tags": [
+      "Research",
+      "Environmental Science",
+      "Chemistry"
+    ],
     "detailsPage": "view-details.html?project=project-9thgrade",
     "order": 12,
     "visibility": "published",
@@ -187,7 +241,11 @@
     "thumbnail": "./data/images/subculture.png",
     "tagline": "",
     "featured": false,
-    "tags": ["Research", "Biology", "Botany"],
+    "tags": [
+      "Research",
+      "Biology",
+      "Botany"
+    ],
     "detailsPage": "view-details.html?project=project-8thgrade",
     "order": 13,
     "visibility": "published",
@@ -202,7 +260,11 @@
     "thumbnail": "./data/images/punnet.png",
     "tagline": "",
     "featured": false,
-    "tags": ["Research", "Biology", "Genetics"],
+    "tags": [
+      "Research",
+      "Biology",
+      "Genetics"
+    ],
     "detailsPage": "view-details.html?project=project-8thgrade",
     "order": 14,
     "visibility": "published",
@@ -217,7 +279,11 @@
     "thumbnail": "./data/images/waterfilter.png",
     "tagline": "",
     "featured": false,
-    "tags": ["Research", "Chemistry", "Environmental Science"],
+    "tags": [
+      "Research",
+      "Chemistry",
+      "Environmental Science"
+    ],
     "detailsPage": "view-details.html?project=project-8thgrade",
     "order": 15,
     "visibility": "published",
@@ -232,7 +298,11 @@
     "thumbnail": "./data/images/lightinfluence.png",
     "tagline": "",
     "featured": false,
-    "tags": ["Research", "Biology", "Aquaculture"],
+    "tags": [
+      "Research",
+      "Biology",
+      "Aquaculture"
+    ],
     "detailsPage": "view-details.html?project=project-8thgrade",
     "order": 16,
     "visibility": "published",
@@ -247,7 +317,11 @@
     "thumbnail": "./data/images/grape.png",
     "tagline": "",
     "featured": false,
-    "tags": ["Research", "Agriculture", "Botany"],
+    "tags": [
+      "Research",
+      "Agriculture",
+      "Botany"
+    ],
     "detailsPage": "view-details.html?project=project-8thgrade",
     "order": 17,
     "visibility": "published",
@@ -262,7 +336,10 @@
     "thumbnail": "./data/images/vlinders.jpeg",
     "tagline": "Overall entrepreneurship projects I've worked on for the past 3 year.",
     "featured": false,
-    "tags": ["Business", "Entrepreneurship"],
+    "tags": [
+      "Business",
+      "Entrepreneurship"
+    ],
     "detailsPage": "view-details.html?project=project-ai",
     "order": 18,
     "visibility": "published",
@@ -277,7 +354,11 @@
     "thumbnail": "./data/images/nawasena.png",
     "tagline": "Wrote a short novel about a dystopian future where everything are granted by artificial fabrication, it explores the true meaning of living and what it means to be human",
     "featured": false,
-    "tags": ["Writing", "Fiction", "Creative"],
+    "tags": [
+      "Writing",
+      "Fiction",
+      "Creative"
+    ],
     "detailsPage": "view-details.html?project=project-novel",
     "order": 19,
     "visibility": "published",
@@ -292,7 +373,11 @@
     "thumbnail": "./data/images/video.png",
     "tagline": "Overall videography projects I've worked on for the past 3 year.",
     "featured": false,
-    "tags": ["Videography", "Creative", "Media"],
+    "tags": [
+      "Videography",
+      "Creative",
+      "Media"
+    ],
     "detailsPage": "view-details.html?project=project-video",
     "order": 20,
     "visibility": "published",
@@ -307,7 +392,11 @@
     "thumbnail": "./data/images/yearbook.png",
     "tagline": "",
     "featured": false,
-    "tags": ["Design", "Graphics", "Print"],
+    "tags": [
+      "Design",
+      "Graphics",
+      "Print"
+    ],
     "detailsPage": "view-details.html?project=project-yearbook",
     "order": 21,
     "visibility": "published",
@@ -322,7 +411,11 @@
     "thumbnail": "./data/images/milk.png",
     "tagline": "",
     "featured": false,
-    "tags": ["Design", "Packaging", "Graphics"],
+    "tags": [
+      "Design",
+      "Packaging",
+      "Graphics"
+    ],
     "detailsPage": "view-details.html?project=project-milk",
     "order": 22,
     "visibility": "published",
@@ -337,7 +430,11 @@
     "thumbnail": "./data/images/banknote.png",
     "tagline": "",
     "featured": false,
-    "tags": ["Design", "Graphics", "Creative"],
+    "tags": [
+      "Design",
+      "Graphics",
+      "Creative"
+    ],
     "detailsPage": "view-details.html?project=project-banknote",
     "order": 23,
     "visibility": "published",
@@ -352,7 +449,11 @@
     "thumbnail": "./data/images/branding.png",
     "tagline": "",
     "featured": false,
-    "tags": ["Design", "Branding", "Graphics"],
+    "tags": [
+      "Design",
+      "Branding",
+      "Graphics"
+    ],
     "detailsPage": "view-details.html?project=project-branding",
     "order": 24,
     "visibility": "published",
@@ -367,7 +468,11 @@
     "thumbnail": "./data/images/banner.png",
     "tagline": "",
     "featured": false,
-    "tags": ["Design", "Graphics", "Portfolio"],
+    "tags": [
+      "Design",
+      "Graphics",
+      "Portfolio"
+    ],
     "detailsPage": "view-details.html?project=project-overalldesign",
     "order": 25,
     "visibility": "published",

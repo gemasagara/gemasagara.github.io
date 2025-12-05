@@ -1,5 +1,5 @@
 ---
-title: International Robotics Competition Entry
+title: International Robotics
 date: 2025-03-15
 category: Robotics
 author: Gema Sagara
@@ -8,6 +8,7 @@ published: true
 link: ../resources/SCN_W8.pdf
 ---
 
+## Project Overview
 ## WowzerRRRR
 
 Our team designed and built an autonomous robot for the International Robotics Competition 2025. The robot was required to navigate through a complex obstacle course, identify and collect specific objects, and place them in designated areas - all while competing against the clock and other teams from around the world.
