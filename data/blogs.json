@@ -133,23 +133,5 @@
     "published": true,
     "markdownFile": "posts/project-rover.md",
     "externalLink": ""
-  },
-  {
-    "id": "project-new",
-    "title": "New",
-    "date": 2030,
-    "category": "Robotics",
-    "tags": [],
-    "author": "Gema Sagara",
-    "excerpt": "new",
-    "readTime": "1 min read",
-    "published": true,
-    "externalLink": "",
-    "markdownFile": "posts/project-new.md",
-    "markdownContent": "## New",
-    "createdAt": "2025-12-05T10:21:15.702Z",
-    "lastModified": "2025-12-05T10:21:15.702Z",
-    "visibility": "draft",
-    "order": 1
   }
 ]

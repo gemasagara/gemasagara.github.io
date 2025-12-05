@@ -3,7 +3,7 @@
     "id": "autonomous-rover-2025",
     "title": "Autonomous Farming Rover",
     "category": "Robotics & Research",
-    "year": 2025,
+    "year": "2025",
     "thumbnail": "./data/images/rover2.png",
     "tagline": "Develop a fully autonomous cropfield monitoring and care robot for root-vegetables to optimize harvest quality and quantity. ML-powered, with a dedicated mobile app.",
     "featured": true,
@@ -17,9 +17,7 @@
     "order": 1,
     "visibility": "published",
     "createdAt": "2025-01-01T00:00:00Z",
-    "lastModified": "2025-12-05T10:21:50.012Z",
-    "linkedBlog": "project-new",
-    "externalLink": ""
+    "lastModified": "2025-01-01T00:00:00Z"
   },
   {
     "id": "ftc-worlds-2024",
