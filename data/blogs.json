@@ -12,8 +12,7 @@
     "featured": false,
     "published": true,
     "markdownFile": "posts/project-cherapace.md",
-    "externalLink": "",
-    "markdownContent": ""
+    "externalLink": ""
   },
   {
     "id": "project-example",
@@ -43,8 +42,7 @@
     "featured": false,
     "published": true,
     "markdownFile": "posts/project-ftc2425.md",
-    "externalLink": "",
-    "markdownContent": ""
+    "externalLink": ""
   },
   {
     "id": "project-ftcworlds",
@@ -59,9 +57,7 @@
     "featured": false,
     "published": true,
     "markdownFile": "posts/project-ftcworlds.md",
-    "externalLink": "../resources/SCN_W8.pdf",
-    "markdownContent": "## WowzerRRRR\n\nOur team designed and built an autonomous robot for the International Robotics Competition 2025. The robot was required to navigate through a complex obstacle course, identify and collect specific objects, and place them in designated areas - all while competing against the clock and other teams from around the world.\n\n## Technical Specifications\n\n- **Microcontroller**: Arduino Mega 2560 with custom shield\n- **Motors**: 4x Brushless DC motors with high-precision encoders\n- **Sensors**: \n  - 2x LIDAR sensors for obstacle detection and mapping\n  - RGB camera for object identification\n  - Ultrasonic sensors for short-range detection\n  - IMU (Inertial Measurement Unit) for position tracking\n- **Power System**: 11.1V LiPo battery with custom power management system\n- **Construction**: Custom aluminum frame with 3D printed components\n- **Software**: Custom navigation algorithms written in C++ with machine learning object recognition\n\n## Development Process\n\n### Planning and Design Phase\n\nThe competition presented several challenges that required careful planning and innovative solutions. We began by breaking down the competition requirements and identifying the key technical challenges:\n\n1. Autonomous navigation in an unknown environment\n2. Object recognition and classification\n3. Precision manipulation of objects\n4. Robust error handling and recovery\n\nOur design process involved multiple iterations of prototyping, from simple cardboard mockups to CAD designs and finally the physical build.\n\n### Build Process\n\nConstruction took approximately six weeks, with team members working in parallel on different subsystems:\n\n- Mechanical team focused on the chassis, drive system, and manipulator arm\n- Electronics team developed the sensor integration and power systems\n- Software team worked on navigation algorithms and object recognition\n\nWe encountered several challenges during the build, particularly with weight distribution affecting the robot's stability and sensor interference requiring custom shielding solutions.\n\n### Testing and Refinement\n\nTesting was conducted in phases:\n\n1. Component testing to verify individual subsystems\n2. Integration testing to ensure all systems worked together\n3. Field testing in simulated competition environments\n4. Stress testing to identify failure points and improve reliability\n\nEach testing phase revealed opportunities for improvement. We made significant modifications to our object recognition system after discovering performance issues in varying lighting conditions.\n\n## Competition Results\n\nOur team placed 3rd overall in the competition, with particularly strong scores in the autonomous navigation portion. The judges commended our innovative approach to object recognition using a hybrid of contour analysis and machine learning classification.\n\nThe most challenging aspect proved to be the final precision placement task, where slight calibration issues in our manipulator arm cost us valuable points.\n\n## What We Learned\n\nThis project provided invaluable hands-on experience in:\n\n- Systems integration in complex robotics projects\n- Real-time sensor fusion and decision making\n- Team collaboration across mechanical, electrical and software disciplines\n- Iterative design and rapid prototyping techniques\n- Performance optimization under strict constraints\n\n## Future Improvements\n\nFor future iterations, we've identified several improvements:\n\n1. Implementing more advanced path planning algorithms\n2. Upgrading to a more powerful onboard computer for real-time image processing\n3. Developing a more precise manipulation system with feedback control\n4. Creating a more modular design to allow rapid reconfiguration for different challenges\n\nThis project represents hundreds of hours of collaborative work and problem-solving, resulting in a sophisticated autonomous system that performed admirably under competition conditions.",
-    "lastModified": "2025-12-05T08:48:56.519Z"
+    "externalLink": "../resources/SCN_W8.pdf"
   },
   {
     "id": "project-gamedev",
