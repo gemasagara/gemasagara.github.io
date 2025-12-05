@@ -1,7 +1,7 @@
 [
   {
     "id": "award-mrc-2025",
-    "year": 2030,
+    "year": "2025",
     "backgroundImage": "./data/images/mrc.jpeg",
     "title": "3rd Winner Innovative Creation. Madrasah Robotic Competition (National) 2025",
     "description": "Won 3rd place out of 170+ teams in Innovative Creation category at the annual Madrasah Robotic Competition (National-wide) with an <b>innovative plant monitoring and surveying robot</b>.",
@@ -10,9 +10,7 @@
     "order": 1,
     "visibility": "published",
     "createdAt": "2025-01-15T00:00:00Z",
-    "lastModified": "2025-12-05T10:07:34.228Z",
-    "linkedBlog": "",
-    "externalLink": ""
+    "lastModified": "2025-01-15T00:00:00Z"
   },
   {
     "id": "award-ftc-nusantara-2425",

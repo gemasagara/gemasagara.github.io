@@ -3,7 +3,7 @@
     "id": "autonomous-rover-2025",
     "title": "Autonomous Farming Rover",
     "category": "Robotics & Research",
-    "year": "2025",
+    "year": 2030,
     "thumbnail": "./data/images/rover2.png",
     "tagline": "Develop a fully autonomous cropfield monitoring and care robot for root-vegetables to optimize harvest quality and quantity. ML-powered, with a dedicated mobile app.",
     "featured": true,
@@ -13,11 +13,13 @@
       "Agriculture",
       "IoT"
     ],
+    "detailsPage": "view-details.html?project=project-rover",
     "order": 1,
     "visibility": "published",
     "createdAt": "2025-01-01T00:00:00Z",
-    "lastModified": "2025-01-01T00:00:00Z",
-    "linkedBlog": "project-rover"
+    "lastModified": "2025-12-05T10:15:19.568Z",
+    "linkedBlog": "",
+    "externalLink": ""
   },
   {
     "id": "ftc-worlds-2024",
@@ -33,11 +35,11 @@
       "Autonomous Systems",
       "Machine Learning"
     ],
+    "detailsPage": "view-details.html?project=project-ftcworlds",
     "order": 2,
     "visibility": "published",
     "createdAt": "2024-05-01T00:00:00Z",
-    "lastModified": "2024-05-01T00:00:00Z",
-    "linkedBlog": "project-ftcworlds"
+    "lastModified": "2024-05-01T00:00:00Z"
   },
   {
     "id": "custom-rocket-2025",
@@ -53,11 +55,11 @@
       "Electronics",
       "Simulations"
     ],
+    "detailsPage": "view-details.html?project=project-rocket",
     "order": 3,
     "visibility": "published",
     "createdAt": "2025-02-01T00:00:00Z",
-    "lastModified": "2025-02-01T00:00:00Z",
-    "linkedBlog": "project-rocket"
+    "lastModified": "2025-02-01T00:00:00Z"
   },
   {
     "id": "ftc-nusantara-2425",
@@ -72,11 +74,11 @@
       "Mechanical Design",
       "Control Systems"
     ],
+    "detailsPage": "view-details.html?project=project-ftc2425",
     "order": 4,
     "visibility": "published",
     "createdAt": "2024-11-01T00:00:00Z",
-    "lastModified": "2024-11-01T00:00:00Z",
-    "linkedBlog": "project-ftc2425"
+    "lastModified": "2024-11-01T00:00:00Z"
   },
   {
     "id": "ml-lobster-2024",
@@ -92,11 +94,11 @@
       "Aquaculture",
       "IoT"
     ],
+    "detailsPage": "view-details.html?project=project-ai",
     "order": 5,
     "visibility": "published",
     "createdAt": "2024-04-01T00:00:00Z",
-    "lastModified": "2024-04-01T00:00:00Z",
-    "linkedBlog": "project-ai"
+    "lastModified": "2024-04-01T00:00:00Z"
   },
   {
     "id": "iot-orchid-2023",
@@ -112,11 +114,11 @@
       "Monitoring",
       "Sensors"
     ],
+    "detailsPage": "view-details.html?project=project-iot",
     "order": 6,
     "visibility": "published",
     "createdAt": "2023-06-01T00:00:00Z",
-    "lastModified": "2023-06-01T00:00:00Z",
-    "linkedBlog": "project-iot"
+    "lastModified": "2023-06-01T00:00:00Z"
   },
   {
     "id": "rapid-fire-game",
@@ -132,11 +134,11 @@
       "C#",
       "Programming"
     ],
+    "detailsPage": "view-details.html?project=project-video",
     "order": 7,
     "visibility": "published",
     "createdAt": "2025-01-01T00:00:00Z",
-    "lastModified": "2025-01-01T00:00:00Z",
-    "linkedBlog": "project-video"
+    "lastModified": "2025-01-01T00:00:00Z"
   },
   {
     "id": "water-scarcity-research",
@@ -151,11 +153,11 @@
       "Environmental Science",
       "Water Management"
     ],
+    "detailsPage": "view-details.html?project=project-9thgrade",
     "order": 8,
     "visibility": "published",
     "createdAt": "2023-01-01T00:00:00Z",
-    "lastModified": "2023-01-01T00:00:00Z",
-    "linkedBlog": "project-9thgrade"
+    "lastModified": "2023-01-01T00:00:00Z"
   },
   {
     "id": "solar-panel-research",
@@ -170,11 +172,11 @@
       "Renewable Energy",
       "Solar Technology"
     ],
+    "detailsPage": "view-details.html?project=project-9thgrade",
     "order": 9,
     "visibility": "published",
     "createdAt": "2023-01-01T00:00:00Z",
-    "lastModified": "2023-01-01T00:00:00Z",
-    "linkedBlog": "project-9thgrade"
+    "lastModified": "2023-01-01T00:00:00Z"
   },
   {
     "id": "hydrogen-fuel-research",
@@ -189,11 +191,11 @@
       "Hydrogen",
       "Alternative Energy"
     ],
+    "detailsPage": "view-details.html?project=project-9thgrade",
     "order": 10,
     "visibility": "published",
     "createdAt": "2023-01-01T00:00:00Z",
-    "lastModified": "2023-01-01T00:00:00Z",
-    "linkedBlog": "project-9thgrade"
+    "lastModified": "2023-01-01T00:00:00Z"
   },
   {
     "id": "lava-lamp-research",
@@ -208,11 +210,11 @@
       "Chemistry",
       "Physics"
     ],
+    "detailsPage": "view-details.html?project=project-9thgrade",
     "order": 11,
     "visibility": "published",
     "createdAt": "2023-01-01T00:00:00Z",
-    "lastModified": "2023-01-01T00:00:00Z",
-    "linkedBlog": "project-9thgrade"
+    "lastModified": "2023-01-01T00:00:00Z"
   },
   {
     "id": "carbon-cycle-research",
@@ -227,11 +229,11 @@
       "Environmental Science",
       "Chemistry"
     ],
+    "detailsPage": "view-details.html?project=project-9thgrade",
     "order": 12,
     "visibility": "published",
     "createdAt": "2023-01-01T00:00:00Z",
-    "lastModified": "2023-01-01T00:00:00Z",
-    "linkedBlog": "project-9thgrade"
+    "lastModified": "2023-01-01T00:00:00Z"
   },
   {
     "id": "orchid-subculture",
@@ -246,11 +248,11 @@
       "Biology",
       "Botany"
     ],
+    "detailsPage": "view-details.html?project=project-8thgrade",
     "order": 13,
     "visibility": "published",
     "createdAt": "2022-01-01T00:00:00Z",
-    "lastModified": "2022-01-01T00:00:00Z",
-    "linkedBlog": "project-8thgrade"
+    "lastModified": "2022-01-01T00:00:00Z"
   },
   {
     "id": "orchid-pollination",
@@ -265,11 +267,11 @@
       "Biology",
       "Genetics"
     ],
+    "detailsPage": "view-details.html?project=project-8thgrade",
     "order": 14,
     "visibility": "published",
     "createdAt": "2022-01-01T00:00:00Z",
-    "lastModified": "2022-01-01T00:00:00Z",
-    "linkedBlog": "project-8thgrade"
+    "lastModified": "2022-01-01T00:00:00Z"
   },
   {
     "id": "water-filter-research",
@@ -284,11 +286,11 @@
       "Chemistry",
       "Environmental Science"
     ],
+    "detailsPage": "view-details.html?project=project-8thgrade",
     "order": 15,
     "visibility": "published",
     "createdAt": "2022-01-01T00:00:00Z",
-    "lastModified": "2022-01-01T00:00:00Z",
-    "linkedBlog": "project-8thgrade"
+    "lastModified": "2022-01-01T00:00:00Z"
   },
   {
     "id": "light-influence-fish",
@@ -303,11 +305,11 @@
       "Biology",
       "Aquaculture"
     ],
+    "detailsPage": "view-details.html?project=project-8thgrade",
     "order": 16,
     "visibility": "published",
     "createdAt": "2022-01-01T00:00:00Z",
-    "lastModified": "2022-01-01T00:00:00Z",
-    "linkedBlog": "project-8thgrade"
+    "lastModified": "2022-01-01T00:00:00Z"
   },
   {
     "id": "banana-grape-cultivation",
@@ -322,11 +324,11 @@
       "Agriculture",
       "Botany"
     ],
+    "detailsPage": "view-details.html?project=project-8thgrade",
     "order": 17,
     "visibility": "published",
     "createdAt": "2022-01-01T00:00:00Z",
-    "lastModified": "2022-01-01T00:00:00Z",
-    "linkedBlog": "project-8thgrade"
+    "lastModified": "2022-01-01T00:00:00Z"
   },
   {
     "id": "entrepreneurship-projects",
@@ -340,11 +342,11 @@
       "Business",
       "Entrepreneurship"
     ],
+    "detailsPage": "view-details.html?project=project-ai",
     "order": 18,
     "visibility": "published",
     "createdAt": "2022-01-01T00:00:00Z",
-    "lastModified": "2022-01-01T00:00:00Z",
-    "linkedBlog": "project-ai"
+    "lastModified": "2022-01-01T00:00:00Z"
   },
   {
     "id": "nawasena-novel",
@@ -359,11 +361,11 @@
       "Fiction",
       "Creative"
     ],
+    "detailsPage": "view-details.html?project=project-novel",
     "order": 19,
     "visibility": "published",
     "createdAt": "2024-01-01T00:00:00Z",
-    "lastModified": "2024-01-01T00:00:00Z",
-    "linkedBlog": "project-novel"
+    "lastModified": "2024-01-01T00:00:00Z"
   },
   {
     "id": "videography-projects",
@@ -378,11 +380,11 @@
       "Creative",
       "Media"
     ],
+    "detailsPage": "view-details.html?project=project-video",
     "order": 20,
     "visibility": "published",
     "createdAt": "2022-01-01T00:00:00Z",
-    "lastModified": "2022-01-01T00:00:00Z",
-    "linkedBlog": "project-video"
+    "lastModified": "2022-01-01T00:00:00Z"
   },
   {
     "id": "yearbook-design",
@@ -397,11 +399,11 @@
       "Graphics",
       "Print"
     ],
+    "detailsPage": "view-details.html?project=project-yearbook",
     "order": 21,
     "visibility": "published",
     "createdAt": "2024-01-01T00:00:00Z",
-    "lastModified": "2024-01-01T00:00:00Z",
-    "linkedBlog": "project-yearbook"
+    "lastModified": "2024-01-01T00:00:00Z"
   },
   {
     "id": "milk-packaging",
@@ -416,11 +418,11 @@
       "Packaging",
       "Graphics"
     ],
+    "detailsPage": "view-details.html?project=project-milk",
     "order": 22,
     "visibility": "published",
     "createdAt": "2023-01-01T00:00:00Z",
-    "lastModified": "2023-01-01T00:00:00Z",
-    "linkedBlog": "project-milk"
+    "lastModified": "2023-01-01T00:00:00Z"
   },
   {
     "id": "banknote-design",
@@ -435,11 +437,11 @@
       "Graphics",
       "Creative"
     ],
+    "detailsPage": "view-details.html?project=project-banknote",
     "order": 23,
     "visibility": "published",
     "createdAt": "2023-01-01T00:00:00Z",
-    "lastModified": "2023-01-01T00:00:00Z",
-    "linkedBlog": "project-banknote"
+    "lastModified": "2023-01-01T00:00:00Z"
   },
   {
     "id": "branding-projects",
@@ -454,11 +456,11 @@
       "Branding",
       "Graphics"
     ],
+    "detailsPage": "view-details.html?project=project-branding",
     "order": 24,
     "visibility": "published",
     "createdAt": "2023-01-01T00:00:00Z",
-    "lastModified": "2023-01-01T00:00:00Z",
-    "linkedBlog": "project-branding"
+    "lastModified": "2023-01-01T00:00:00Z"
   },
   {
     "id": "overall-design",
@@ -473,10 +475,10 @@
       "Graphics",
       "Portfolio"
     ],
+    "detailsPage": "view-details.html?project=project-overalldesign",
     "order": 25,
     "visibility": "published",
     "createdAt": "2022-01-01T00:00:00Z",
-    "lastModified": "2022-01-01T00:00:00Z",
-    "linkedBlog": "project-overalldesign"
+    "lastModified": "2022-01-01T00:00:00Z"
   }
 ]
