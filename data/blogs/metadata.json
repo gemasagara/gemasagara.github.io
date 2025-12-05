@@ -1,0 +1,67 @@
+[
+  {
+    "id": "example-project",
+    "title": "Example Project",
+    "date": "2025-04-10",
+    "category": "Robotics",
+    "tags": [
+      "Robotics",
+      "Engineering",
+      "Innovation"
+    ],
+    "author": "Gema Sagara",
+    "thumbnail": "/data/images/four.png",
+    "excerpt": "Deserunt dolore veniam minim voluptate fugiat do veniam minim sint.",
+    "readTime": "5 min read",
+    "featured": true,
+    "published": true,
+    "markdownFile": "posts/example-project.md"
+  },
+  {
+    "id": "ftc-worlds-journey",
+    "title": "Our Journey to FTC World Championship",
+    "date": "2024-05-15",
+    "category": "Robotics",
+    "tags": [
+      "FTC",
+      "Competition",
+      "Teamwork",
+      "International"
+    ],
+    "author": "Gema Sagara",
+    "thumbnail": "/data/images/ftcworlds.jpeg",
+    "excerpt": "How our team prepared for and competed at the FIRST Tech Challenge World Championship in Houston, Texas.",
+    "readTime": "8 min read",
+    "featured": true,
+    "published": true,
+    "markdownFile": "posts/ftc-worlds-journey.md"
+  },
+  {
+    "id": "project-ftcworlds",
+    "title": "International Robotics Competition Entry",
+    "date": "2025-03-15",
+    "category": "Robotics",
+    "tags": [],
+    "author": "Gema Sagara",
+    "thumbnail": "",
+    "excerpt": "Building an autonomous robot that navigated complex obstacle courses and performed precision tasks.",
+    "featured": false,
+    "published": true,
+    "markdownFile": "posts/project-ftcworlds.md",
+    "externalLink": "./data/documents/SCN_W8.pdf"
+  },
+  {
+    "id": "project-new",
+    "title": "New Blog!",
+    "date": "2020-12-12",
+    "category": "Stuff",
+    "tags": [],
+    "author": "Gema Sagara",
+    "thumbnail": "",
+    "excerpt": "idk",
+    "featured": false,
+    "published": true,
+    "markdownFile": "posts/project-new.md",
+    "externalLink": ""
+  }
+]

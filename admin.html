@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Admin Panel</title>
+    <link rel="stylesheet" href="css/admin.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/data/images/favicon_io/favicon.ico"
+    />
+    <!-- EasyMDE (SimpleMDE) CSS & JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.js"></script>
+  </head>
+  <body class="admin">
+    <div class="admin-container">
+      <!-- Sidebar -->
+      <aside class="admin-sidebar" id="adminSidebar">
+        <div class="admin-logo">
+          <h2>Admin Panel</h2>
+          <button class="sidebar-toggle" onclick="window.adminPanel.toggleSidebar()" title="Toggle Sidebar">☰</button>
+        </div>
+        <nav>
+          <ul class="admin-nav">
+            <li>
+              <a
+                href="#"
+                onclick="window.adminPanel.openSection('dashboard')"
+                class="nav-link active"
+                data-section="dashboard"
+                ><span>Dashboard</span></a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                onclick="window.adminPanel.openSection('hero')"
+                class="nav-link"
+                data-section="hero"
+                ><span>Hero</span></a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                onclick="window.adminPanel.openSection('about')"
+                class="nav-link"
+                data-section="about"
+                ><span>About</span></a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                onclick="window.adminPanel.openSection('projects')"
+                class="nav-link"
+                data-section="projects"
+                ><span>Projects</span></a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                onclick="window.adminPanel.openSection('awards')"
+                class="nav-link"
+                data-section="awards"
+                ><span>Awards</span></a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                onclick="window.adminPanel.openSection('leadership')"
+                class="nav-link"
+                data-section="leadership"
+                ><span>Leadership</span></a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                onclick="window.adminPanel.openSection('experiences')"
+                class="nav-link"
+                data-section="experiences"
+                ><span>Experiences</span></a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                onclick="window.adminPanel.openSection('teams')"
+                class="nav-link"
+                data-section="teams"
+                ><span>Teams</span></a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                onclick="window.adminPanel.openSection('blogs')"
+                class="nav-link"
+                data-section="blogs"
+                ><span>Blogs</span></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="admin-main">
+        <div class="admin-topbar">
+           <h1 id="pageTitle">Dashboard</h1>
+           <div class="topbar-actions">
+             <button
+               class="btn btn-primary"
+               onclick="window.location.href = './';"
+             >
+               Back to Site
+             </button>
+           </div>
+         </div>
+
+        <div id="adminContent">
+          <!-- Content loaded dynamically -->
+        </div>
+      </main>
+    </div>
+
+    <!-- Modal for editing -->
+    <div
+      id="editModal"
+      class="modal-overlay"
+      onclick="if(event.target === this) window.adminPanel.closeModal()"
+    >
+      <div class="modal-content">
+        <div id="modalContent">
+          <!-- Form loaded dynamically -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="js/admin-panel.js"></script>
+  </body>
+</html>

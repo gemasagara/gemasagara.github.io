@@ -1,0 +1,19 @@
+{
+  "siteName": "Gema Sagara Portfolio",
+  "tagline": "Robotics & ML | Rocketry | Scientific Research",
+  "author": {
+    "name": "Gema Sagara",
+    "email": "contact@gemasagara.com",
+    "location": "Depok, West Java, ID"
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/gema-sagara-a828a92a2/",
+    "github": "https://github.com/gemasagara",
+    "instagram": "https://www.instagram.com/gema.sagara/"
+  },
+  "settings": {
+    "projectsPerPage": 3,
+    "carouselSpeed": 1,
+    "animationThreshold": 100
+  }
+}

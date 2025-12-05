@@ -1,0 +1,72 @@
+[
+  {
+    "id": "team-tecrabot",
+    "name": "#21573 Tecra Bot",
+    "description": "Robotics Team",
+    "logo": "./data/images/tbt.png",
+    "order": 1,
+    "visibility": "published",
+    "createdAt": "2022-01-01T00:00:00Z",
+    "lastModified": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "team-r2045",
+    "name": "#19829 R2045",
+    "description": "Robotics Team",
+    "logo": "./data/images/r2045logo.png",
+    "order": 2,
+    "visibility": "published",
+    "createdAt": "2024-01-01T00:00:00Z",
+    "lastModified": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "team-cherapace",
+    "name": "Cherapace",
+    "description": "Aquaculture AI Farming",
+    "logo": "./data/images/cherapacelogo.png",
+    "order": 3,
+    "visibility": "published",
+    "createdAt": "2024-01-01T00:00:00Z",
+    "lastModified": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "team-natech",
+    "name": "Natech",
+    "description": "IoT Plant Monitoring",
+    "logo": "./data/images/natechlogo.png",
+    "order": 4,
+    "visibility": "published",
+    "createdAt": "2023-01-01T00:00:00Z",
+    "lastModified": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "team-gremlin",
+    "name": "Gremlin Games",
+    "description": "Game Development Team",
+    "logo": "./data/images/gremlinlogo.png",
+    "order": 5,
+    "visibility": "published",
+    "createdAt": "2025-01-01T00:00:00Z",
+    "lastModified": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "team-sagara",
+    "name": "Sagara Totebag",
+    "description": "Apparel Workshop",
+    "logo": "./data/images/sagaralogo.png",
+    "order": 6,
+    "visibility": "published",
+    "createdAt": "2023-01-01T00:00:00Z",
+    "lastModified": "2023-01-01T00:00:00Z"
+  },
+  {
+    "id": "team-vlinders",
+    "name": "Vlinders",
+    "description": "Clothing Distro",
+    "logo": "./data/images/vlinderlogo.png",
+    "order": 7,
+    "visibility": "published",
+    "createdAt": "2022-01-01T00:00:00Z",
+    "lastModified": "2023-01-01T00:00:00Z"
+  }
+]

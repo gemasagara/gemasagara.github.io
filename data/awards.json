@@ -1,0 +1,67 @@
+[
+  {
+    "id": "award-mrc-2025",
+    "year": "2025",
+    "backgroundImage": "./data/images/mrc.jpeg",
+    "title": "3rd Winner Innovative Creation. Madrasah Robotic Competition (National) 2025",
+    "description": "Won 3rd place out of 170+ teams in Innovative Creation category at the annual Madrasah Robotic Competition (National-wide) with an <b>innovative plant monitoring and surveying robot</b>.",
+    "link": "view-details.html",
+    "external": false,
+    "order": 1,
+    "visibility": "published",
+    "createdAt": "2025-01-15T00:00:00Z",
+    "lastModified": "2025-01-15T00:00:00Z"
+  },
+  {
+    "id": "award-ftc-nusantara-2425",
+    "year": "24/25",
+    "backgroundImage": "./data/images/tbt2425.jpeg",
+    "title": "1st Inspire Award, 1st Design Award, 2nd Think Award. 2024 FTC Nusantara Championship",
+    "description": "Won first place in Inspire Award, Design award, and second place in Think Award at the 2024 FIRST Tech Challenge Nusantara Championship (National-wide) robotics competition for innovative design and amazing engineering portfolio.",
+    "link": "view-details.html",
+    "external": false,
+    "order": 2,
+    "visibility": "published",
+    "createdAt": "2024-12-01T00:00:00Z",
+    "lastModified": "2024-12-01T00:00:00Z"
+  },
+  {
+    "id": "award-consulate-2025",
+    "year": "2025",
+    "backgroundImage": "./data/images/consulate.jpeg",
+    "title": "FTC Robotics Team Supported by Consulate General of the Republic Indonesia in Houston",
+    "description": "Recognized by Consulate General of the Republic Indonesia in Houston and given support on competing in the 2024 FIRST Tech Challenge World Championship that's held in Houston, Texas, USA.",
+    "link": "view-details.html",
+    "external": false,
+    "order": 3,
+    "visibility": "published",
+    "createdAt": "2025-01-10T00:00:00Z",
+    "lastModified": "2025-01-10T00:00:00Z"
+  },
+  {
+    "id": "award-olympic-2024",
+    "year": "2024",
+    "backgroundImage": "./data/images/olympic.png",
+    "title": "FGC Robotics Team Supported by the Indonesian National Olympic Comitee",
+    "description": "Gaining support so that robotics can become part of the sports branch in Indonesia that is recognized by the Indonesian National Olympic Comitee. This is in part of the initisiation of Indonesia competing in the FIRST Global Challenge that's held on Athens, Greece.",
+    "link": "https://www.instagram.com/noc.indonesia/p/C8J1xDAy4Dq/",
+    "external": true,
+    "order": 4,
+    "visibility": "published",
+    "createdAt": "2024-06-01T00:00:00Z",
+    "lastModified": "2024-06-01T00:00:00Z"
+  },
+  {
+    "id": "award-ftc-nusantara-2324",
+    "year": "23/24",
+    "backgroundImage": "./data/images/ftc2324team.jpeg",
+    "title": "1st Innovate Award, 3rd Design Award. 2023 FTC Nusantara Championship",
+    "description": "Won first place in Innovate Award, and third place in Design award, at the 2023 FIRST Tech Challenge Nusantara Championship (National-wide) robotics competition for innovative design.",
+    "link": "view-details.html",
+    "external": false,
+    "order": 5,
+    "visibility": "published",
+    "createdAt": "2023-12-01T00:00:00Z",
+    "lastModified": "2023-12-01T00:00:00Z"
+  }
+]

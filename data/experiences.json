@@ -1,0 +1,72 @@
+[
+  {
+    "id": "exp-robotics",
+    "duration": "5+ YEARS",
+    "title": "Robotics",
+    "description": "Design and construction of competitive robots for national and international <a href='https://www.firstinspires.org/robotics/ftc' target='_blank'>FIRST Tech Challenge</a> championships; Built various robotic projects ranging from <b>IoT to Machine Learning</b>.",
+    "order": 1,
+    "visibility": "published",
+    "createdAt": "2020-01-01T00:00:00Z",
+    "lastModified": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "exp-software",
+    "duration": "5+ YEARS",
+    "title": "SOFTWARE DEVELOPMENT",
+    "description": "Proficient in multiple programming languages and frameworks including Python, Arduino (C++), Unity Game Dev (C# .Netcode), App Dev (Flutter/Dart), and Web Frontends (HTML, CSS, JavaScript).",
+    "order": 2,
+    "visibility": "published",
+    "createdAt": "2020-01-01T00:00:00Z",
+    "lastModified": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "exp-cad",
+    "duration": "2+ YEARS",
+    "title": "CAD MODELING",
+    "description": "Created <b>award-winning 3D designs</b> for robotics, model rocketry, and engineering projects, with recognition at national and international competitions.",
+    "order": 3,
+    "visibility": "published",
+    "createdAt": "2022-01-01T00:00:00Z",
+    "lastModified": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "exp-electronics",
+    "duration": "5+ YEARS",
+    "title": "ELECTRONICS",
+    "description": "Development of custom electronic systems and circuits for various applications, with extensive hands-on project experience across multiple domains.",
+    "order": 4,
+    "visibility": "published",
+    "createdAt": "2020-01-01T00:00:00Z",
+    "lastModified": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "exp-rocketry",
+    "duration": "1+ YEARS",
+    "title": "ROCKETRY",
+    "description": "Design and construction of model rockets, including experience as a <b>BRIN ORPA Pustekroket Intern (2024)</b>.",
+    "order": 5,
+    "visibility": "published",
+    "createdAt": "2024-01-01T00:00:00Z",
+    "lastModified": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "exp-research",
+    "duration": "3+ YEARS",
+    "title": "SCIENTIFIC RESEARCH",
+    "description": "Authored over <b>25 scientific papers</b> across various technical disciplines, demonstrating strong analytical skills and academic writing capabilities.",
+    "order": 6,
+    "visibility": "published",
+    "createdAt": "2021-01-01T00:00:00Z",
+    "lastModified": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "exp-design",
+    "duration": "3+ YEARS",
+    "title": "GRAPHIC DESIGN",
+    "description": "Professional experience as a freelance designer serving <b>international clients</b>, specializing in poster artwork, banners, books, zines, branding, and clothing design.",
+    "order": 7,
+    "visibility": "published",
+    "createdAt": "2021-01-01T00:00:00Z",
+    "lastModified": "2024-01-01T00:00:00Z"
+  }
+]

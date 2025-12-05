@@ -1,0 +1,98 @@
+[
+  {
+    "id": "lead-representative",
+    "image": "./data/images/twelve.jpeg",
+    "title": "Representative",
+    "organization": "Depok City Government @Musrenbangnas",
+    "year": "2024",
+    "description": "One of the representatives for Depok City Goverment presence in the 2024 National Development Planning Conference (known as Musrenbangnas)",
+    "order": 1,
+    "visibility": "published",
+    "createdAt": "2024-01-01T00:00:00Z",
+    "lastModified": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "lead-cocaptain",
+    "image": "./data/images/seven.JPG",
+    "title": "Team Co-Captain",
+    "organization": "FTC Team Tecra Bot (Robotics) - National",
+    "year": "2022 - 2024",
+    "description": "Organize team workflows, targets, meetings. Head of Team's Mechanic (Design & Build), Lead Programmer.",
+    "order": 2,
+    "visibility": "published",
+    "createdAt": "2022-01-01T00:00:00Z",
+    "lastModified": "2024-12-01T00:00:00Z"
+  },
+  {
+    "id": "lead-spokesperson",
+    "image": "./data/images/fifteen.jpeg",
+    "title": "Spokesperson",
+    "organization": "FTC Team R2045 - World Championship",
+    "year": "2024",
+    "description": "Lead of communication, Event spokesperson, etc. Additionally working as team's mechanics.",
+    "order": 3,
+    "visibility": "published",
+    "createdAt": "2024-01-01T00:00:00Z",
+    "lastModified": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "lead-intern",
+    "image": "./data/images/sixteen.jpeg",
+    "title": "Intern",
+    "organization": "BRIN ORPA Pustekroket (Rocketry Research)",
+    "year": "2024",
+    "description": "Learning and discussing with leading national experts on the field of rocketry research and development.",
+    "order": 4,
+    "visibility": "published",
+    "createdAt": "2024-01-01T00:00:00Z",
+    "lastModified": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "lead-president",
+    "image": "./data/images/twenty.jpeg",
+    "title": "President",
+    "organization": "Student Council",
+    "year": "2023 - 2024",
+    "description": "Organized school-wide events, Reaching out to communities, Support student skills & interests.",
+    "order": 5,
+    "visibility": "published",
+    "createdAt": "2023-01-01T00:00:00Z",
+    "lastModified": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "lead-cherapace",
+    "image": "./data/images/seventeen.jpeg",
+    "title": "Team Captain",
+    "organization": "Cherapace AI Lobster Farming",
+    "year": "2024",
+    "description": "Captain & Head of Technologies. Creating machine learning models for Lobster detection and behaviour analytics; Creating real-time monitoring interface",
+    "order": 6,
+    "visibility": "published",
+    "createdAt": "2024-01-01T00:00:00Z",
+    "lastModified": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "lead-natech",
+    "image": "./data/images/eighteen.jpeg",
+    "title": "Team Captain",
+    "organization": "Natech IoT Orchid Incubator",
+    "year": "2023",
+    "description": "Captain & Lead Programmer. Create a monitoring device and system interface for Orchid Acclimatization process.",
+    "order": 7,
+    "visibility": "published",
+    "createdAt": "2023-01-01T00:00:00Z",
+    "lastModified": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "lead-gremlin",
+    "image": "./data/images/twentytwo.png",
+    "title": "Lead Programmer",
+    "organization": "Gremlin Games",
+    "year": "2025 - Present",
+    "description": "Lead Programmer. Developing game mechanics and visual implementation for Gremlin Games current title, Rapid Fire.",
+    "order": 8,
+    "visibility": "published",
+    "createdAt": "2025-01-01T00:00:00Z",
+    "lastModified": "2025-01-01T00:00:00Z"
+  }
+]
