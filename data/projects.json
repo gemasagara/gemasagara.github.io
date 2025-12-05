@@ -1,10 +1,10 @@
 [
   {
     "id": "autonomous-rover-2025",
-    "title": "Autonomous ROVERRRRRRR",
+    "title": "Autonomous Farming Rover",
     "category": "Robotics & Research",
     "year": 2025,
-    "thumbnail": "./images/rover2.png",
+    "thumbnail": "./data/images/rover2.png",
     "tagline": "Develop a fully autonomous cropfield monitoring and care robot for root-vegetables to optimize harvest quality and quantity. ML-powered, with a dedicated mobile app.",
     "featured": true,
     "tags": [
@@ -16,7 +16,7 @@
     "order": 1,
     "visibility": "published",
     "createdAt": "2025-01-01T00:00:00Z",
-    "lastModified": "2025-12-05T09:30:58.561Z",
+    "lastModified": "2025-12-05T09:38:35.363Z",
     "linkedBlog": "project-rover",
     "externalLink": ""
   },
@@ -25,7 +25,7 @@
     "title": "FTC World Championship",
     "category": "Robotics",
     "year": "2024",
-    "thumbnail": "./images/ftcworlds.jpeg",
+    "thumbnail": "./data/images/ftcworlds.jpeg",
     "tagline": "Built an International-Level competition robot that utilizes autonomous processes including machine learning to do intricate tasks while navigating through courses.",
     "featured": true,
     "tags": [
@@ -45,7 +45,7 @@
     "title": "Custom Built Model Rocket",
     "category": "Rocketry",
     "year": "2025",
-    "thumbnail": "./images/eight.JPG",
+    "thumbnail": "./data/images/eight.JPG",
     "tagline": "Develop from the ground up a fully custom model rocket with custom motors and flight computer, utilizing CAD and simulations* throughout the process.",
     "featured": true,
     "tags": [
@@ -65,7 +65,7 @@
     "title": "FTC Nusantara Championship",
     "category": "Robotics",
     "year": "24/25",
-    "thumbnail": "./images/six.JPG",
+    "thumbnail": "./data/images/six.JPG",
     "tagline": "Designed and built a fully custom manufactured robot with complex mechanics and system control.",
     "featured": false,
     "tags": [
@@ -84,7 +84,7 @@
     "title": "Machine Learning model for Lobster farming",
     "category": "Machine Learning",
     "year": "2024",
-    "thumbnail": "./images/ai.jpeg",
+    "thumbnail": "./data/images/ai.jpeg",
     "tagline": "Creating machine learning models for Lobster detection and behaviour analytics; Creating real-time monitoring interface.",
     "featured": false,
     "tags": [
@@ -104,7 +104,7 @@
     "title": "IoT monitoring device for Orchid Acclimatization",
     "category": "Internet of Things",
     "year": "2023",
-    "thumbnail": "./images/iot.jpeg",
+    "thumbnail": "./data/images/iot.jpeg",
     "tagline": "Create a monitoring device and system interface for Orchid Acclimatization process.",
     "featured": false,
     "tags": [
@@ -124,7 +124,7 @@
     "title": "Rapid Fire - Game Development",
     "category": "Creative Works",
     "year": "2025 - Present",
-    "thumbnail": "./images/twentytwo.png",
+    "thumbnail": "./data/images/twentytwo.png",
     "tagline": "Developing game mechanics and visual implementation for Gremlin Games current title, Rapid Fire.",
     "featured": false,
     "tags": [
@@ -144,7 +144,7 @@
     "title": "Probable Water Scarcity Solution for The MENA Region",
     "category": "Scientific Research",
     "year": "9th Grade",
-    "thumbnail": "./images/water.png",
+    "thumbnail": "./data/images/water.png",
     "tagline": "",
     "featured": false,
     "tags": [
@@ -163,7 +163,7 @@
     "title": "Solar Panel As An Alternative Energy Source, A Review",
     "category": "Scientific Research",
     "year": "9th Grade",
-    "thumbnail": "./images/solarpanel.png",
+    "thumbnail": "./data/images/solarpanel.png",
     "tagline": "",
     "featured": false,
     "tags": [
@@ -182,7 +182,7 @@
     "title": "Reviewing Hydrogen Fuel Cells Technologies",
     "category": "Scientific Research",
     "year": "9th Grade",
-    "thumbnail": "./images/fuelcell.png",
+    "thumbnail": "./data/images/fuelcell.png",
     "tagline": "",
     "featured": false,
     "tags": [
@@ -201,7 +201,7 @@
     "title": "Acid-Base Reaction and Atom Rearrangement of Lava Lamp Models",
     "category": "Scientific Research",
     "year": "9th Grade",
-    "thumbnail": "./images/atom.png",
+    "thumbnail": "./data/images/atom.png",
     "tagline": "",
     "featured": false,
     "tags": [
@@ -220,7 +220,7 @@
     "title": "Implementation of the Carbon Cycle in Photocatalytic Air Purifier",
     "category": "Scientific Research",
     "year": "9th Grade",
-    "thumbnail": "./images/carbon.png",
+    "thumbnail": "./data/images/carbon.png",
     "tagline": "",
     "featured": false,
     "tags": [
@@ -239,7 +239,7 @@
     "title": "Orchid Subculture and Seed Germination",
     "category": "Scientific Research",
     "year": "8th Grade",
-    "thumbnail": "./images/subculture.png",
+    "thumbnail": "./data/images/subculture.png",
     "tagline": "",
     "featured": false,
     "tags": [
@@ -258,7 +258,7 @@
     "title": "Artificial Cross Pollination on Stratiotes and Sylvanum Orchid",
     "category": "Scientific Research",
     "year": "8th Grade",
-    "thumbnail": "./images/punnet.png",
+    "thumbnail": "./data/images/punnet.png",
     "tagline": "",
     "featured": false,
     "tags": [
@@ -277,7 +277,7 @@
     "title": "Influence of Mechanical-Chemical Water Filter Composition to Water Parameter",
     "category": "Scientific Research",
     "year": "8th Grade",
-    "thumbnail": "./images/waterfilter.png",
+    "thumbnail": "./data/images/waterfilter.png",
     "tagline": "",
     "featured": false,
     "tags": [
@@ -296,7 +296,7 @@
     "title": "Influence of Light and Plants on Channa Asiatica Fish",
     "category": "Scientific Research",
     "year": "8th Grade",
-    "thumbnail": "./images/lightinfluence.png",
+    "thumbnail": "./data/images/lightinfluence.png",
     "tagline": "",
     "featured": false,
     "tags": [
@@ -315,7 +315,7 @@
     "title": "Banana Grape Cultivation",
     "category": "Scientific Research",
     "year": "8th Grade",
-    "thumbnail": "./images/grape.png",
+    "thumbnail": "./data/images/grape.png",
     "tagline": "",
     "featured": false,
     "tags": [
@@ -334,7 +334,7 @@
     "title": "Entrepreneurship Projects",
     "category": "Entrepreneurship",
     "year": "2022-2023",
-    "thumbnail": "./images/vlinders.jpeg",
+    "thumbnail": "./data/images/vlinders.jpeg",
     "tagline": "Overall entrepreneurship projects I've worked on for the past 3 year.",
     "featured": false,
     "tags": [
@@ -352,7 +352,7 @@
     "title": "Nawasena - Short Novel",
     "category": "Creative Works",
     "year": "2024",
-    "thumbnail": "./images/nawasena.png",
+    "thumbnail": "./data/images/nawasena.png",
     "tagline": "Wrote a short novel about a dystopian future where everything are granted by artificial fabrication, it explores the true meaning of living and what it means to be human",
     "featured": false,
     "tags": [
@@ -371,7 +371,7 @@
     "title": "Videography Projects",
     "category": "Creative Works",
     "year": "2022-2024",
-    "thumbnail": "./images/video.png",
+    "thumbnail": "./data/images/video.png",
     "tagline": "Overall videography projects I've worked on for the past 3 year.",
     "featured": false,
     "tags": [
@@ -390,7 +390,7 @@
     "title": "School Yearbook",
     "category": "Graphic Designs",
     "year": "2024",
-    "thumbnail": "./images/yearbook.png",
+    "thumbnail": "./data/images/yearbook.png",
     "tagline": "",
     "featured": false,
     "tags": [
@@ -409,7 +409,7 @@
     "title": "Milk Packaging",
     "category": "Graphic Designs",
     "year": "2023",
-    "thumbnail": "./images/milk.png",
+    "thumbnail": "./data/images/milk.png",
     "tagline": "",
     "featured": false,
     "tags": [
@@ -428,7 +428,7 @@
     "title": "Banknote Design",
     "category": "Graphic Designs",
     "year": "2023",
-    "thumbnail": "./images/banknote.png",
+    "thumbnail": "./data/images/banknote.png",
     "tagline": "",
     "featured": false,
     "tags": [
@@ -447,7 +447,7 @@
     "title": "Branding",
     "category": "Graphic Designs",
     "year": "2023",
-    "thumbnail": "./images/branding.png",
+    "thumbnail": "./data/images/branding.png",
     "tagline": "",
     "featured": false,
     "tags": [
@@ -466,7 +466,7 @@
     "title": "Overall Graphic Design Projects",
     "category": "Graphic Designs",
     "year": "2022-2024",
-    "thumbnail": "./images/banner.png",
+    "thumbnail": "./data/images/banner.png",
     "tagline": "",
     "featured": false,
     "tags": [

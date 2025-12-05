@@ -6,7 +6,7 @@
     "text": "View My Work",
     "link": "#projects"
   },
-  "backgroundImage": "./images/cakrawala2.png",
+  "backgroundImage": "./data/images/cakrawala2.png",
   "visibility": "published",
   "createdAt": "2024-01-01T00:00:00Z",
   "lastModified": "2024-01-01T00:00:00Z"
