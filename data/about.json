@@ -1,15 +1,27 @@
 {
-  "image": "./data/images/one.jpeg",
+  "image": "./images/one.jpeg",
   "greeting": "Hello, I'm Gema Sagara",
   "bio": [
     "I'm a high school student with a passion for science and engineering. With over 5 years of robotics experience, I've not only built numerous projects but also competed internationally. My interest in engineering extends to rocketry, where I've designed and built custom model rockets, motors, and flight computers.",
     "Beyond engineering, I'm passionate about scientific research, particularly in physics and biology. Last year, I serve as the President of the Student Council, where I help organize events and represent student interests."
   ],
   "skills": [
-    { "name": "Robotics", "level": 90 },
-    { "name": "Programming", "level": 80 },
-    { "name": "Rocketry", "level": 60 },
-    { "name": "Scientific Research", "level": 80 }
+    {
+      "name": "Robotics",
+      "level": 90
+    },
+    {
+      "name": "Programming",
+      "level": 80
+    },
+    {
+      "name": "Rocketry",
+      "level": 60
+    },
+    {
+      "name": "Scientific Research",
+      "level": 80
+    }
   ],
   "visibility": "published",
   "createdAt": "2024-01-01T00:00:00Z",
