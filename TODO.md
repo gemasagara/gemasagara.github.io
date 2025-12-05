@@ -20,9 +20,17 @@
 - [x] LinkedBlog feature end-to-end (admin → portfolio → view-details)
 
 ### Future Plan :
-- [ ] Integrate the dashboard to github api, so the admin panel can direcly update the site without having to manually push the changes to the server
-- [ ] Think of a simple way to open the admin panel directly from the portfolio site
-- [ ] Add a security measure / authentication to access the admin panel
+- [x] Integrate the dashboard to github api, so the admin panel can direcly update the site without having to manually push the changes to the server
+  - [x] GitHub OAuth authentication
+  - [x] Push changes endpoint
+  - [x] File collection from localStorage
+  - [x] Commit and push to main branch
+  - [x] UI with login/logout and push buttonfrom the portfolio site
+- [x] Add a security measure / authentication to access the admin panel (GitHub OAuth)
+- [ ] Think of a simple way to open the admin panel directly 
+- [ ] Fix carousel, dont use carousel.js
+- [ ] Fix scroll button
+- [ ] remove amp contribution from the github
 
 ### Non Admin :
 - [ ] Fix the infinite scroll carousel issue

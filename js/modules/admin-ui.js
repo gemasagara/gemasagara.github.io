@@ -48,7 +48,7 @@ class AdminUI {
           </div>
 
         <div class="actions-grid">
-          <button class="btn btn-warning" onclick="if(confirm('Reset all changes to original?')) window.adminPanel.resetData()">
+          <button class="btn btn-warning" onclick="window.adminPanel.confirmResetAll()">
             Reset All
           </button>
         </div>
@@ -149,7 +149,7 @@ class AdminUI {
           <button class="btn-small" onclick="window.adminPanel.showEditForm('${type}', '${itemId}')">Edit</button>
           ${
             !isSingleObject
-              ? `<button class="btn-small btn-danger" onclick="if(confirm('Delete?')) window.adminPanel.deleteItem('${type}', '${item.id}')">Delete</button>`
+              ? `<button class="btn-small btn-danger" onclick="window.adminPanel.confirmDelete('${type}', '${item.id}')">Delete</button>`
               : ""
           }
         </td>
@@ -177,6 +177,9 @@ class AdminUI {
     }
 
     const schema = this.getItemSchema(type);
+    
+    // Ensure item has all schema fields with defaults
+    item = this.ensureItemDefaults(item, schema);
 
     let html = `
       <div class="modal-header">
@@ -311,6 +314,8 @@ class AdminUI {
     }
 
     if (config.type === "select") {
+      // Ensure value is a string for comparison
+      const stringValue = String(value || "");
       return `
         <div class="form-group">
           <label for="${fieldName}">${label}</label>
@@ -319,7 +324,7 @@ class AdminUI {
               .map(
                 (opt) =>
                   `<option value="${opt}" ${
-                    opt === value ? "selected" : ""
+                    String(opt) === stringValue ? "selected" : ""
                   }>${opt}</option>`
               )
               .join("")}
@@ -534,6 +539,43 @@ class AdminUI {
    */
   getTitleCase(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
+  /**
+   * Ensure item has all schema fields with default values
+   * This handles backward compatibility with old data structures
+   */
+  ensureItemDefaults(item, schema) {
+    const itemWithDefaults = { ...item };
+    
+    Object.keys(schema).forEach((field) => {
+      // If field is missing, add it with a default value
+      if (!(field in itemWithDefaults)) {
+        const config = schema[field];
+        
+        // Special handling for linkedBlog field
+        if (field === "linkedBlog" && itemWithDefaults.detailsPage) {
+          // Extract the project ID from detailsPage query parameter
+          // e.g., "view-details.html?project=project-rover" -> "project-rover"
+          const match = itemWithDefaults.detailsPage.match(/[?&]project=([^&]+)/);
+          if (match && match[1]) {
+            itemWithDefaults[field] = match[1];
+          } else {
+            itemWithDefaults[field] = "";
+          }
+        } else if (config.type === "checkbox") {
+          itemWithDefaults[field] = false;
+        } else if (config.type === "number") {
+          itemWithDefaults[field] = 0;
+        } else if (config.type === "select" && config.options) {
+          itemWithDefaults[field] = config.options[0] || "";
+        } else {
+          itemWithDefaults[field] = "";
+        }
+      }
+    });
+    
+    return itemWithDefaults;
   }
 }
 

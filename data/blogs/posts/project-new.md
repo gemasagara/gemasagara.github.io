@@ -1,10 +1,10 @@
 ---
-title: New Blog!
-date: 2020-12-12
-category: Stuff
+title: New
+date: 2030
+category: Robotics
 author: Gema Sagara
-tagline: idk
+tagline: new
 published: true
 ---
 
-## WOWW
+## New

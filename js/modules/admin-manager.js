@@ -18,10 +18,38 @@ class AdminManager {
    * Initialize admin manager
    */
   async init() {
-    await this.loadData();
-    this.restoreFromLocalStorage();
-    this.migrateDetailsPageToLinkedBlog();
-    console.log("[OK] Admin Manager initialized");
+    console.log("Loading admin data...");
+
+    try {
+        this.data = await this.fetchDataFromServer();
+        localStorage.setItem("portfolio_admin_data", JSON.stringify(this.data));
+        console.log("Loaded from server and cached in localStorage");
+      } catch (error) {
+        console.error("Failed to load data from server:", error);
+        this.data = this.getDefaultData();
+      }
+
+    this.originalData = JSON.parse(JSON.stringify(this.data));
+  }
+
+  async fetchDataFromServer() {
+    const sections = ["hero", "about", "projects", "awards", "leadership", "experiences", "teams", "blogs"];
+    const data = {};
+
+    for (const section of sections) {
+      try {
+        const response = await fetch(
+          `https://raw.githubusercontent.com/gemasagara/gemasagara.github.io/admin/data/${section}.json`
+        );
+        if (response.ok) {
+          data[section] = await response.json();
+        }
+      } catch (error) {
+        console.warn(`Could not load ${section}.json:`, error);
+      }
+    }
+
+    return data;
   }
 
   /**

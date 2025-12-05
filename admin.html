@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Admin Panel</title>
+    <title>Admin Panel</title>
     <link rel="stylesheet" href="css/admin.css" />
     <link
       rel="icon"
@@ -13,14 +13,43 @@
     <!-- EasyMDE (SimpleMDE) CSS & JS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.css">
     <script src="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.js"></script>
+    <script>
+      window.GITHUB_CLIENT_ID = 'Ov23lirHIajJs11gwqbB';
+    </script>
   </head>
   <body class="admin">
-    <div class="admin-container">
+    <!-- Login Page (shown when not authenticated) -->
+    <div id="loginPage" class="login-page" style="display: none;">
+      <div class="login-container">
+        <div class="login-content">
+          <h1>Admin Panel</h1>
+          <p class="login-subtitle">Log in to access admin panel</p>
+          <button class="btn btn-github btn-lg" onclick="window.adminPanel.login()">
+            <img src="./data/images/github-mark-white.svg" alt="GitHub" class="github-icon">
+            Login with GitHub
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="admin-container" id="adminContainer" style="display: none;">
       <!-- Sidebar -->
       <aside class="admin-sidebar" id="adminSidebar">
         <div class="admin-logo">
           <h2>Admin Panel</h2>
           <button class="sidebar-toggle" onclick="window.adminPanel.toggleSidebar()" title="Toggle Sidebar">☰</button>
+        </div>
+        
+        <!-- GitHub Auth Status -->
+        <div class="github-auth-status" id="githubAuthStatus">
+          <div class="auth-info" id="authInfo" style="display: none;">
+            <img id="userAvatar" class="user-avatar" alt="User avatar">
+            <p id="userName" class="user-name"></p>
+            <button class="btn btn-sm btn-danger" onclick="window.adminPanel.logout()">Logout</button>
+          </div>
+          <button class="btn btn-sm btn-github" id="loginBtn" onclick="window.adminPanel.login()">
+            Login with GitHub
+          </button>
         </div>
         <nav>
           <ul class="admin-nav">
@@ -114,6 +143,15 @@
         <div class="admin-topbar">
            <h1 id="pageTitle">Dashboard</h1>
            <div class="topbar-actions">
+             <button
+               class="btn btn-success"
+               id="pushChangesBtn"
+               onclick="window.adminPanel.pushChangesToGitHub()"
+               style="display: none;"
+               title="Push changes to GitHub repository"
+             >
+               Push Changes to GitHub
+             </button>
              <button
                class="btn btn-primary"
                onclick="window.location.href = './';"

@@ -1,23 +1,108 @@
 import AdminManager from "./modules/admin-manager.js";
 import AdminUI from "./modules/admin-ui.js";
 import BlogAPI from "./modules/blog-api.js";
+import GitHubAuth from "./modules/github-auth.js";
+import GitHubPush from "./modules/github-push.js";
 
 class AdminPanel {
   constructor() {
     this.manager = AdminManager;
     this.ui = new AdminUI(this.manager);
     this.blogAPI = BlogAPI;
+    this.githubAuth = GitHubAuth;
+    this.githubPush = GitHubPush;
     this.currentSection = "dashboard";
     this.init();
   }
 
   async init() {
     console.log("Initializing Admin Panel...");
+    
+    // Set GitHub Client ID (from config or environment)
+    const githubClientId = this.getGitHubClientId();
+    if (githubClientId) {
+      this.githubAuth.setClientId(githubClientId);
+    }
+    
+    // Set alert callbacks for GitHub push module
+    this.githubPush.setAlertCallbacks(
+      this.showAlert.bind(this),
+      this.showConfirm.bind(this)
+    );
+
+    // Check if user is authenticated
+    if (!this.githubAuth.isAuthenticated()) {
+      // Show login page
+      document.getElementById("loginPage").style.display = "flex";
+      document.getElementById("adminContainer").style.display = "none";
+      return;
+    }
+
+    // User is authenticated, check if they have access
+    const hasAccess = await this.githubAuth.checkAccess();
+    if (!hasAccess) {
+      document.body.innerHTML = `
+        <div style="display: flex; align-items: center; justify-content: center; height: 100vh; background: #f3f4f6;">
+          <div style="text-align: center; padding: 2rem; background: white; border-radius: 0.75rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+            <h1 style="color: #dc2626; margin-bottom: 1rem;">Access Denied</h1>
+            <p style="color: #6b7280; margin-bottom: 1.5rem;">You don't have permission to access this admin panel.</p>
+            <button onclick="window.location.href = './'" style="padding: 0.5rem 1rem; background: #2563eb; color: white; border: none; border-radius: 0.375rem; cursor: pointer;">Back to Portfolio</button>
+          </div>
+        </div>
+      `;
+      return;
+    }
+    
+    // User has access, show admin panel
+    document.getElementById("loginPage").style.display = "none";
+    document.getElementById("adminContainer").style.display = "flex";
+    
     await this.manager.init();
+    this.migrateImagePaths();
     this.restoreSidebarState();
+    this.updateAuthUI();
     this.openSection("dashboard");
     this.setupEventListeners();
     this.startAutoSave();
+  }
+
+  migrateImagePaths() {
+    const data = localStorage.getItem("portfolio_admin_data");
+    if (!data) return;
+
+    try {
+      let allData = JSON.parse(data);
+      let hasChanges = false;
+
+      // Recursively replace ./images/ with ./data/images/
+      const replaceImagePaths = (obj) => {
+        if (typeof obj === "string") {
+          if (obj.includes("./images/") && !obj.includes("./data/images/")) {
+            hasChanges = true;
+            return obj.replace(/\.\/images\//g, "./data/images/");
+          }
+          return obj;
+        } else if (Array.isArray(obj)) {
+          return obj.map(replaceImagePaths);
+        } else if (obj !== null && typeof obj === "object") {
+          const newObj = {};
+          for (const key in obj) {
+            newObj[key] = replaceImagePaths(obj[key]);
+          }
+          return newObj;
+        }
+        return obj;
+      };
+
+      allData = replaceImagePaths(allData);
+
+      if (hasChanges) {
+        localStorage.setItem("portfolio_admin_data", JSON.stringify(allData));
+        console.log("✓ Image paths migrated from ./images/ to ./data/images/");
+      }
+    } catch (e) {
+      console.error("Error migrating image paths:", e);
+    }
   }
 
   restoreSidebarState() {
@@ -100,7 +185,7 @@ class AdminPanel {
       }
     } catch (error) {
       console.error("Error loading form:", error);
-      alert("Error loading form: " + error.message);
+      this.showAlert("Error loading form: " + error.message);
     }
   }
 
@@ -148,7 +233,7 @@ class AdminPanel {
         console.log(`[initImageUpload] File selected: ${field} - ${file.name} (${file.size} bytes)`);
         
         if (file.size > 5 * 1024 * 1024) {
-          alert('Image too large! Max 5MB');
+          this.showAlert('Image too large! Max 5MB');
           input.value = '';
           statusDiv.innerHTML = 'File too large!';
           statusDiv.style.color = '#dc2626';
@@ -300,6 +385,14 @@ class AdminPanel {
 
       // For blogs, handle markdown content and auto-generate filename
       if (type === "blogs") {
+        const recentBlogs = JSON.parse(
+          sessionStorage.getItem("recently_edited_blogs") || "[]"
+        );
+        if (!recentBlogs.includes(itemData.id)) {
+          recentBlogs.push(itemData.id);
+        }
+        sessionStorage.setItem("recently_edited_blogs", JSON.stringify(recentBlogs));
+
         if (!itemData.markdownFile) {
           itemData.markdownFile = `posts/${itemData.id}.md`;
         }
@@ -343,7 +436,7 @@ class AdminPanel {
         console.log(`[saveItem] Creating new ${type}`, itemData);
         this.manager.createItem(type, itemData);
         console.log(`[OK] Item created:`, itemData);
-        alert("[OK] Item created successfully!");
+        this.showAlert("[OK] Item created successfully!");
       } else {
         console.log(`[DEBUG] Entering else block for update, type=${type}, id=${id}`);
         // For both "edit" (single objects) and regular IDs (array items)
@@ -352,7 +445,7 @@ class AdminPanel {
         const result = await this.manager.updateItem(type, id, itemData);
         console.log(`[saveItem] updateItem returned:`, result);
         console.log(`[OK] Item updated:`, itemData);
-        alert("[OK] Item updated successfully!");
+        this.showAlert("[OK] Item updated successfully!");
       }
 
       // Ensure data is saved to localStorage
@@ -363,7 +456,7 @@ class AdminPanel {
       this.openSection(this.currentSection);
     } catch (error) {
       console.error("Error saving item:", error);
-      alert("❌ Error saving item: " + error.message);
+      this.showAlert("Error saving item: " + error.message, "error", "Error");
     }
   }
 
@@ -379,16 +472,181 @@ class AdminPanel {
 
   deleteItem(type, id) {
     if (this.manager.deleteItem(type, id)) {
-      alert("✅ Item deleted successfully!");
+      this.showAlert("Item deleted successfully!", "success", "Deleted");
       this.openSection(this.currentSection);
+    }
+  }
+
+  async confirmDelete(type, id) {
+    const confirmed = await this.showConfirm("Are you sure you want to delete this item?", "Confirm Delete");
+    if (confirmed) {
+      this.deleteItem(type, id);
     }
   }
 
   resetData() {
     this.manager.resetToOriginal();
-    alert("✅ Data reset to original!");
+    this.manager.saveToLocalStorage();
+    this.forcePush = true;
+    this.showAlert("Data reset to original!", "success", "Reset Complete");
     this.openSection("dashboard");
   }
+
+  async confirmResetAll() {
+    const confirmed = await this.showConfirm("Reset all changes to original? This cannot be undone.", "Confirm Reset");
+    if (confirmed) {
+      this.resetData();
+    }
+  }
+
+  /**
+   * GitHub Authentication Methods
+   */
+
+  getGitHubClientId() {
+    // Get from meta tag or config
+    const metaTag = document.querySelector('meta[name="github-client-id"]');
+    if (metaTag) {
+      return metaTag.getAttribute("content");
+    }
+    // Or try to get from window config
+    return window.GITHUB_CLIENT_ID || "";
+  }
+
+  login() {
+    this.githubAuth.startLogin();
+  }
+
+  logout() {
+    this.githubAuth.logout();
+    document.getElementById("loginPage").style.display = "flex";
+    document.getElementById("adminContainer").style.display = "none";
+    this.showAlert("Logged out from GitHub");
+  }
+
+  updateAuthUI() {
+    const loginBtn = document.getElementById("loginBtn");
+    const authInfo = document.getElementById("authInfo");
+    const userAvatar = document.getElementById("userAvatar");
+    const userName = document.getElementById("userName");
+    const pushBtn = document.getElementById("pushChangesBtn");
+
+    if (this.githubAuth.isAuthenticated()) {
+      const user = this.githubAuth.getUser();
+      
+      // Show auth info
+      loginBtn.style.display = "none";
+      authInfo.style.display = "block";
+      userAvatar.src = user.avatar_url;
+      userName.textContent = user.login;
+      
+      // Show push button
+      if (pushBtn) {
+        pushBtn.style.display = "inline-block";
+      }
+    } else {
+      // Show login button
+      loginBtn.style.display = "block";
+      authInfo.style.display = "none";
+      
+      // Hide push button
+      if (pushBtn) {
+        pushBtn.style.display = "none";
+      }
+    }
+  }
+
+  async pushChangesToGitHub() {
+    const forcePush = this.forcePush || false;
+    const success = await this.githubPush.pushChanges();
+    this.forcePush = false;
+    if (success) {
+      // Could add additional UI updates here
+      console.log("Changes successfully pushed to GitHub");
+    }
+  }
+
+  /**
+ * Show custom alert box
+ */
+showAlert(message, type = "info", title = null) {
+  return new Promise((resolve) => {
+    const overlay = document.createElement("div");
+    overlay.className = "custom-alert-overlay";
+
+    const typeClass = type === "success" ? "custom-alert-success" : 
+                      type === "error" ? "custom-alert-error" :
+                      type === "warning" ? "custom-alert-warning" : "";
+
+    overlay.innerHTML = `
+      <div class="custom-alert-box ${typeClass}">
+        ${title ? `<div class="custom-alert-title">${title}</div>` : ""}
+        <div class="custom-alert-message">${message}</div>
+        <div class="custom-alert-buttons">
+          <button class="custom-alert-btn custom-alert-btn-ok">OK</button>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(overlay);
+
+    const btn = overlay.querySelector(".custom-alert-btn-ok");
+    btn.addEventListener("click", () => {
+      overlay.remove();
+      resolve();
+    });
+
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) {
+        overlay.remove();
+        resolve();
+      }
+    });
+  });
+}
+
+/**
+ * Show custom confirm dialog
+ */
+showConfirm(message, title = "Confirm") {
+  return new Promise((resolve) => {
+    const overlay = document.createElement("div");
+    overlay.className = "custom-alert-overlay";
+
+    overlay.innerHTML = `
+      <div class="custom-alert-box">
+        <div class="custom-alert-title">${title}</div>
+        <div class="custom-alert-message">${message}</div>
+        <div class="custom-alert-buttons">
+          <button class="custom-alert-btn custom-alert-btn-cancel">Cancel</button>
+          <button class="custom-alert-btn custom-alert-btn-ok">OK</button>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(overlay);
+
+    const okBtn = overlay.querySelector(".custom-alert-btn-ok");
+    const cancelBtn = overlay.querySelector(".custom-alert-btn-cancel");
+
+    okBtn.addEventListener("click", () => {
+      overlay.remove();
+      resolve(true);
+    });
+
+    cancelBtn.addEventListener("click", () => {
+      overlay.remove();
+      resolve(false);
+    });
+
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) {
+        overlay.remove();
+        resolve(false);
+      }
+    });
+  });
+}
 }
 
 // Initialize admin panel

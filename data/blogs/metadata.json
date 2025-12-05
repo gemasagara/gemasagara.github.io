@@ -48,17 +48,17 @@
     "featured": false,
     "published": true,
     "markdownFile": "posts/project-ftcworlds.md",
-    "externalLink": "./data/documents/SCN_W8.pdf"
+    "externalLink": "../resources/SCN_W8.pdf"
   },
   {
     "id": "project-new",
-    "title": "New Blog!",
-    "date": "2020-12-12",
-    "category": "Stuff",
+    "title": "New",
+    "date": 2030,
+    "category": "Robotics",
     "tags": [],
     "author": "Gema Sagara",
     "thumbnail": "",
-    "excerpt": "idk",
+    "excerpt": "new",
     "featured": false,
     "published": true,
     "markdownFile": "posts/project-new.md",

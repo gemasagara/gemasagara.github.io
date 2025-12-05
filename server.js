@@ -3,16 +3,27 @@
  * Handles blog markdown file operations and API endpoints
  */
 
+import dotenv from "dotenv";
+dotenv.config();
+
 import express from "express";
 import path from "path";
 import { promises as fs } from "fs";
 import { fileURLToPath } from "url";
+import crypto from "crypto";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
+
+// GitHub OAuth config
+const GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID || "";
+const GITHUB_CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET || "";
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN || "";
+const GITHUB_REPO_OWNER = process.env.GITHUB_REPO_OWNER || "";
+const GITHUB_REPO_NAME = process.env.GITHUB_REPO_NAME || "";
 
 // Middleware
 app.use(express.json({ limit: "50mb" }));
@@ -202,6 +213,277 @@ app.delete("/api/blogs/:blogId", async (req, res) => {
     res
       .status(500)
       .json({ error: "Failed to delete blog markdown", details: error.message });
+  }
+});
+
+/**
+ * GitHub OAuth & API Routes
+ */
+
+// GitHub OAuth callback endpoint
+app.get("/api/auth/github/callback", async (req, res) => {
+  const { code, state } = req.query;
+
+  if (!code || !state) {
+    return res.status(400).json({ error: "Missing code or state" });
+  }
+
+  try {
+    // Exchange code for access token
+    const tokenResponse = await fetch(
+      "https://github.com/login/oauth/access_token",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          client_id: GITHUB_CLIENT_ID,
+          client_secret: GITHUB_CLIENT_SECRET,
+          code: code,
+        }),
+      }
+    );
+
+    const tokenData = await tokenResponse.json();
+
+    if (tokenData.error) {
+      return res.status(400).json({ error: tokenData.error });
+    }
+
+    // Redirect back to admin.html with token in hash
+    res.redirect(`/admin.html#token=${tokenData.access_token}`);
+  } catch (error) {
+    console.error("Error during GitHub OAuth:", error);
+    res.status(500).json({ error: "GitHub authentication failed" });
+  }
+});
+
+// Verify GitHub token and get user info
+app.post("/api/auth/verify", async (req, res) => {
+  const { access_token } = req.body;
+
+  if (!access_token) {
+    return res.status(400).json({ error: "Missing access token" });
+  }
+
+  try {
+    const response = await fetch("https://api.github.com/user", {
+      headers: {
+        Authorization: `Bearer ${access_token}`,
+        Accept: "application/vnd.github.v3+json",
+      },
+    });
+
+    if (!response.ok) {
+      return res.status(401).json({ error: "Invalid token" });
+    }
+
+    const userData = await response.json();
+    res.json({
+      success: true,
+      user: {
+        login: userData.login,
+        name: userData.name,
+        avatar_url: userData.avatar_url,
+      },
+    });
+  } catch (error) {
+    console.error("Error verifying token:", error);
+    res.status(500).json({ error: "Token verification failed" });
+  }
+});
+
+// Push files to GitHub
+app.post("/api/github/push", async (req, res) => {
+  const { access_token, files, message } = req.body;
+
+  if (!access_token || !files || !Array.isArray(files)) {
+    return res.status(400).json({ error: "Missing access_token or files" });
+  }
+
+  if (!GITHUB_REPO_OWNER || !GITHUB_REPO_NAME) {
+    return res
+      .status(500)
+      .json({ error: "GitHub repository not configured on server" });
+  }
+
+  try {
+    const commitMessage = message || `Update portfolio data - ${new Date().toISOString()}`;
+
+    // Get current repo reference
+    const refResponse = await fetch(
+      `https://api.github.com/repos/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}/git/refs/heads/admin`,
+      {
+        headers: {
+          Authorization: `Bearer ${access_token}`,
+          Accept: "application/vnd.github.v3+json",
+        },
+      }
+    );
+
+    if (!refResponse.ok) {
+      throw new Error("Failed to get repository reference");
+    }
+
+    const refData = await refResponse.json();
+    const baseSha = refData.object.sha;
+
+    // Get the current tree
+    const treeResponse = await fetch(
+      `https://api.github.com/repos/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}/git/trees/${baseSha}`,
+      {
+        headers: {
+          Authorization: `Bearer ${access_token}`,
+          Accept: "application/vnd.github.v3+json",
+        },
+      }
+    );
+
+    if (!treeResponse.ok) {
+      throw new Error("Failed to get repository tree");
+    }
+
+    // Create tree items for new files
+    const treeItems = files.map((file) => ({
+      path: file.path,
+      mode: "100644",
+      type: "blob",
+      content: file.content,
+    }));
+
+    // Create new tree
+    const newTreeResponse = await fetch(
+      `https://api.github.com/repos/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}/git/trees`,
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${access_token}`,
+          Accept: "application/vnd.github.v3+json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          base_tree: baseSha,
+          tree: treeItems,
+        }),
+      }
+    );
+
+    if (!newTreeResponse.ok) {
+      throw new Error("Failed to create new tree");
+    }
+
+    const newTreeData = await newTreeResponse.json();
+
+    // Create commit
+    const commitResponse = await fetch(
+      `https://api.github.com/repos/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}/git/commits`,
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${access_token}`,
+          Accept: "application/vnd.github.v3+json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          message: commitMessage,
+          tree: newTreeData.sha,
+          parents: [baseSha],
+        }),
+      }
+    );
+
+    if (!commitResponse.ok) {
+      throw new Error("Failed to create commit");
+    }
+
+    const commitData = await commitResponse.json();
+
+    // Update reference
+    const updateRefResponse = await fetch(
+      `https://api.github.com/repos/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}/git/refs/heads/admin`,
+      {
+        method: "PATCH",
+        headers: {
+          Authorization: `Bearer ${access_token}`,
+          Accept: "application/vnd.github.v3+json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          sha: commitData.sha,
+        }),
+      }
+    );
+
+    if (!updateRefResponse.ok) {
+      throw new Error("Failed to update reference");
+    }
+
+    res.json({
+      success: true,
+      message: "Changes pushed to GitHub successfully",
+      commit_sha: commitData.sha,
+      files_pushed: files.length,
+    });
+  } catch (error) {
+    console.error("Error pushing to GitHub:", error);
+    res.status(500).json({
+      error: "Failed to push changes to GitHub",
+      details: error.message,
+    });
+  }
+});
+
+// Check if user is authorized to access admin
+app.post("/api/auth/check-access", async (req, res) => {
+  const { access_token } = req.body;
+
+  if (!access_token) {
+    return res.status(401).json({ error: "Not authenticated" });
+  }
+
+  try {
+    // Get user info
+    const userResponse = await fetch("https://api.github.com/user", {
+      headers: {
+        Authorization: `Bearer ${access_token}`,
+        Accept: "application/vnd.github.v3+json",
+      },
+    });
+
+    if (!userResponse.ok) {
+      return res.status(401).json({ error: "Invalid token" });
+    }
+
+    const user = await userResponse.json();
+    const username = user.login;
+
+    // Check if user is repo owner
+    if (username === GITHUB_REPO_OWNER) {
+      return res.json({ access: true, reason: "repo_owner" });
+    }
+
+    // Check if user is a collaborator
+    const collabResponse = await fetch(
+      `https://api.github.com/repos/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}/collaborators/${username}`,
+      {
+        headers: {
+          Authorization: `Bearer ${access_token}`,
+          Accept: "application/vnd.github.v3+json",
+        },
+      }
+    );
+
+    if (collabResponse.ok) {
+      return res.json({ access: true, reason: "collaborator" });
+    }
+
+    // User is not authorized
+    res.status(403).json({ access: false, error: "Not authorized to access this admin panel" });
+  } catch (error) {
+    console.error("Error checking access:", error);
+    res.status(500).json({ error: "Access check failed" });
   }
 });
 
