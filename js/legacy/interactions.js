@@ -89,3 +89,6 @@ function scrollCards(which, direction) {
     container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
   }
 }
+
+// Make scrollCards globally accessible for inline onclick handlers
+window.scrollCards = scrollCards;

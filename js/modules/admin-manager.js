@@ -386,7 +386,7 @@ class AdminManager {
     // Convert map to array
     this.data.blogs = Object.values(blogsMap);
     this.originalData.blogs = JSON.parse(JSON.stringify(this.data.blogs));
-    console.log(`[OK] Discovered ${this.data.blogs.length} blog posts`);
+    console.log(`Discovered ${this.data.blogs.length} blog posts`);
   }
 
   /**
@@ -483,7 +483,7 @@ class AdminManager {
           const match = project.detailsPage.match(urlRegex);
           if (match) {
             project.linkedBlog = match[1];
-            console.log(`[OK] Migrated project ${project.id}: linkedBlog = ${match[1]}`);
+            console.log(`Migrated project ${project.id}: linkedBlog = ${match[1]}`);
           }
         }
         // Remove old field
@@ -500,7 +500,7 @@ class AdminManager {
           const match = award.link.match(urlRegex);
           if (match) {
             award.linkedBlog = match[1];
-            console.log(`[OK] Migrated award ${award.id}: linkedBlog = ${match[1]}`);
+            console.log(`Migrated award ${award.id}: linkedBlog = ${match[1]}`);
           }
         }
       });

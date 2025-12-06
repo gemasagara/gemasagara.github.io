@@ -298,7 +298,7 @@ class AdminPanel {
         placeholder: 'Write your blog content here...',
         initialValue: mdElement.value
       });
-      console.log("[OK] EasyMDE initialized successfully");
+      console.log("EasyMDE initialized successfully");
     } catch (error) {
       console.error("Error initializing EasyMDE:", error);
     }
@@ -422,7 +422,7 @@ class AdminPanel {
           // Try to save to server, fall back to localStorage if server is unavailable
           try {
             await this.blogAPI.saveBlogMarkdown(blogMarkdownData);
-            console.log(`[OK] Blog markdown saved to server: ${itemData.id}`);
+            console.log(`Blog markdown saved to server: ${itemData.id}`);
           } catch (apiError) {
             console.warn("Could not save to server, storing in localStorage:", apiError);
             const blogMarkdownKey = `blog_markdown_${itemData.id}`;
@@ -435,8 +435,8 @@ class AdminPanel {
       if (id === "new") {
         console.log(`[saveItem] Creating new ${type}`, itemData);
         this.manager.createItem(type, itemData);
-        console.log(`[OK] Item created:`, itemData);
-        this.showAlert("[OK] Item created successfully!");
+        console.log(`Item created:`, itemData);
+        this.showAlert("Item created successfully!");
       } else {
         console.log(`[DEBUG] Entering else block for update, type=${type}, id=${id}`);
         // For both "edit" (single objects) and regular IDs (array items)
@@ -444,8 +444,8 @@ class AdminPanel {
         console.log(`[saveItem] this.manager is:`, this.manager);
         const result = await this.manager.updateItem(type, id, itemData);
         console.log(`[saveItem] updateItem returned:`, result);
-        console.log(`[OK] Item updated:`, itemData);
-        this.showAlert("[OK] Item updated successfully!");
+        console.log(`Item updated:`, itemData);
+        this.showAlert("Item updated successfully!");
       }
 
       // Ensure data is saved to localStorage
