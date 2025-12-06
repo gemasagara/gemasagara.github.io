@@ -18,5 +18,12 @@ export default class ScrollProgress {
 
     this.progressFill.style.width = scrollPercent + '%';
     this.progressIcon.style.left = scrollPercent + '%';
+
+    // Show icon only between 0% and 100%, hide at start and end
+    if (scrollPercent > 0 && scrollPercent < 100) {
+      this.progressIcon.classList.add('visible');
+    } else {
+      this.progressIcon.classList.remove('visible');
+    }
   }
 }
