@@ -174,7 +174,7 @@ export function heroTemplate(hero) {
   return `
     <div class="hero-content">
       <div class="hero-image">
-        <img src="./data/images/self.jpeg" alt="Profile Picture" class="hero-profile-img">
+        <img src="./data/images/two.jpeg" alt="Profile Picture" class="hero-profile-img">
       </div>
       <div class="hero-text">
         <h1>${sanitizeHTML(hero.title)}</h1>
