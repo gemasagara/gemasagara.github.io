@@ -27,9 +27,4 @@
   - [x] Commit and push to main branch
   - [x] UI with login/logout and push buttonfrom the portfolio site
 - [x] Add a security measure / authentication to access the admin panel (GitHub OAuth)
-- [ ] Fix carousel, dont use carousel.js
-- [ ] Fix scroll button
 - [ ] remove amp contribution from the github
-
-### Non Admin :
-- [ ] Fix the infinite scroll carousel issue

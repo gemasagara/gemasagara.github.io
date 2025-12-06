@@ -172,13 +172,18 @@ export function emptyStateTemplate(message) {
  */
 export function heroTemplate(hero) {
   return `
-    <div class="container">
-      <h1>${sanitizeHTML(hero.title)}</h1>
-      <b>
-        <p class="hero-subtitle">${sanitizeHTML(hero.subtitle)}</p>
-      </b>
-      <p class="hero-description">${parseHTML(hero.description)}</p>
-      <a href="${hero.cta.link}" class="btn">${sanitizeHTML(hero.cta.text)}</a>
+    <div class="hero-content">
+      <div class="hero-image">
+        <img src="./data/images/self.jpeg" alt="Profile Picture" class="hero-profile-img">
+      </div>
+      <div class="hero-text">
+        <h1>${sanitizeHTML(hero.title)}</h1>
+        <b>
+          <p class="hero-subtitle">${sanitizeHTML(hero.subtitle)}</p>
+        </b>
+        <p class="hero-description">${parseHTML(hero.description)}</p>
+        <a href="${hero.cta.link}" class="btn">${sanitizeHTML(hero.cta.text)}</a>
+      </div>
     </div>
   `;
 }

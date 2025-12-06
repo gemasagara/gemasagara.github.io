@@ -8,6 +8,8 @@ import { logInfo } from '../utils/helpers.js';
 class NavigationRenderer {
   constructor() {
     this.navData = null;
+    this.moonIcon = './data/images/moon_stars_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg';
+    this.sunIcon = './data/images/light_mode_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg';
   }
 
   async init() {
@@ -40,7 +42,82 @@ class NavigationRenderer {
     const navLinks = document.querySelector(CONFIG.SELECTORS.navLinks);
     if (navLinks && this.navData.items) {
       renderer.renderList(navLinks, this.navData.items, navItemTemplate);
+      this.addThemeToggle(navLinks);
     }
+  }
+
+  addThemeToggle(navLinks) {
+    // Create theme toggle list item
+    const themeToggleLi = document.createElement('li');
+    themeToggleLi.className = 'theme-toggle-item';
+    themeToggleLi.innerHTML = `
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <img id="themeIcon" src="./data/images/moon_stars_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="Dark mode toggle">
+      </button>
+    `;
+    navLinks.appendChild(themeToggleLi);
+    
+    // Initialize theme toggle functionality
+    this.initThemeToggle();
+  }
+
+  initThemeToggle() {
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const body = document.body;
+
+    // Check for saved theme preference, otherwise use system preference
+    const initTheme = () => {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      
+      if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        this.enableDarkMode(body, themeIcon);
+      } else {
+        this.disableDarkMode(body, themeIcon);
+      }
+    };
+
+    const toggleTheme = () => {
+      if (body.classList.contains('dark-mode')) {
+        this.disableDarkMode(body, themeIcon);
+      } else {
+        this.enableDarkMode(body, themeIcon);
+      }
+    };
+
+    // Initialize theme on first load
+    initTheme();
+
+    // Add click listener to toggle button
+    themeToggle.addEventListener('click', toggleTheme);
+
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      if (!localStorage.getItem('theme')) {
+        e.matches ? this.enableDarkMode(body, themeIcon) : this.disableDarkMode(body, themeIcon);
+      }
+    });
+  }
+
+  enableDarkMode(body, themeIcon) {
+    body.classList.add('dark-mode');
+    themeIcon.src = this.sunIcon;
+    localStorage.setItem('theme', 'dark');
+    this.updateScrollProgress();
+  }
+
+  disableDarkMode(body, themeIcon) {
+    body.classList.remove('dark-mode');
+    themeIcon.src = this.moonIcon;
+    localStorage.setItem('theme', 'light');
+    this.updateScrollProgress();
+  }
+
+  updateScrollProgress() {
+    // Trigger update of scroll progress icon color
+    const event = new CustomEvent('themeChanged');
+    document.dispatchEvent(event);
   }
 }
 

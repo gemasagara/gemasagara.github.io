@@ -10,6 +10,8 @@ import leadershipRenderer from './modules/leadership-renderer.js';
 import teamsRenderer from './modules/teams-renderer.js';
 import awardsRenderer from './modules/awards-renderer.js';
 import navigationRenderer from './modules/navigation-renderer.js';
+import ParallaxHero from './modules/parallax-hero.js';
+import ScrollProgress from './modules/scroll-progress.js';
 
 // Keep existing functionality from index.js
 import './legacy/interactions.js'; // Your existing mobile menu, carousel, etc.
@@ -112,6 +114,12 @@ class App {
   }
 
   initInteractions() {
+    // Initialize parallax hero effect
+    new ParallaxHero();
+    
+    // Initialize scroll progress bar
+    new ScrollProgress();
+    
     // Scroll animations with debounce
     const fadeElements = document.querySelectorAll('.fade-in');
     
