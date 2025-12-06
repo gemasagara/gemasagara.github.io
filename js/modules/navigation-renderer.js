@@ -38,24 +38,32 @@ class NavigationRenderer {
       logoName.textContent = this.navData.logo.text;
     }
 
+    // Add theme toggle next to logo
+    this.addThemeToggleToNav();
+
     // Render navigation items
     const navLinks = document.querySelector(CONFIG.SELECTORS.navLinks);
     if (navLinks && this.navData.items) {
       renderer.renderList(navLinks, this.navData.items, navItemTemplate);
-      this.addThemeToggle(navLinks);
     }
   }
 
-  addThemeToggle(navLinks) {
-    // Create theme toggle list item
-    const themeToggleLi = document.createElement('li');
-    themeToggleLi.className = 'theme-toggle-item';
-    themeToggleLi.innerHTML = `
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-        <img id="themeIcon" src="./data/images/moon_stars_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="Dark mode toggle">
-      </button>
+  addThemeToggleToNav() {
+    // Create theme toggle button and insert inside nav-logo
+    const navLogo = document.querySelector('.nav-logo');
+    
+    if (!navLogo) return;
+    
+    const themeToggleBtn = document.createElement('button');
+    themeToggleBtn.className = 'theme-toggle';
+    themeToggleBtn.id = 'themeToggle';
+    themeToggleBtn.setAttribute('aria-label', 'Toggle dark mode');
+    themeToggleBtn.innerHTML = `
+      <img id="themeIcon" src="./data/images/moon_stars_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="Dark mode toggle">
     `;
-    navLinks.appendChild(themeToggleLi);
+    
+    // Append to nav-logo so it sits next to the text
+    navLogo.appendChild(themeToggleBtn);
     
     // Initialize theme toggle functionality
     this.initThemeToggle();

@@ -8,10 +8,14 @@ import Carousel from '../modules/carousel.js';
 // ===== Mobile Menu Toggle =====
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 const navLinks = document.querySelector('.nav-links');
+const navLogo = document.querySelector('.nav-logo');
 
 if (mobileMenuBtn && navLinks) {
   mobileMenuBtn.addEventListener('click', () => {
     navLinks.classList.toggle('show');
+    if (navLogo) {
+      navLogo.classList.toggle('show');
+    }
   });
 }
 
@@ -32,6 +36,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     // Close mobile menu if open
     if (navLinks && navLinks.classList.contains('show')) {
       navLinks.classList.remove('show');
+      if (navLogo) {
+        navLogo.classList.remove('show');
+      }
     }
   });
 });

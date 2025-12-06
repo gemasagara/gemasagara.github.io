@@ -160,6 +160,7 @@ nav {
     display: flex;
     align-items: center;
     height: 40px;
+    gap: 12px;
 }
 
 .logo-container {
@@ -191,10 +192,7 @@ nav {
     margin-right: 10px;
 }
 
-.nav-links .theme-toggle-item {
-    margin-left: auto;
-    margin-right: 0;
-}
+
 
 .nav-links a {
     color: var(--text-primary);
@@ -205,6 +203,18 @@ nav {
 .nav-links a:hover {
     color: var(--accent-primary);
     text-decoration: none;
+}
+
+.nav-container > .theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .theme-toggle {
@@ -345,6 +355,7 @@ nav {
 .hero-text {
     flex: 1;
     max-width: 600px;
+    padding: 0 20px;
 }
 
 .hero h1 {
@@ -1006,27 +1017,70 @@ footer {
 
 @media (max-width: 768px) {
     .nav-container {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
+        position: relative;
+        padding: 15px 20px;
+        justify-content: space-between;
+    }
+    .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: opacity 0.3s, visibility 0.3s;
+    }
+    .nav-logo.hidden {
+        opacity: 0;
+        visibility: hidden;
     }
     .nav-links {
-        flex-direction: column;
+        flex-direction: row;
         width: 100%;
-        margin-top: 15px;
+        margin-top: 0;
         display: none;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 15px 0;
+        gap: 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg-secondary);
+        border-bottom: 1px solid var(--border-primary);
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+        scrollbar-color: var(--border-primary) transparent;
+    }
+    .nav-links::-webkit-scrollbar {
+        height: 4px;
+    }
+    .nav-links::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    .nav-links::-webkit-scrollbar-thumb {
+        background: var(--border-primary);
+        border-radius: 2px;
     }
     .nav-links.show {
         display: flex;
     }
     .nav-links li {
-        margin: 10px 0;
+        margin: 0;
         margin-left: 0;
+        white-space: nowrap;
+        padding: 0 20px;
+        border-right: 1px solid var(--border-primary);
+    }
+    .nav-links li:last-child {
+        border-right: none;
     }
     .mobile-menu-btn {
         display: block;
-        position: absolute;
-        right: 20px;
-        top: 23px;
+    }
+    .hero-text {
+        text-align: center;
+        padding: 0 40px;
     }
     .projects-grid, .leadership-grid, .exp-grid {
         grid-template-columns: 1fr;
