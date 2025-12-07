@@ -11,6 +11,8 @@ import teamsRenderer from './modules/teams-renderer.js';
 import awardsRenderer from './modules/awards-renderer.js';
 import ParallaxHero from './modules/parallax-hero.js';
 import ScrollProgress from './modules/scroll-progress.js';
+import Carousel from './modules/carousel.js';
+import './legacy/interactions.js'; // Load global interactions (mobile menu, scroll controls, etc.)
 
 class App {
   constructor() {
@@ -45,6 +47,9 @@ class App {
       // Hide loading state
       this.hideGlobalLoading();
 
+      // Initialize carousel AFTER teams data is rendered
+      this.initCarousel();
+
       // Initialize interactions (scroll animations, etc.)
       this.initInteractions();
 
@@ -55,6 +60,17 @@ class App {
       logError('Error during initialization (continuing gracefully):', error);
       this.hideGlobalLoading();
       // Don't show error overlay - renderers handle their own sections
+    }
+  }
+
+  initCarousel() {
+    const carousel = new Carousel('.featured-grid');
+    carousel.init();
+    
+    // Expose for debugging
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+      window.portfolioCarousel = carousel;
+      logInfo('Carousel initialized and exposed via window.portfolioCarousel');
     }
   }
 

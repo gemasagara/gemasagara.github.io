@@ -1,9 +1,7 @@
 /**
  * Legacy Interactions - DOM-based functionality
- * Handles: mobile menu, smooth scrolling, back-to-top button, carousel
+ * Handles: mobile menu, smooth scrolling, back-to-top button
  */
-
-import Carousel from '../modules/carousel.js';
 
 // ===== Mobile Menu Toggle =====
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
@@ -62,20 +60,6 @@ if (backToTopBtn) {
     });
   });
 }
-
-// ===== Initialize Carousel =====
-document.addEventListener('DOMContentLoaded', () => {
-  const carousel = new Carousel('.featured-grid');
-  carousel.init();
-
-  // Expose for debugging
-  if (
-    window.location.hostname === 'localhost' ||
-    window.location.hostname === '127.0.0.1'
-  ) {
-    window.portfolioCarousel = carousel;
-  }
-});
 
 // ===== Manual Scroll Controls for Cards =====
 function scrollCards(which, direction) {

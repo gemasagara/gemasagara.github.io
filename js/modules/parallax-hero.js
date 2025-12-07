@@ -20,7 +20,7 @@ export default class ParallaxHero {
     const heroHeight = this.hero.offsetHeight;
     
     // Calculate scale based on scroll position
-    // As user scrolls down, scale decreases from 1.2 to 1
+    // As user scrolls down, scale decreases from 1.4 to 1
     const scrollRatio = Math.min(scrollPosition / heroHeight, 1);
     const scale = this.initialScale - (scrollRatio * (this.initialScale - this.minScale));
     
