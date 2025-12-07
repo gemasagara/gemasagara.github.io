@@ -51,6 +51,7 @@ class NavigationRenderer {
     // Create theme toggle button and insert inside nav-logo
     const navLinksContainer = document.querySelector('.nav-links-container');
     
+    
     if (!navLinksContainer) return;
     
     const themeToggleBtn = document.createElement('button');
