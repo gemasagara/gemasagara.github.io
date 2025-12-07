@@ -11,8 +11,13 @@
   to = "/.netlify/functions/api"
   status = 200
 
-[[redirects]]
+[[rewrites]]
   from = "/"
-  to = "https://www.gemasagara.online/admin.html"
-  status = 301
+  to = "/admin.html"
+  status = 200
   domain = "admin.gemasagara.online"
+
+[[rewrites]]
+  from = "/"
+  to = "/index.html"
+  status = 200
