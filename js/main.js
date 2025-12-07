@@ -134,8 +134,8 @@ class App {
     // Run on load
     fadeInOnScroll();
 
-    // Run on scroll with debounce
-    window.addEventListener('scroll', debounce(fadeInOnScroll, 100));
+    // Run on scroll - no debounce for smooth fade-in during scrolling
+    window.addEventListener('scroll', fadeInOnScroll);
   }
 
   // Public API for debugging
