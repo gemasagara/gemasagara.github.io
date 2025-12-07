@@ -11,13 +11,3 @@
   to = "/.netlify/functions/api"
   status = 200
 
-[[rewrites]]
-  from = "/"
-  to = "/admin.html"
-  status = 200
-  domain = "admin.gemasagara.online"
-
-[[rewrites]]
-  from = "/"
-  to = "/index.html"
-  status = 200
