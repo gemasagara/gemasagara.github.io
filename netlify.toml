@@ -12,8 +12,7 @@
   status = 200
 
 [[redirects]]
-  from = "admin.gemasagara.online/"
-  to = "/admin.html"
-  status = 200
-  host = "admin.gemasagara.online"
-  force = true
+  from = "/"
+  to = "https://www.gemasagara.online/admin.html"
+  status = 301
+  domain = "admin.gemasagara.online"
