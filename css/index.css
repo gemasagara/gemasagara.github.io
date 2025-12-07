@@ -1038,6 +1038,7 @@ footer {
         opacity: 0;
         visibility: hidden;
     }
+    
     .nav-links {
         flex-direction: row;
         width: 100%;
@@ -1082,6 +1083,7 @@ footer {
     }
     .mobile-menu-btn {
         display: block;
+        margin-right: 5px;
     }
     .hero-text {
         text-align: center;
