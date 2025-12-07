@@ -2,10 +2,10 @@ import { promises as fs } from "fs";
 import path from "path";
 
 // GitHub OAuth config
-const GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID || "";
+const GITHUB_CLIENT_ID = "Ov23lirHIajJs11gwqbB";
 const GITHUB_CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET || "";
-const GITHUB_REPO_OWNER = process.env.GITHUB_REPO_OWNER || "";
-const GITHUB_REPO_NAME = process.env.GITHUB_REPO_NAME || "";
+const GITHUB_REPO_OWNER = "gemasagara";
+const GITHUB_REPO_NAME = "gemasagara.github.io";
 
 // Netlify Functions base directory
 const BLOGS_DIR = path.join(process.cwd(), "data", "blogs", "posts");
