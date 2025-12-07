@@ -38,21 +38,20 @@ class NavigationRenderer {
       logoName.textContent = this.navData.logo.text;
     }
 
-    // Add theme toggle next to logo
-    this.addThemeToggleToNav();
-
     // Render navigation items
     const navLinks = document.querySelector(CONFIG.SELECTORS.navLinks);
     if (navLinks && this.navData.items) {
       renderer.renderList(navLinks, this.navData.items, navItemTemplate);
     }
+
+    this.addThemeToggleToNav();
   }
 
   addThemeToggleToNav() {
     // Create theme toggle button and insert inside nav-logo
-    const navLogo = document.querySelector('.nav-logo');
+    const navLinksContainer = document.querySelector('.nav-links-container');
     
-    if (!navLogo) return;
+    if (!navLinksContainer) return;
     
     const themeToggleBtn = document.createElement('button');
     themeToggleBtn.className = 'theme-toggle';
@@ -63,7 +62,7 @@ class NavigationRenderer {
     `;
     
     // Append to nav-logo so it sits next to the text
-    navLogo.appendChild(themeToggleBtn);
+    navLinksContainer.appendChild(themeToggleBtn);
     
     // Initialize theme toggle functionality
     this.initThemeToggle();
