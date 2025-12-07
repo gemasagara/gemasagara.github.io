@@ -1,11 +1,3 @@
-// Mobile Menu Toggle
-const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-const navLinks = document.querySelector('.nav-links');
-
-mobileMenuBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-});
-
 // Scroll Animation
 const fadeElements = document.querySelectorAll('.fade-in');
 

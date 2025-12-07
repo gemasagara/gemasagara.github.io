@@ -5,11 +5,11 @@
     "link": "#home"
   },
   "items": [
-    { "label": "Home", "href": "#home" },
-    { "label": "About", "href": "#about" },
-    { "label": "Projects", "href": "#projects" },
-    { "label": "Leadership", "href": "#leadership" },
-    { "label": "Awards", "href": "#awards" },
-    { "label": "Contact", "href": "#contact" }
+    { "label": "Home", "href": "index.html#home" },
+    { "label": "About", "href": "index.html#about" },
+    { "label": "Projects", "href": "index.html#projects" },
+    { "label": "Leadership", "href": "index.html#leadership" },
+    { "label": "Awards", "href": "index.html#awards" },
+    { "label": "Contact", "href": "index.html#contact" }
   ]
 }

@@ -9,12 +9,8 @@ import experiencesRenderer from './modules/experiences-renderer.js';
 import leadershipRenderer from './modules/leadership-renderer.js';
 import teamsRenderer from './modules/teams-renderer.js';
 import awardsRenderer from './modules/awards-renderer.js';
-import navigationRenderer from './modules/navigation-renderer.js';
 import ParallaxHero from './modules/parallax-hero.js';
 import ScrollProgress from './modules/scroll-progress.js';
-
-// Keep existing functionality from index.js
-import './legacy/interactions.js'; // Your existing mobile menu, carousel, etc.
 
 class App {
   constructor() {
@@ -35,10 +31,10 @@ class App {
 
       // Initialize all renderers in parallel
       // Note: Renderers handle errors gracefully, so we won't throw
+      // Navigation is handled separately by init-navigation.js (centralized for all pages)
       await Promise.all([
         heroRenderer.init(),
         aboutRenderer.init(),
-        navigationRenderer.init(),
         projectsRenderer.init(),
         experiencesRenderer.init(),
         leadershipRenderer.init(),

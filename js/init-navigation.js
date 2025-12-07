@@ -1,11 +1,14 @@
-// js/modules/navigation-renderer.js
-import { CONFIG } from '../config.js';
-import dataLoader from './data-loader.js';
-import renderer from './renderer.js';
-import { navItemTemplate } from '../utils/templates.js';
-import { logInfo } from '../utils/helpers.js';
+// js/init-navigation.js
+// Centralized navigation initialization for all pages
+// No dependency on main.js - works standalone on any page
 
-class NavigationRenderer {
+import { CONFIG } from './config.js';
+import dataLoader from './modules/data-loader.js';
+import renderer from './modules/renderer.js';
+import { navItemTemplate } from './utils/templates.js';
+import { logInfo } from './utils/helpers.js';
+
+class NavigationInitializer {
   constructor() {
     this.navData = null;
     this.moonIcon = './data/images/moon_stars_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg';
@@ -14,12 +17,14 @@ class NavigationRenderer {
 
   async init() {
     try {
-      logInfo('Initializing navigation...');
+      logInfo('Initializing centralized navigation...');
       this.navData = await dataLoader.loadData('navigation');
       this.render();
+      this.initMobileMenu();
+      this.initThemeToggle();
       logInfo('Navigation initialized successfully');
     } catch (error) {
-      logInfo('Using default navigation (JSON load failed)');
+      logInfo('Navigation load failed:', error);
     }
   }
 
@@ -44,10 +49,11 @@ class NavigationRenderer {
       renderer.renderList(navLinks, this.navData.items, navItemTemplate);
     }
 
-    this.addThemeToggleToNav();
+    // Add theme toggle
+    this.addThemeToggle();
   }
 
-  addThemeToggleToNav() {
+  addThemeToggle() {
     const navLinksContainer = document.querySelector('.nav-links-container');
     const toggler = document.querySelector('.toggler');
     
@@ -86,15 +92,35 @@ class NavigationRenderer {
         navLinksContainer.appendChild(themeToggle);
       }
     });
-    
-    // Initialize theme toggle functionality
-    this.initThemeToggle();
+  }
+
+  initMobileMenu() {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (mobileMenuBtn && navLinks) {
+      mobileMenuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+      });
+    }
+
+    // Close mobile menu when a nav link is clicked
+    document.querySelectorAll('a[href^="index.html#"], a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function () {
+        // Close mobile menu if open
+        if (navLinks && navLinks.classList.contains('show')) {
+          navLinks.classList.remove('show');
+        }
+      });
+    });
   }
 
   initThemeToggle() {
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
     const body = document.body;
+
+    if (!themeToggle || !themeIcon) return;
 
     // Check for saved theme preference, otherwise use system preference
     const initTheme = () => {
@@ -134,22 +160,22 @@ class NavigationRenderer {
     body.classList.add('dark-mode');
     themeIcon.src = this.sunIcon;
     localStorage.setItem('theme', 'dark');
-    this.updateScrollProgress();
   }
 
   disableDarkMode(body, themeIcon) {
     body.classList.remove('dark-mode');
     themeIcon.src = this.moonIcon;
     localStorage.setItem('theme', 'light');
-    this.updateScrollProgress();
-  }
-
-  updateScrollProgress() {
-    // Trigger update of scroll progress icon color
-    const event = new CustomEvent('themeChanged');
-    document.dispatchEvent(event);
   }
 }
 
-const navigationRenderer = new NavigationRenderer();
-export default navigationRenderer;
+// Initialize on DOM ready
+const navigationInitializer = new NavigationInitializer();
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    navigationInitializer.init();
+  });
+} else {
+  navigationInitializer.init();
+}
