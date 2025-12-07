@@ -12,7 +12,7 @@
   status = 200
 
 [[redirects]]
-  from = "admin.gemasagara.online/*"
+  from = "/"
   to = "/admin.html"
   status = 200
   domain = "admin.gemasagara.online"
