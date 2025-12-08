@@ -42,24 +42,56 @@ function parseFrontMatter(markdown) {
     return { content, metadata };
 }
 
+// Check if we're in preview mode
+function isPreviewMode() {
+     return window.location.pathname.includes('preview.html');
+}
+
+// Load blog markdown from localStorage (for preview mode)
+function getBlogMarkdownFromStorage(projectName) {
+     try {
+         const blogMarkdownKey = `blog_markdown_${projectName}`;
+         const stored = localStorage.getItem(blogMarkdownKey);
+         if (stored) {
+             const blogData = JSON.parse(stored);
+             return blogData.content || '';
+         }
+     } catch (error) {
+         console.error('Error reading blog from localStorage:', error);
+     }
+     return null;
+}
+
 // Load the markdown file and render it
 async function loadProject() {
-    const projectName = getProjectParam();
-    
-    if (!projectName) {
-        displayError("No project specified");
-        return;
-    }
-    
-    try {
-        const response = await fetch(`./data/blogs/posts/${projectName}.md`);
-        
-        if (!response.ok) {
-            throw new Error(`Failed to load project: ${response.statusText}`);
-        }
-        
-        const markdown = await response.text();
-        const { content, metadata } = parseFrontMatter(markdown);
+     const projectName = getProjectParam();
+     
+     if (!projectName) {
+         displayError("No project specified");
+         return;
+     }
+     
+     try {
+         let markdown;
+         
+         // In preview mode, load from localStorage; otherwise fetch from filesystem
+         if (isPreviewMode()) {
+             markdown = getBlogMarkdownFromStorage(projectName);
+             if (!markdown) {
+                 throw new Error('Blog not found in preview data');
+             }
+             console.log('[Preview Mode] Loaded blog from localStorage:', projectName);
+         } else {
+             const response = await fetch(`./data/blogs/posts/${projectName}.md`);
+             
+             if (!response.ok) {
+                 throw new Error(`Failed to load project: ${response.statusText}`);
+             }
+             
+             markdown = await response.text();
+         }
+         
+         const { content, metadata } = parseFrontMatter(markdown);
         
         // Update page with metadata
         document.title = `${metadata.title || projectName} - Gema Sagara`;
