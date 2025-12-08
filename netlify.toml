@@ -10,3 +10,17 @@
   from = "/api/*"
   to = "/.netlify/functions/api"
   status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/admin.html"
+  status = 200
+  force = true
+  conditions = {Host = ["admin.gemasagara.online"]}
+
+[[redirects]]
+  from = "/admin.html"
+  to = "https://admin.gemasagara.online"
+  status = 301
+  force = true
+  conditions = {Host = ["gemasagara.online", "www.gemasagara.online"]}
