@@ -8,8 +8,7 @@
     { "label": "Home", "href": "#home" },
     { "label": "About", "href": "#about" },
     { "label": "Projects", "href": "#projects" },
-    { "label": "Leadership", "href": "#leadership" },
-    { "label": "Awards", "href": "#awards" },
+    { "label": "Blog", "href": "blog-gallery.html" },
     { "label": "Contact", "href": "#contact" }
   ]
 }

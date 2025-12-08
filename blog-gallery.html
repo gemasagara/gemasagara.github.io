@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Details - Gema Sagara</title>
-    <link rel="stylesheet" href="css/blog.css">
+    <title>Blog Gallery - Gema Sagara</title>
+    <link rel="stylesheet" href="css/blog-gallery.css">
     <link rel="icon" type="image/x-icon" href="/data/images/favicon_io/favicon.ico">
 </head>
 <body>
@@ -21,61 +21,43 @@
                 <div class="toggler"></div>
                 <button class="mobile-menu-btn">≡</button>
                 <ul class="nav-links">
+                    <!-- Rendered by navigation-renderer.js (includes theme toggle) -->
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Project Hero Section -->
-    <section class="blog-hero">
+    <!-- Blog Gallery Hero Section -->
+    <section class="gallery-hero">
         <div class="container">
-            <h1 id="project-title">Loading Project...</h1>
-            <div class="blog-meta">
-                <div id="project-date" class="blog-date">Loading...</div>
-                <div id="project-category" class="blog-category">Loading...</div>
-                <div class="blog-link"><a class="blog-hyperlink" id="project-link" href="" target="_blank">Loading...</a></div>
+            <h1>Blog Gallery</h1>
+            <p class="gallery-subtitle">Explore all my latest posts and projects</p>
+        </div>
+    </section>
+
+    <!-- Featured Posts Section -->
+    <section class="featured-posts-section">
+        <div class="container">
+            <h2 class="section-subtitle">Featured Posts</h2>
+            <div class="featured-posts-grid" id="featured-posts-grid">
+                <!-- Rendered dynamically -->
+                <div class="loading-placeholder">Loading featured posts...</div>
             </div>
         </div>
     </section>
 
-    <!-- Project Content Section -->
-    <section class="blog-content-section">
+    <!-- All Posts Section -->
+    <section class="all-posts-section">
         <div class="container">
-            <div class="blog-content fade-in">
-                <div id="project-tagline" class="blog-tagline">
-                    Loading project details...
-                </div>
-                
-                <div class="blog-description"> 
-                    <div class="blog-media">
-                        <img id="project-media" src="/api/placeholder/1200/600" alt="Project Image">
-                    </div>
-                    
-                    <div id="project-content">
-                        <!-- Content will be dynamically loaded here -->
-                        <p>Loading content...</p>
-                    </div>
-                    
-                    <div class="blog-gallery" id="project-gallery">
-                        <!-- Gallery images will be dynamically loaded here if available -->
-                    </div>
-                </div>
-                
-                <a href="index.html#projects" class="back-button">Back to Projects</a>
-            </div>
-            
-            <!-- Related Projects Section -->
-            <div class="related-projects fade-in" id="related-projects">
-                <h3>Related Projects</h3>
-                <div class="related-grid" id="related-grid">
-                    <!-- Related projects will be dynamically loaded here -->
-                    <div class="loading-placeholder">Loading related projects...</div>
-                </div>
+            <h2 class="section-subtitle">All Posts</h2>
+            <div class="posts-grid" id="posts-grid">
+                <!-- Rendered dynamically -->
+                <div class="loading-placeholder">Loading posts...</div>
             </div>
         </div>
     </section>
 
-   <!-- Footer -->
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -88,7 +70,7 @@
                             <li><a href="index.html#home">Home</a></li>
                             <li><a href="index.html#about">About</a></li>
                             <li><a href="index.html#projects">Projects</a></li>
-                            <li><a href="index.html#contact">Contact</a></li>
+                            <li><a href="index.html#leadership">Leadership</a></li>
                             <li><a href="index.html#awards">Awards</a></li>
                             <li><a href="index.html#contact">Contact</a></li>
                         </ul>
@@ -139,15 +121,13 @@
 
                 <!-- Footer Bottom -->
                 <div class="footer-bottom">
-                    <p>2025 Gema Sagara. Crafted without any frameworks</p>
+                    <p>2025 Gema Sagara. Crafted with no framework in sight.</p>
                 </div>
             </div>
         </div>
     </footer>
-    
-    <!-- Include the Markdown Parser -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.3.0/marked.min.js"></script>
-    <script type="module" src="js/init-navigation.js"></script>
-    <script src="js/blog.js"></script>
+
+    <script type="module" src="./js/init-navigation.js"></script>
+    <script type="module" src="js/blog-gallery.js"></script>
 </body>
 </html>

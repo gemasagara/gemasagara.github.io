@@ -16,11 +16,19 @@ const fadeInOnScroll = () => {
 // Get URL parameters
 function getProjectParam() {
     const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get('project');
+    const project = urlParams.get('project');
+    console.log('URL Search Params:', window.location.search);
+    console.log('Project param value:', project);
+    return project;
 }
 
 // Parse YAML frontmatter from markdown
 function parseFrontMatter(markdown) {
+    // Handle empty markdown
+    if (!markdown || markdown.trim() === '') {
+        return { content: '', metadata: {} };
+    }
+    
     const frontMatterRegex = /^---\n([\s\S]*?)\n---/;
     const match = markdown.match(frontMatterRegex);
     
@@ -52,13 +60,18 @@ async function loadProject() {
     }
     
     try {
-        const response = await fetch(`./data/blogs/posts/${projectName}.md`);
+        const filePath = `./data/blogs/posts/${projectName}.md`;
+        console.log('Fetching:', filePath);
+        
+        const response = await fetch(filePath);
         
         if (!response.ok) {
+            console.error('Response status:', response.status, response.statusText);
             throw new Error(`Failed to load project: ${response.statusText}`);
         }
         
         const markdown = await response.text();
+        console.log('Markdown loaded successfully, length:', markdown.length);
         const { content, metadata } = parseFrontMatter(markdown);
         
         // Update page with metadata
@@ -79,7 +92,10 @@ async function loadProject() {
         }
         
         // Render content
-        const contentHTML = marked.parse(content);
+        let contentHTML = marked.parse(content);
+        if (!contentHTML || contentHTML.trim() === '') {
+            contentHTML = '<p class="placeholder-text">Content coming soon...</p>';
+        }
         document.getElementById('project-content').innerHTML = contentHTML;
         
         // Handle gallery if present
