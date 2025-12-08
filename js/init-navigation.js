@@ -43,14 +43,33 @@ class NavigationInitializer {
       logoName.textContent = this.navData.logo.text;
     }
 
-    // Render navigation items
+    // Render navigation items with conditional URL formatting
     const navLinks = document.querySelector(CONFIG.SELECTORS.navLinks);
     if (navLinks && this.navData.items) {
-      renderer.renderList(navLinks, this.navData.items, navItemTemplate);
+      // Adjust nav URLs based on current page
+      const adjustedItems = this.adjustNavUrls(this.navData.items);
+      renderer.renderList(navLinks, adjustedItems, navItemTemplate);
     }
 
     // Add theme toggle
     this.addThemeToggle();
+  }
+
+  adjustNavUrls(items) {
+    // Check if current page is index.html
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const isIndexPage = currentPage === 'index.html' || currentPage === '';
+
+    // If on index.html, use URLs as-is; otherwise prepend index.html/
+    return items.map(item => {
+      if (!isIndexPage && item.href.startsWith('#')) {
+        return {
+          ...item,
+          href: `index.html${item.href}`
+        };
+      }
+      return item;
+    });
   }
 
   addThemeToggle() {
