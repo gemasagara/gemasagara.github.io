@@ -10,7 +10,7 @@ export function projectCardTemplate(project) {
   // Determine the details page URL - use linkedBlog if set, otherwise fallback to detailsPage
   let detailsUrl = '';
   if (project.linkedBlog) {
-    detailsUrl = `view-details.html?project=${project.linkedBlog}`;
+    detailsUrl = `blog.html?project=${project.linkedBlog}`;
   } else if (project.detailsPage) {
     detailsUrl = project.detailsPage;
   }
@@ -86,7 +86,7 @@ export function awardItemTemplate(award) {
   let linkTarget = '_self';
   
   if (award.linkedBlog) {
-    linkUrl = `view-details.html?project=${award.linkedBlog}`;
+    linkUrl = `blog.html?project=${award.linkedBlog}`;
   } else if (award.externalLink) {
     linkUrl = award.externalLink;
     linkTarget = '_blank';

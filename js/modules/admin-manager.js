@@ -471,7 +471,7 @@ class AdminManager {
 
   /**
    * Migrate detailsPage URLs to linkedBlog
-   * Extracts blog ID from URLs like "view-details.html?project=project-id"
+   * Extracts blog ID from URLs like "blog.html?project=project-id"
    */
   migrateDetailsPageToLinkedBlog() {
     const urlRegex = /[?&]project=([^&]+)/;

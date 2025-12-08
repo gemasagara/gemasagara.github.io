@@ -5,7 +5,6 @@
 - [ ] move admin to admin.gemasagara.online sub domain
 - [ ] make the site size to be smaller, like cut the codes and stuff, while still mantaining the same thing, im sure there's alot of bloated implementation here.
 - [ ] make the hero more interesting
-- [ ] preview feature
 - [ ] blog page, like a blog gallery
 
 ### Unrelated

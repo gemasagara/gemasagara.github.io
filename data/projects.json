@@ -13,7 +13,7 @@
       "Agriculture",
       "IoT"
     ],
-    "detailsPage": "view-details.html?project=project-rover",
+    "detailsPage": "blog.html?project=project-rover",
     "order": 1,
     "visibility": "published",
     "createdAt": "2025-01-01T00:00:00Z",
@@ -35,7 +35,7 @@
       "Autonomous Systems",
       "Machine Learning"
     ],
-    "detailsPage": "view-details.html?project=project-ftcworlds",
+    "detailsPage": "blog.html?project=project-ftcworlds",
     "order": 2,
     "visibility": "published",
     "createdAt": "2024-05-01T00:00:00Z",
@@ -55,7 +55,7 @@
       "Electronics",
       "Simulations"
     ],
-    "detailsPage": "view-details.html?project=project-rocket",
+    "detailsPage": "blog.html?project=project-rocket",
     "order": 3,
     "visibility": "published",
     "createdAt": "2025-02-01T00:00:00Z",
@@ -74,7 +74,7 @@
       "Mechanical Design",
       "Control Systems"
     ],
-    "detailsPage": "view-details.html?project=project-ftc2425",
+    "detailsPage": "blog.html?project=project-ftc2425",
     "order": 4,
     "visibility": "published",
     "createdAt": "2024-11-01T00:00:00Z",
@@ -94,7 +94,7 @@
       "Aquaculture",
       "IoT"
     ],
-    "detailsPage": "view-details.html?project=project-ai",
+    "detailsPage": "blog.html?project=project-ai",
     "order": 5,
     "visibility": "published",
     "createdAt": "2024-04-01T00:00:00Z",
@@ -114,7 +114,7 @@
       "Monitoring",
       "Sensors"
     ],
-    "detailsPage": "view-details.html?project=project-iot",
+    "detailsPage": "blog.html?project=project-iot",
     "order": 6,
     "visibility": "published",
     "createdAt": "2023-06-01T00:00:00Z",
@@ -134,7 +134,7 @@
       "C#",
       "Programming"
     ],
-    "detailsPage": "view-details.html?project=project-video",
+    "detailsPage": "blog.html?project=project-video",
     "order": 7,
     "visibility": "published",
     "createdAt": "2025-01-01T00:00:00Z",
@@ -153,7 +153,7 @@
       "Environmental Science",
       "Water Management"
     ],
-    "detailsPage": "view-details.html?project=project-9thgrade",
+    "detailsPage": "blog.html?project=project-9thgrade",
     "order": 8,
     "visibility": "published",
     "createdAt": "2023-01-01T00:00:00Z",
@@ -172,7 +172,7 @@
       "Renewable Energy",
       "Solar Technology"
     ],
-    "detailsPage": "view-details.html?project=project-9thgrade",
+    "detailsPage": "blog.html?project=project-9thgrade",
     "order": 9,
     "visibility": "published",
     "createdAt": "2023-01-01T00:00:00Z",
@@ -191,7 +191,7 @@
       "Hydrogen",
       "Alternative Energy"
     ],
-    "detailsPage": "view-details.html?project=project-9thgrade",
+    "detailsPage": "blog.html?project=project-9thgrade",
     "order": 10,
     "visibility": "published",
     "createdAt": "2023-01-01T00:00:00Z",
@@ -210,7 +210,7 @@
       "Chemistry",
       "Physics"
     ],
-    "detailsPage": "view-details.html?project=project-9thgrade",
+    "detailsPage": "blog.html?project=project-9thgrade",
     "order": 11,
     "visibility": "published",
     "createdAt": "2023-01-01T00:00:00Z",
@@ -229,7 +229,7 @@
       "Environmental Science",
       "Chemistry"
     ],
-    "detailsPage": "view-details.html?project=project-9thgrade",
+    "detailsPage": "blog.html?project=project-9thgrade",
     "order": 12,
     "visibility": "published",
     "createdAt": "2023-01-01T00:00:00Z",
@@ -248,7 +248,7 @@
       "Biology",
       "Botany"
     ],
-    "detailsPage": "view-details.html?project=project-8thgrade",
+    "detailsPage": "blog.html?project=project-8thgrade",
     "order": 13,
     "visibility": "published",
     "createdAt": "2022-01-01T00:00:00Z",
@@ -267,7 +267,7 @@
       "Biology",
       "Genetics"
     ],
-    "detailsPage": "view-details.html?project=project-8thgrade",
+    "detailsPage": "blog.html?project=project-8thgrade",
     "order": 14,
     "visibility": "published",
     "createdAt": "2022-01-01T00:00:00Z",
@@ -286,7 +286,7 @@
       "Chemistry",
       "Environmental Science"
     ],
-    "detailsPage": "view-details.html?project=project-8thgrade",
+    "detailsPage": "blog.html?project=project-8thgrade",
     "order": 15,
     "visibility": "published",
     "createdAt": "2022-01-01T00:00:00Z",
@@ -305,7 +305,7 @@
       "Biology",
       "Aquaculture"
     ],
-    "detailsPage": "view-details.html?project=project-8thgrade",
+    "detailsPage": "blog.html?project=project-8thgrade",
     "order": 16,
     "visibility": "published",
     "createdAt": "2022-01-01T00:00:00Z",
@@ -324,7 +324,7 @@
       "Agriculture",
       "Botany"
     ],
-    "detailsPage": "view-details.html?project=project-8thgrade",
+    "detailsPage": "blog.html?project=project-8thgrade",
     "order": 17,
     "visibility": "published",
     "createdAt": "2022-01-01T00:00:00Z",
@@ -342,7 +342,7 @@
       "Business",
       "Entrepreneurship"
     ],
-    "detailsPage": "view-details.html?project=project-ai",
+    "detailsPage": "blog.html?project=project-ai",
     "order": 18,
     "visibility": "published",
     "createdAt": "2022-01-01T00:00:00Z",
@@ -361,7 +361,7 @@
       "Fiction",
       "Creative"
     ],
-    "detailsPage": "view-details.html?project=project-novel",
+    "detailsPage": "blog.html?project=project-novel",
     "order": 19,
     "visibility": "published",
     "createdAt": "2024-01-01T00:00:00Z",
@@ -380,7 +380,7 @@
       "Creative",
       "Media"
     ],
-    "detailsPage": "view-details.html?project=project-video",
+    "detailsPage": "blog.html?project=project-video",
     "order": 20,
     "visibility": "published",
     "createdAt": "2022-01-01T00:00:00Z",
@@ -399,7 +399,7 @@
       "Graphics",
       "Print"
     ],
-    "detailsPage": "view-details.html?project=project-yearbook",
+    "detailsPage": "blog.html?project=project-yearbook",
     "order": 21,
     "visibility": "published",
     "createdAt": "2024-01-01T00:00:00Z",
@@ -418,7 +418,7 @@
       "Packaging",
       "Graphics"
     ],
-    "detailsPage": "view-details.html?project=project-milk",
+    "detailsPage": "blog.html?project=project-milk",
     "order": 22,
     "visibility": "published",
     "createdAt": "2023-01-01T00:00:00Z",
@@ -437,7 +437,7 @@
       "Graphics",
       "Creative"
     ],
-    "detailsPage": "view-details.html?project=project-banknote",
+    "detailsPage": "blog.html?project=project-banknote",
     "order": 23,
     "visibility": "published",
     "createdAt": "2023-01-01T00:00:00Z",
@@ -456,7 +456,7 @@
       "Branding",
       "Graphics"
     ],
-    "detailsPage": "view-details.html?project=project-branding",
+    "detailsPage": "blog.html?project=project-branding",
     "order": 24,
     "visibility": "published",
     "createdAt": "2023-01-01T00:00:00Z",
@@ -475,7 +475,7 @@
       "Graphics",
       "Portfolio"
     ],
-    "detailsPage": "view-details.html?project=project-overalldesign",
+    "detailsPage": "blog.html?project=project-overalldesign",
     "order": 25,
     "visibility": "published",
     "createdAt": "2022-01-01T00:00:00Z",

@@ -153,7 +153,7 @@ async function loadRelatedProjects(category) {
                             <div class="related-category">${project.category}</div>
                             <h3 class="related-title">${project.title}</h3>
                             <p>${project.excerpt}</p>
-                            <a href="view-details.html?project=${project.id}" class="btn">View Details</a>
+                            <a href="blog.html?project=${project.id}" class="btn">View Details</a>
                         </div>
                     </div>
                 `;

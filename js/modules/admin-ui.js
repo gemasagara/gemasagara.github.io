@@ -556,7 +556,7 @@ class AdminUI {
         // Special handling for linkedBlog field
         if (field === "linkedBlog" && itemWithDefaults.detailsPage) {
           // Extract the project ID from detailsPage query parameter
-          // e.g., "view-details.html?project=project-rover" -> "project-rover"
+          // e.g., "blog.html?project=project-rover" -> "project-rover"
           const match = itemWithDefaults.detailsPage.match(/[?&]project=([^&]+)/);
           if (match && match[1]) {
             itemWithDefaults[field] = match[1];
