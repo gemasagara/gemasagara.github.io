@@ -141,13 +141,18 @@ section {
 
 /* Navigation */
 nav {
-    background-color: var(--bg-secondary);
-    box-shadow: var(--shadow-sm);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    transition: background-color 0.3s, box-shadow 0.3s;
-}
+     background-color: rgba(255, 255, 255, 0.85);
+     box-shadow: var(--shadow-sm);
+     position: sticky;
+     top: 0;
+     z-index: 1000;
+     transition: background-color 0.3s, box-shadow 0.3s;
+     backdrop-filter: blur(8px);
+ }
+
+ body.dark-mode nav {
+     background-color: rgba(26, 31, 40, 0.85);
+ }
 
 .nav-container {
     display: flex;
@@ -1175,11 +1180,16 @@ footer::before {
         top: 100%;
         left: 0;
         right: 0;
-        background: var(--bg-secondary);
+        background: rgba(255, 255, 255, 0.85);
         border-bottom: 1px solid var(--border-primary);
         -webkit-overflow-scrolling: touch;
         scrollbar-width: thin;
         scrollbar-color: var(--border-primary) transparent;
+        backdrop-filter: blur(8px);
+    }
+
+    body.dark-mode .nav-links {
+        background: rgba(26, 31, 40, 0.85);
     }
     .nav-links::-webkit-scrollbar {
         height: 4px;

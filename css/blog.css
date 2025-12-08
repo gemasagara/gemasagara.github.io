@@ -121,13 +121,18 @@ section {
 
 /* Navigation - Same as main page */
 nav {
-    background-color: var(--bg-secondary);
-    box-shadow: var(--shadow-sm);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    transition: background-color 0.3s, box-shadow 0.3s;
-}
+     background-color: rgba(255, 255, 255, 0.85);
+     box-shadow: var(--shadow-sm);
+     position: sticky;
+     top: 0;
+     z-index: 1000;
+     transition: background-color 0.3s, box-shadow 0.3s;
+     backdrop-filter: blur(8px);
+ }
+
+ body.dark-mode nav {
+     background-color: rgba(26, 31, 40, 0.85);
+ }
 
 
 .nav-container {
@@ -174,8 +179,8 @@ nav {
   }
 
   .nav-links li {
-     margin-left: 5px;
-     margin-right: 5px;
+     margin-left: 20px;
+     margin-right: 10px;
   }
 
   .nav-links a {
@@ -533,7 +538,7 @@ footer::before {
      padding: 0;
      margin: 0;
      flex-wrap: wrap;
-     gap: 10px;
+     gap: 15px;
  }
 
 .footer-links a {
@@ -548,7 +553,6 @@ footer::before {
 .footer-links a:hover {
     color: var(--accent-primary);
     border-bottom-color: var(--accent-primary);
-    transform: translateY(-3px);
 }
 
 /* Social Links */
@@ -612,6 +616,25 @@ footer::before {
     line-height: 1.6;
 }
 
+.heart {
+    color: var(--accent-primary);
+    animation: heartbeat 1.5s ease-in-out infinite;
+    display: inline-block;
+}
+
+/* Animations */
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.2);
+    }
+    50% {
+        transform: scale(1);
+    }
+}
+
 /* Responsive Styles */
 @media (max-width: 992px) {
     .blog-gallery {
@@ -660,11 +683,16 @@ footer::before {
         top: 100%;
         left: 0;
         right: 0;
-        background: var(--bg-secondary);
+        background: rgba(255, 255, 255, 0.85);
         border-bottom: 1px solid var(--border-primary);
         -webkit-overflow-scrolling: touch;
         scrollbar-width: thin;
         scrollbar-color: var(--border-primary) transparent;
+        backdrop-filter: blur(8px);
+    }
+
+    body.dark-mode .nav-links {
+        background: rgba(26, 31, 40, 0.85);
     }
     .nav-links::-webkit-scrollbar {
         height: 4px;
