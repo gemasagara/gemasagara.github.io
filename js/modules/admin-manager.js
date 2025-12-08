@@ -328,6 +328,21 @@ class AdminManager {
        });
      }
      localStorage.removeItem(this.storageKey);
+     
+     // Also clear all blog markdown files from localStorage
+     // These are stored with keys like "blog_markdown_project-name"
+     const keysToRemove = [];
+     for (let i = 0; i < localStorage.length; i++) {
+       const key = localStorage.key(i);
+       if (key && key.startsWith('blog_markdown_')) {
+         keysToRemove.push(key);
+       }
+     }
+     keysToRemove.forEach(key => {
+       localStorage.removeItem(key);
+       console.log(`[INFO] Removed blog markdown from localStorage: ${key}`);
+     });
+     
      console.log("[INFO] Data reset to original");
    }
 
