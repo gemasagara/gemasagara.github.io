@@ -44,7 +44,31 @@ class NavigationRenderer {
       renderer.renderList(navLinks, this.navData.items, navItemTemplate);
     }
 
+    // Initialize mobile menu
+    this.initMobileMenu();
+    
     this.addThemeToggleToNav();
+  }
+
+  initMobileMenu() {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (mobileMenuBtn && navLinks) {
+      mobileMenuBtn.addEventListener('click', (e) => {
+        navLinks.classList.toggle('show');
+      });
+    }
+
+    // Close mobile menu when a nav link is clicked
+    document.querySelectorAll('a[href^="index.html#"], a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function () {
+        // Close mobile menu if open
+        if (navLinks && navLinks.classList.contains('show')) {
+          navLinks.classList.remove('show');
+        }
+      });
+    });
   }
 
   addThemeToggleToNav() {

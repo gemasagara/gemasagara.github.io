@@ -6,6 +6,7 @@
 - [ ] make the site size to be smaller, like cut the codes and stuff, while still mantaining the same thing, im sure there's alot of bloated implementation here.
 - [ ] make the hero more interesting
 - [ ] blog page, like a blog gallery
+- [ ] blog js shit, cant load data and shit
 
 ### Unrelated
 - [ ] remove amp contribution from the github

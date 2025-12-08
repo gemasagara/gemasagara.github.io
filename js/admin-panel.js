@@ -32,7 +32,8 @@ class AdminPanel {
 
     // Check if user is authenticated
     // use: !this.githubAuth.isAuthenticated() in production
-    if (!this.githubAuth.isAuthenticated()) {
+    const testing = true;
+    if (!testing) {
       // Show login page
       document.getElementById("loginPage").style.display = "flex";
       document.getElementById("adminContainer").style.display = "none";
@@ -41,7 +42,7 @@ class AdminPanel {
 
     // User is authenticated, check if they have access
     // use: const hasAccess = await this.githubAuth.checkAccess(); in production
-    const hasAccess = await this.githubAuth.checkAccess();
+    const hasAccess = testing;
     if (!hasAccess) {
       document.body.innerHTML = `
         <div style="display: flex; align-items: center; justify-content: center; height: 100vh; background: #f3f4f6;">

@@ -20,6 +20,10 @@ class NavigationInitializer {
       logInfo('Initializing centralized navigation...');
       this.navData = await dataLoader.loadData('navigation');
       this.render();
+      
+      // Small delay to ensure DOM is updated
+      await new Promise(resolve => setTimeout(resolve, 100));
+      
       this.initMobileMenu();
       this.initThemeToggle();
       logInfo('Navigation initialized successfully');
@@ -118,7 +122,7 @@ class NavigationInitializer {
     const navLinks = document.querySelector('.nav-links');
 
     if (mobileMenuBtn && navLinks) {
-      mobileMenuBtn.addEventListener('click', () => {
+      mobileMenuBtn.addEventListener('click', (e) => {
         navLinks.classList.toggle('show');
       });
     }

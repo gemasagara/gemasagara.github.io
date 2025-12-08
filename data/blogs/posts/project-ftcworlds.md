@@ -1,5 +1,5 @@
 ---
-title: International Robotics
+title: International Robotics Competition Entry
 date: 2025-03-15
 category: Robotics
 author: Gema Sagara

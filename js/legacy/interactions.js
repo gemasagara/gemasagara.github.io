@@ -1,21 +1,10 @@
 /**
  * Legacy Interactions - DOM-based functionality
  * Handles: mobile menu, smooth scrolling, back-to-top button
+ * 
+ * NOTE: Mobile menu toggle is now handled by init-navigation.js
+ * to avoid duplicate event listeners
  */
-
-// ===== Mobile Menu Toggle =====
-const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-const navLinks = document.querySelector('.nav-links');
-const navLogo = document.querySelector('.nav-logo');
-
-if (mobileMenuBtn && navLinks) {
-  mobileMenuBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-    if (navLogo) {
-      navLogo.classList.toggle('show');
-    }
-  });
-}
 
 // ===== Smooth Scrolling for Navigation Links =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
