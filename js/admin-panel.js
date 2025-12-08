@@ -31,6 +31,7 @@ class AdminPanel {
     );
 
     // Check if user is authenticated
+    // use: !this.githubAuth.isAuthenticated() in production
     if (!this.githubAuth.isAuthenticated()) {
       // Show login page
       document.getElementById("loginPage").style.display = "flex";
@@ -39,6 +40,7 @@ class AdminPanel {
     }
 
     // User is authenticated, check if they have access
+    // use: const hasAccess = await this.githubAuth.checkAccess(); in production
     const hasAccess = await this.githubAuth.checkAccess();
     if (!hasAccess) {
       document.body.innerHTML = `
@@ -574,6 +576,11 @@ class AdminPanel {
       // Could add additional UI updates here
       console.log("Changes successfully pushed to GitHub");
     }
+  }
+
+  previewChanges(){
+    // Open the preview page in a new tab/window
+    window.open('./preview.html', 'preview');
   }
 
   /**

@@ -6,6 +6,18 @@ class DataLoader {
   constructor() {
     this.cache = new Map();
     this.loadingStates = new Map();
+    this.previewMode = false;
+  }
+
+  /**
+   * Enable/disable preview mode (loads from localStorage instead of GitHub)
+   * @param {boolean} enabled - Whether preview mode is enabled
+   */
+  setPreviewMode(enabled) {
+    this.previewMode = enabled;
+    if (enabled) {
+      logInfo('Preview mode enabled - data will be loaded from localStorage');
+    }
   }
 
   /**
@@ -15,6 +27,18 @@ class DataLoader {
    * @returns {Promise<any>} Parsed JSON data
    */
   async fetchJSON(endpoint, forceRefresh = false) {
+    // In preview mode, only load from admin panel localStorage
+    if (this.previewMode) {
+      const previewData = this.getFromAdminPanel(endpoint);
+      if (previewData) {
+        logInfo(`[Preview Mode] Using admin panel data for: ${endpoint}`);
+        return previewData;
+      } else {
+        logInfo(`[Preview Mode] No admin panel data found for: ${endpoint} - returning empty array`);
+        return [];
+      }
+    }
+
     // Check admin panel localStorage first
     const adminData = this.getFromAdminPanel(endpoint);
     if (adminData && !forceRefresh) {
