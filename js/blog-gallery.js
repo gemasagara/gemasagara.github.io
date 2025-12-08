@@ -1,3 +1,6 @@
+// Import scroll progress
+import ScrollProgress from './modules/scroll-progress.js';
+
 // Fetch and render blog gallery
 async function loadBlogGallery() {
     try {
@@ -94,4 +97,8 @@ function navigateToBlog(blogId) {
 }
 
 // Load blog gallery when page is ready
-document.addEventListener('DOMContentLoaded', loadBlogGallery);
+document.addEventListener('DOMContentLoaded', () => {
+    loadBlogGallery();
+    // Initialize scroll progress bar
+    new ScrollProgress();
+});

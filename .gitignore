@@ -3,6 +3,7 @@ LEGACY/
 .DS_Store
 .env
 *.log
+TODO.md
 
 # Local Netlify folder
 .netlify

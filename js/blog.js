@@ -1,3 +1,6 @@
+// Import scroll progress
+import ScrollProgress from './modules/scroll-progress.js';
+
 // Scroll Animation
 const fadeElements = document.querySelectorAll('.fade-in');
 
@@ -187,6 +190,8 @@ async function loadRelatedProjects(category) {
 document.addEventListener('DOMContentLoaded', () => {
     fadeInOnScroll();
     loadProject();
+    // Initialize scroll progress bar
+    new ScrollProgress();
 });
 
 // Run on scroll
