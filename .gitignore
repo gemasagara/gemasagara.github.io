@@ -3,8 +3,6 @@ LEGACY/
 .DS_Store
 .env
 *.log
-data/images/*
-!data/images/.gitkeep
 
 # Local Netlify folder
 .netlify

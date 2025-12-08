@@ -74,31 +74,41 @@ class AdminPanel {
       let allData = JSON.parse(data);
       let hasChanges = false;
 
-      // Recursively replace ./images/ with ./data/images/
-      const replaceImagePaths = (obj) => {
+      // Recursively migrate image paths
+      const migrateImagePath = (obj) => {
         if (typeof obj === "string") {
-          if (obj.includes("./images/") && !obj.includes("./data/images/")) {
+          let migrated = obj;
+          
+          // Migrate ./images/ to ./data/images/
+          if (migrated.includes("./images/") && !migrated.includes("./data/images/")) {
+            migrated = migrated.replace(/\.\/images\//g, "./data/images/");
             hasChanges = true;
-            return obj.replace(/\.\/images\//g, "./data/images/");
           }
-          return obj;
+          
+          // Migrate .jpg, .jpeg, .png to .webp
+          if (/\.(jpg|jpeg|png)$/i.test(migrated)) {
+            migrated = migrated.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+            hasChanges = true;
+          }
+          
+          return migrated;
         } else if (Array.isArray(obj)) {
-          return obj.map(replaceImagePaths);
+          return obj.map(migrateImagePath);
         } else if (obj !== null && typeof obj === "object") {
           const newObj = {};
           for (const key in obj) {
-            newObj[key] = replaceImagePaths(obj[key]);
+            newObj[key] = migrateImagePath(obj[key]);
           }
           return newObj;
         }
         return obj;
       };
 
-      allData = replaceImagePaths(allData);
+      allData = migrateImagePath(allData);
 
       if (hasChanges) {
         localStorage.setItem("portfolio_admin_data", JSON.stringify(allData));
-        console.log("✓ Image paths migrated from ./images/ to ./data/images/");
+        console.log("✓ Image paths migrated (paths & WebP format)");
       }
     } catch (e) {
       console.error("Error migrating image paths:", e);

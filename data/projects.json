@@ -26,7 +26,7 @@
     "title": "FTC World Championship",
     "category": "Robotics",
     "year": "2024",
-    "thumbnail": "./data/images/ftcworlds.jpeg",
+    "thumbnail": "./data/images/ftcworlds.webp",
     "tagline": "Built an International-Level competition robot that utilizes autonomous processes including machine learning to do intricate tasks while navigating through courses.",
     "featured": true,
     "tags": [
@@ -46,7 +46,7 @@
     "title": "Custom Built Model Rocket",
     "category": "Rocketry",
     "year": "2025",
-    "thumbnail": "./data/images/eight.JPG",
+    "thumbnail": "./data/images/eight.webp",
     "tagline": "Develop from the ground up a fully custom model rocket with custom motors and flight computer, utilizing CAD and simulations* throughout the process.",
     "featured": true,
     "tags": [
@@ -66,7 +66,7 @@
     "title": "FTC Nusantara Championship",
     "category": "Robotics",
     "year": "24/25",
-    "thumbnail": "./data/images/six.JPG",
+    "thumbnail": "./data/images/six.webp",
     "tagline": "Designed and built a fully custom manufactured robot with complex mechanics and system control.",
     "featured": false,
     "tags": [
@@ -85,7 +85,7 @@
     "title": "Machine Learning model for Lobster farming",
     "category": "Machine Learning",
     "year": "2024",
-    "thumbnail": "./data/images/ai.jpeg",
+    "thumbnail": "./data/images/ai.webp",
     "tagline": "Creating machine learning models for Lobster detection and behaviour analytics; Creating real-time monitoring interface.",
     "featured": false,
     "tags": [
@@ -105,7 +105,7 @@
     "title": "IoT monitoring device for Orchid Acclimatization",
     "category": "Internet of Things",
     "year": "2023",
-    "thumbnail": "./data/images/iot.jpeg",
+    "thumbnail": "./data/images/iot.webp",
     "tagline": "Create a monitoring device and system interface for Orchid Acclimatization process.",
     "featured": false,
     "tags": [
@@ -125,7 +125,7 @@
     "title": "Rapid Fire - Game Development",
     "category": "Creative Works",
     "year": "2025 - Present",
-    "thumbnail": "./data/images/twentytwo.png",
+    "thumbnail": "./data/images/twentytwo.webp",
     "tagline": "Developing game mechanics and visual implementation for Gremlin Games current title, Rapid Fire.",
     "featured": false,
     "tags": [
@@ -145,7 +145,7 @@
     "title": "Probable Water Scarcity Solution for The MENA Region",
     "category": "Scientific Research",
     "year": "9th Grade",
-    "thumbnail": "./data/images/water.png",
+    "thumbnail": "./data/images/water.webp",
     "tagline": "",
     "featured": false,
     "tags": [
@@ -164,7 +164,7 @@
     "title": "Solar Panel As An Alternative Energy Source, A Review",
     "category": "Scientific Research",
     "year": "9th Grade",
-    "thumbnail": "./data/images/solarpanel.png",
+    "thumbnail": "./data/images/solarpanel.webp",
     "tagline": "",
     "featured": false,
     "tags": [
@@ -183,7 +183,7 @@
     "title": "Reviewing Hydrogen Fuel Cells Technologies",
     "category": "Scientific Research",
     "year": "9th Grade",
-    "thumbnail": "./data/images/fuelcell.png",
+    "thumbnail": "./data/images/fuelcell.webp",
     "tagline": "",
     "featured": false,
     "tags": [
@@ -202,7 +202,7 @@
     "title": "Acid-Base Reaction and Atom Rearrangement of Lava Lamp Models",
     "category": "Scientific Research",
     "year": "9th Grade",
-    "thumbnail": "./data/images/atom.png",
+    "thumbnail": "./data/images/atom.webp",
     "tagline": "",
     "featured": false,
     "tags": [
@@ -221,7 +221,7 @@
     "title": "Implementation of the Carbon Cycle in Photocatalytic Air Purifier",
     "category": "Scientific Research",
     "year": "9th Grade",
-    "thumbnail": "./data/images/carbon.png",
+    "thumbnail": "./data/images/carbon.webp",
     "tagline": "",
     "featured": false,
     "tags": [
@@ -240,7 +240,7 @@
     "title": "Orchid Subculture and Seed Germination",
     "category": "Scientific Research",
     "year": "8th Grade",
-    "thumbnail": "./data/images/subculture.png",
+    "thumbnail": "./data/images/subculture.webp",
     "tagline": "",
     "featured": false,
     "tags": [
@@ -259,7 +259,7 @@
     "title": "Artificial Cross Pollination on Stratiotes and Sylvanum Orchid",
     "category": "Scientific Research",
     "year": "8th Grade",
-    "thumbnail": "./data/images/punnet.png",
+    "thumbnail": "./data/images/punnet.webp",
     "tagline": "",
     "featured": false,
     "tags": [
@@ -278,7 +278,7 @@
     "title": "Influence of Mechanical-Chemical Water Filter Composition to Water Parameter",
     "category": "Scientific Research",
     "year": "8th Grade",
-    "thumbnail": "./data/images/waterfilter.png",
+    "thumbnail": "./data/images/waterfilter.webp",
     "tagline": "",
     "featured": false,
     "tags": [
@@ -297,7 +297,7 @@
     "title": "Influence of Light and Plants on Channa Asiatica Fish",
     "category": "Scientific Research",
     "year": "8th Grade",
-    "thumbnail": "./data/images/lightinfluence.png",
+    "thumbnail": "./data/images/lightinfluence.webp",
     "tagline": "",
     "featured": false,
     "tags": [
@@ -316,7 +316,7 @@
     "title": "Banana Grape Cultivation",
     "category": "Scientific Research",
     "year": "8th Grade",
-    "thumbnail": "./data/images/grape.png",
+    "thumbnail": "./data/images/grape.webp",
     "tagline": "",
     "featured": false,
     "tags": [
@@ -335,7 +335,7 @@
     "title": "Entrepreneurship Projects",
     "category": "Entrepreneurship",
     "year": "2022-2023",
-    "thumbnail": "./data/images/vlinders.jpeg",
+    "thumbnail": "./data/images/vlinders.webp",
     "tagline": "Overall entrepreneurship projects I've worked on for the past 3 year.",
     "featured": false,
     "tags": [
@@ -353,7 +353,7 @@
     "title": "Nawasena - Short Novel",
     "category": "Creative Works",
     "year": "2024",
-    "thumbnail": "./data/images/nawasena.png",
+    "thumbnail": "./data/images/nawasena.webp",
     "tagline": "Wrote a short novel about a dystopian future where everything are granted by artificial fabrication, it explores the true meaning of living and what it means to be human",
     "featured": false,
     "tags": [
@@ -372,7 +372,7 @@
     "title": "Videography Projects",
     "category": "Creative Works",
     "year": "2022-2024",
-    "thumbnail": "./data/images/video.png",
+    "thumbnail": "./data/images/video.webp",
     "tagline": "Overall videography projects I've worked on for the past 3 year.",
     "featured": false,
     "tags": [
@@ -391,7 +391,7 @@
     "title": "School Yearbook",
     "category": "Graphic Designs",
     "year": "2024",
-    "thumbnail": "./data/images/yearbook.png",
+    "thumbnail": "./data/images/yearbook.webp",
     "tagline": "",
     "featured": false,
     "tags": [
@@ -410,7 +410,7 @@
     "title": "Milk Packaging",
     "category": "Graphic Designs",
     "year": "2023",
-    "thumbnail": "./data/images/milk.png",
+    "thumbnail": "./data/images/milk.webp",
     "tagline": "",
     "featured": false,
     "tags": [
@@ -429,7 +429,7 @@
     "title": "Banknote Design",
     "category": "Graphic Designs",
     "year": "2023",
-    "thumbnail": "./data/images/banknote.png",
+    "thumbnail": "./data/images/banknote.webp",
     "tagline": "",
     "featured": false,
     "tags": [
@@ -448,7 +448,7 @@
     "title": "Branding",
     "category": "Graphic Designs",
     "year": "2023",
-    "thumbnail": "./data/images/branding.png",
+    "thumbnail": "./data/images/branding.webp",
     "tagline": "",
     "featured": false,
     "tags": [
@@ -467,7 +467,7 @@
     "title": "Overall Graphic Design Projects",
     "category": "Graphic Designs",
     "year": "2022-2024",
-    "thumbnail": "./data/images/banner.png",
+    "thumbnail": "./data/images/banner.webp",
     "tagline": "",
     "featured": false,
     "tags": [

@@ -1,7 +1,7 @@
 [
   {
     "id": "lead-representative",
-    "image": "./data/images/twelve.jpeg",
+    "image": "./data/images/twelve.webp",
     "title": "Representative",
     "organization": "Depok City Government @Musrenbangnas",
     "year": "2024",
@@ -13,7 +13,7 @@
   },
   {
     "id": "lead-cocaptain",
-    "image": "./data/images/seven.JPG",
+    "image": "./data/images/seven.webp",
     "title": "Team Co-Captain",
     "organization": "FTC Team Tecra Bot (Robotics) - National",
     "year": "2022 - 2024",
@@ -25,7 +25,7 @@
   },
   {
     "id": "lead-spokesperson",
-    "image": "./data/images/fifteen.jpeg",
+    "image": "./data/images/fifteen.webp",
     "title": "Spokesperson",
     "organization": "FTC Team R2045 - World Championship",
     "year": "2024",
@@ -37,7 +37,7 @@
   },
   {
     "id": "lead-intern",
-    "image": "./data/images/sixteen.jpeg",
+    "image": "./data/images/sixteen.webp",
     "title": "Intern",
     "organization": "BRIN ORPA Pustekroket (Rocketry Research)",
     "year": "2024",
@@ -49,7 +49,7 @@
   },
   {
     "id": "lead-president",
-    "image": "./data/images/twenty.jpeg",
+    "image": "./data/images/twenty.webp",
     "title": "President",
     "organization": "Student Council",
     "year": "2023 - 2024",
@@ -61,7 +61,7 @@
   },
   {
     "id": "lead-cherapace",
-    "image": "./data/images/seventeen.jpeg",
+    "image": "./data/images/seventeen.webp",
     "title": "Team Captain",
     "organization": "Cherapace AI Lobster Farming",
     "year": "2024",
@@ -73,7 +73,7 @@
   },
   {
     "id": "lead-natech",
-    "image": "./data/images/eighteen.jpeg",
+    "image": "./data/images/eighteen.webp",
     "title": "Team Captain",
     "organization": "Natech IoT Orchid Incubator",
     "year": "2023",
@@ -85,7 +85,7 @@
   },
   {
     "id": "lead-gremlin",
-    "image": "./data/images/twentytwo.png",
+    "image": "./data/images/twentytwo.webp",
     "title": "Lead Programmer",
     "organization": "Gremlin Games",
     "year": "2025 - Present",

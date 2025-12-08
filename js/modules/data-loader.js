@@ -40,6 +40,11 @@ class DataLoader {
     // Create loading promise
     const loadingPromise = this._fetchWithRetry(endpoint)
       .then((data) => {
+        // Apply migrations (including WebP conversion) to freshly fetched data
+        const dataType = this._getDataTypeFromEndpoint(endpoint);
+        if (dataType) {
+          data = this.migrateDataIfNeeded(dataType, data);
+        }
         this.saveToCache(endpoint, data);
         this.loadingStates.delete(endpoint);
         return data;
@@ -211,8 +216,39 @@ class DataLoader {
    * @private
    */
   migrateDataIfNeeded(dataType, data) {
-    if (!Array.isArray(data)) {
-      return data;
+    // Helper function to convert image paths to WebP
+    const convertToWebP = (obj) => {
+      if (typeof obj === 'string' && /\.(jpg|jpeg|png)$/i.test(obj)) {
+        const webpPath = obj.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+        if (obj !== webpPath) {
+          logInfo(`Migrated image path: ${obj} → ${webpPath}`);
+        }
+        return webpPath;
+      }
+      return obj;
+    };
+
+    // Recursively convert image paths in an object
+    const migrateImages = (obj) => {
+      if (typeof obj === 'string') {
+        return convertToWebP(obj);
+      } else if (Array.isArray(obj)) {
+        return obj.map(migrateImages);
+      } else if (obj !== null && typeof obj === 'object') {
+        const newObj = {};
+        for (const key in obj) {
+          newObj[key] = migrateImages(obj[key]);
+        }
+        return newObj;
+      }
+      return obj;
+    };
+
+    // Apply WebP migration to all data (works for both arrays and objects)
+    if (Array.isArray(data)) {
+      data = data.map(migrateImages);
+    } else if (data !== null && typeof data === 'object') {
+      data = migrateImages(data);
     }
 
     if (dataType === "projects") {
@@ -311,9 +347,26 @@ class DataLoader {
   }
 
   /**
-   * Utility: delay function
-   * @private
-   */
+    * Map endpoint URL to data type
+    * @private
+    */
+  _getDataTypeFromEndpoint(endpoint) {
+    const typeMap = {
+      "/data/hero.json": "hero",
+      "/data/about.json": "about",
+      "/data/projects.json": "projects",
+      "/data/awards.json": "awards",
+      "/data/experiences.json": "experiences",
+      "/data/leadership.json": "leadership",
+      "/data/teams.json": "teams",
+    };
+    return typeMap[endpoint] || null;
+  }
+
+  /**
+    * Utility: delay function
+    * @private
+    */
   _delay(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
