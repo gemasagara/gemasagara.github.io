@@ -1,7 +1,7 @@
 {
   "title": "Hi! I'm Gema",
   "_subtitle": "Robotics | Computer Vision | Rocketry | Research",
-  "description": "A high school student passionate about exploring the intersection of science and engineering to solve tomorrow's challenges.",
+  "description": "A high",
   "cta": {
     "text": "View My Projects",
     "link": "#projects"
@@ -9,5 +9,6 @@
   "backgroundImage": "./data/images/tecraboy13.webp",
   "visibility": "published",
   "createdAt": "2024-01-01T00:00:00Z",
-  "lastModified": "2025-12-07T12:09:41.032Z"
+  "lastModified": "2025-12-09T12:52:21.728Z",
+  "subtitle": "nah"
 }
