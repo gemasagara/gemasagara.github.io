@@ -10,3 +10,13 @@
   from = "/api/*"
   to = "/.netlify/functions/api"
   status = 200
+
+  [[redirects]]
+  from = "https://admin.gemasagara.online/*"
+  to = "https://gemasagara.online/admin.html"
+  status = 301
+
+[[redirects]]
+  from = "https://gemasagara.online/*"
+  to = "/index.html"
+  status = 200

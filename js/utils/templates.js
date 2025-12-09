@@ -195,9 +195,6 @@ export function aboutTemplate(about) {
 
   return `
     <div class="about-content">
-      <div class="about-image">
-        <img src="${about.image}" alt="Profile Picture">
-      </div>
       <div class="about-text">
         <h3>${sanitizeHTML(about.greeting)}</h3>
         ${bioHtml}
