@@ -1,9 +1,9 @@
 {
-  "image": "./data/images/facetbt.webp",
-  "greeting": "Hello, I'm Gema Sagara",
+  "image": "./data/images/one.webp",
+  "_greeting": "Hello, I'm Gema Sagara",
   "bio": [
     "I'm a high school student with a passion for science and engineering. With over 5 years of robotics experience, I've not only built numerous projects but also competed internationally. My interest in engineering extends to rocketry, where I've designed and built custom model rockets, motors, and flight computers.",
-    "Beyond engineering, I'm passionate about scientific research, particularly in physics and biology. Last year, I serve as the President of the Student Council, where I help organize events and represent student interests."
+    "Beyond engineering, I'm passionate about research, particularly in physics and biology. Last year, I serve as the President of the Student Council, where I help organize events and represent student interests."
   ],
   "skills": [
     {
@@ -19,7 +19,7 @@
       "level": 60
     },
     {
-      "name": "Scientific Research",
+      "name": "Research",
       "level": 80
     }
   ],

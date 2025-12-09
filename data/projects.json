@@ -143,7 +143,7 @@
   {
     "id": "water-scarcity-research",
     "title": "Probable Water Scarcity Solution for The MENA Region",
-    "category": "Scientific Research",
+    "category": "Research",
     "year": "9th Grade",
     "thumbnail": "./data/images/water.webp",
     "tagline": "",
@@ -162,7 +162,7 @@
   {
     "id": "solar-panel-research",
     "title": "Solar Panel As An Alternative Energy Source, A Review",
-    "category": "Scientific Research",
+    "category": "Research",
     "year": "9th Grade",
     "thumbnail": "./data/images/solarpanel.webp",
     "tagline": "",
@@ -181,7 +181,7 @@
   {
     "id": "hydrogen-fuel-research",
     "title": "Reviewing Hydrogen Fuel Cells Technologies",
-    "category": "Scientific Research",
+    "category": "Research",
     "year": "9th Grade",
     "thumbnail": "./data/images/fuelcell.webp",
     "tagline": "",
@@ -200,7 +200,7 @@
   {
     "id": "lava-lamp-research",
     "title": "Acid-Base Reaction and Atom Rearrangement of Lava Lamp Models",
-    "category": "Scientific Research",
+    "category": "Research",
     "year": "9th Grade",
     "thumbnail": "./data/images/atom.webp",
     "tagline": "",
@@ -219,7 +219,7 @@
   {
     "id": "carbon-cycle-research",
     "title": "Implementation of the Carbon Cycle in Photocatalytic Air Purifier",
-    "category": "Scientific Research",
+    "category": "Research",
     "year": "9th Grade",
     "thumbnail": "./data/images/carbon.webp",
     "tagline": "",
@@ -238,7 +238,7 @@
   {
     "id": "orchid-subculture",
     "title": "Orchid Subculture and Seed Germination",
-    "category": "Scientific Research",
+    "category": "Research",
     "year": "8th Grade",
     "thumbnail": "./data/images/subculture.webp",
     "tagline": "",
@@ -257,7 +257,7 @@
   {
     "id": "orchid-pollination",
     "title": "Artificial Cross Pollination on Stratiotes and Sylvanum Orchid",
-    "category": "Scientific Research",
+    "category": "Research",
     "year": "8th Grade",
     "thumbnail": "./data/images/punnet.webp",
     "tagline": "",
@@ -276,7 +276,7 @@
   {
     "id": "water-filter-research",
     "title": "Influence of Mechanical-Chemical Water Filter Composition to Water Parameter",
-    "category": "Scientific Research",
+    "category": "Research",
     "year": "8th Grade",
     "thumbnail": "./data/images/waterfilter.webp",
     "tagline": "",
@@ -295,7 +295,7 @@
   {
     "id": "light-influence-fish",
     "title": "Influence of Light and Plants on Channa Asiatica Fish",
-    "category": "Scientific Research",
+    "category": "Research",
     "year": "8th Grade",
     "thumbnail": "./data/images/lightinfluence.webp",
     "tagline": "",
@@ -314,7 +314,7 @@
   {
     "id": "banana-grape-cultivation",
     "title": "Banana Grape Cultivation",
-    "category": "Scientific Research",
+    "category": "Research",
     "year": "8th Grade",
     "thumbnail": "./data/images/grape.webp",
     "tagline": "",

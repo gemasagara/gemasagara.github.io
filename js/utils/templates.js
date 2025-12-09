@@ -21,8 +21,8 @@ export function projectCardTemplate(project) {
       <div class="project-info">
         <div class="project-category">${sanitizeHTML(project.category)} | ${project.year}</div>
         <h3 class="project-title">${sanitizeHTML(project.title)}</h3>
-        <p>${parseHTML(project.tagline)}</p>
-        <a href="${detailsUrl}" class="btn">View Details</a>
+        <p class="project-description">${parseHTML(project.tagline)}</p>
+        <a href="${detailsUrl}" class="project-link">View Details →</a>
       </div>
     </div>
   `;
@@ -173,14 +173,13 @@ export function emptyStateTemplate(message) {
 export function heroTemplate(hero) {
   return `
     <div class="hero-content">
+    <!--
       <div class="hero-image">
         <img src="./data/images/face.webp" alt="Profile Picture" class="hero-profile-img">
       </div>
+      -->
       <div class="hero-text">
         <h1>${sanitizeHTML(hero.title)}</h1>
-        <b>
-          <p class="hero-subtitle">${sanitizeHTML(hero.subtitle)}</p>
-        </b>
         <p class="hero-description">${parseHTML(hero.description)}</p>
         <a href="${hero.cta.link}" class="btn">${sanitizeHTML(hero.cta.text)}</a>
       </div>
@@ -193,14 +192,6 @@ export function heroTemplate(hero) {
  */
 export function aboutTemplate(about) {
   const bioHtml = about.bio.map(paragraph => `<p>${parseHTML(paragraph)}</p>`).join('');
-  const skillsHtml = about.skills.map(skill => `
-    <div class="skill">
-      <div class="skill-name">${sanitizeHTML(skill.name)}</div>
-      <div class="skill-bar">
-        <div class="skill-level" style="width: ${skill.level}%;"></div>
-      </div>
-    </div>
-  `).join('');
 
   return `
     <div class="about-content">
@@ -210,9 +201,6 @@ export function aboutTemplate(about) {
       <div class="about-text">
         <h3>${sanitizeHTML(about.greeting)}</h3>
         ${bioHtml}
-        <div class="skill-bars">
-          ${skillsHtml}
-        </div>
       </div>
     </div>
   `;

@@ -1,11 +1,10 @@
-// js/modules/parallax-hero.js
-export default class ParallaxHero {
+// js/modules/parallax-gallery-hero.js
+export default class ParallaxGalleryHero {
   constructor() {
-    this.hero = document.querySelector('.hero');
-    this.heroContent = document.querySelector('.hero-content');
-    this.heroBackground = document.querySelector('.hero::after');
-    this.initialScale = 1;
-    this.minScale = 1;
+    this.hero = document.querySelector('.gallery-hero');
+    this.galleryContainer = document.querySelector('.gallery-container');
+    this.initialScale = 1.2;
+    this.minScale = 1.2;
     this.init();
   }
 
@@ -13,7 +12,7 @@ export default class ParallaxHero {
     if (!this.hero) return;
     
     // Set initial values
-    this.hero.style.setProperty('--hero-scale', this.initialScale);
+    this.hero.style.setProperty('--gallery-hero-scale', this.initialScale);
     
     // Handle scroll event
     window.addEventListener('scroll', () => this.onScroll());
@@ -36,9 +35,9 @@ export default class ParallaxHero {
     const contentTranslate = scrollPosition * 0.3;
     
     // Apply transforms
-    this.hero.style.setProperty('--hero-scale', scale);
-    this.hero.style.setProperty('--hero-translate', `${translateY}px`);
-    this.hero.style.setProperty('--hero-opacity', contentOpacity);
-    this.hero.style.setProperty('--hero-content-translate', `${contentTranslate}px`);
+    this.hero.style.setProperty('--gallery-hero-scale', scale);
+    this.hero.style.setProperty('--gallery-hero-translate', `${translateY}px`);
+    this.hero.style.setProperty('--gallery-hero-opacity', contentOpacity);
+    this.hero.style.setProperty('--gallery-hero-content-translate', `${contentTranslate}px`);
   }
 }

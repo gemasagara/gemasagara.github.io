@@ -1,5 +1,6 @@
-// Import scroll progress
+// Import scroll progress and parallax hero
 import ScrollProgress from './modules/scroll-progress.js';
+import ParallaxGalleryHero from './modules/parallax-gallery-hero.js';
 
 // Fetch and render blog gallery
 async function loadBlogGallery() {
@@ -101,4 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
     loadBlogGallery();
     // Initialize scroll progress bar
     new ScrollProgress();
+    // Initialize parallax gallery hero effect
+    new ParallaxGalleryHero();
 });
