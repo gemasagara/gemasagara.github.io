@@ -355,25 +355,17 @@ body.dark-mode nav {
 }
 
 .section-subtitle {
-  text-align: left;
+  text-align: center;
   margin-bottom: 40px;
-  font-size: 2rem;
-  position: relative;
-  padding-bottom: 15px;
 }
 
 .section-subtitle:after {
   content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  display: block;
   width: 80px;
   height: 3px;
-  background: linear-gradient(
-    90deg,
-    var(--accent-primary),
-    var(--accent-light)
-  );
+  background: var(--accent-primary);
+  margin: 15px auto;
 }
 
 /* Grid Layouts */

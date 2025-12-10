@@ -1,12 +1,12 @@
 {
-  "title": "Hi! I'm Gema",
+  "title": "Hello! I'm Gema",
   "_subtitle": "Robotics | Computer Vision | Rocketry | Research",
-  "description": "A high",
+  "description": "A 16 year-old future engineer. Currently doing competitive robotics, building amateur rockets, working on a game studio, and once interned at Indonesia's Aeronautics and Space Research Organization.",
   "cta": {
     "text": "View My Projects",
     "link": "#projects"
   },
-  "backgroundImage": "./data/images/tecraboy13.webp",
+  "backgroundImage": "./data/images/tecraboy14.webp",
   "visibility": "published",
   "createdAt": "2024-01-01T00:00:00Z",
   "lastModified": "2025-12-09T12:52:21.728Z",

@@ -41,46 +41,10 @@
     "title": "Intern",
     "organization": "BRIN ORPA Pustekroket (Rocketry Research)",
     "year": "2024",
-    "description": "Learning and discussing with leading national experts on the field of rocketry research and development.",
+    "description": "Learned and dicussed with leading national experts on the field of rocketry research and development.",
     "order": 4,
     "visibility": "published",
     "createdAt": "2024-01-01T00:00:00Z",
-    "lastModified": "2024-01-01T00:00:00Z"
-  },
-  {
-    "id": "lead-president",
-    "image": "./data/images/twenty.webp",
-    "title": "President",
-    "organization": "Student Council",
-    "year": "2023 - 2024",
-    "description": "Organized school-wide events, Reaching out to communities, Support student skills & interests.",
-    "order": 5,
-    "visibility": "published",
-    "createdAt": "2023-01-01T00:00:00Z",
-    "lastModified": "2024-01-01T00:00:00Z"
-  },
-  {
-    "id": "lead-cherapace",
-    "image": "./data/images/seventeen.webp",
-    "title": "Team Captain",
-    "organization": "Cherapace AI Lobster Farming",
-    "year": "2024",
-    "description": "Captain & Head of Technologies. Creating machine learning models for Lobster detection and behaviour analytics; Creating real-time monitoring interface",
-    "order": 6,
-    "visibility": "published",
-    "createdAt": "2024-01-01T00:00:00Z",
-    "lastModified": "2024-01-01T00:00:00Z"
-  },
-  {
-    "id": "lead-natech",
-    "image": "./data/images/eighteen.webp",
-    "title": "Team Captain",
-    "organization": "Natech IoT Orchid Incubator",
-    "year": "2023",
-    "description": "Captain & Lead Programmer. Create a monitoring device and system interface for Orchid Acclimatization process.",
-    "order": 7,
-    "visibility": "published",
-    "createdAt": "2023-01-01T00:00:00Z",
     "lastModified": "2024-01-01T00:00:00Z"
   },
   {
@@ -89,10 +53,46 @@
     "title": "Lead Programmer",
     "organization": "Gremlin Games",
     "year": "2025 - Present",
-    "description": "Lead Programmer. Developing game mechanics and visual implementation for Gremlin Games current title, Rapid Fire.",
-    "order": 8,
+    "description": "Developing game mechanics and visual implementation for Gremlin Games current title, Rapid Fire.",
+    "order": 5,
     "visibility": "published",
     "createdAt": "2025-01-01T00:00:00Z",
     "lastModified": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "lead-president",
+    "image": "./data/images/twenty.webp",
+    "title": "President",
+    "organization": "Student Council",
+    "year": "2023 - 2024",
+    "description": "Organized school-wide events, Reaching out to communities, Support student skills & interests.",
+    "order": 6,
+    "visibility": "published",
+    "createdAt": "2023-01-01T00:00:00Z",
+    "lastModified": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "lead-cherapace",
+    "image": "./data/images/cherapaceex.jpeg",
+    "title": "Team Captain",
+    "organization": "Cherapace - Aquaculture Automation",
+    "year": "2024",
+    "description": "Managed team workflows; Created machine learning models for Lobster detection and behaviour analytics; Creating real-time monitoring interface",
+    "order": 7,
+    "visibility": "published",
+    "createdAt": "2024-01-01T00:00:00Z",
+    "lastModified": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "lead-natech",
+    "image": "./data/images/eighteen.webp",
+    "title": "Team Captain",
+    "organization": "Natech - Automated Orchid Acclimatization Incubator",
+    "year": "2023",
+    "description": "Developed electrical and IoT systems; and manage team workflows.",
+    "order": 8,
+    "visibility": "published",
+    "createdAt": "2023-01-01T00:00:00Z",
+    "lastModified": "2024-01-01T00:00:00Z"
   }
 ]

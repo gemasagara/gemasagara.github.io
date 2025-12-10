@@ -138,11 +138,7 @@ section {
   display: block;
   width: 80px;
   height: 3px;
-background: linear-gradient(
-    90deg,
-    var(--accent-primary),
-    var(--accent-light)
-);
+  background: var(--accent-primary);
   margin: 15px auto;
 }
 
@@ -479,7 +475,7 @@ body.dark-mode nav {
 .about-image {
   position: relative;
   width: 400px;
-  height: 400px;
+  height: 500px;
   aspect-ratio: 1;
   overflow: hidden;
   border-radius: 15px;
@@ -500,8 +496,9 @@ body.dark-mode nav {
 }
 
 .about-text {
- text-align: center;
+  text-align: justify;
   flex: 1;
+  font-size: 1.1rem;
 }
 
 .skill-bars {
@@ -837,7 +834,6 @@ body.dark-mode nav {
   border-radius: 12px;
   overflow: hidden;
   margin: 0 auto 10px auto;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .featured-img {
@@ -1399,9 +1395,13 @@ footer::before {
   .about-content {
     flex-direction: column;
   }
+  .about-image {
+    width: 330px;
+    height: 300px;
+  }
   .about-text {
     flex: auto;
-    width: 100%;
+    width: 90%;
   }
   h1 {
     font-size: 2.2rem;

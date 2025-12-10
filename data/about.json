@@ -1,9 +1,11 @@
 {
-  "image": "./data/images/one.webp",
+  "image": "./data/images/oneone.webp",
   "_greeting": "Hello, I'm Gema Sagara",
   "bio": [
-    "I'm a high school student with a passion for science and engineering. With over 5 years of robotics experience, I've not only built numerous projects but also competed internationally. My interest in engineering extends to rocketry, where I've designed and built custom model rockets, motors, and flight computers.",
-    "Beyond engineering, I'm passionate about research, particularly in physics and biology. Last year, I serve as the President of the Student Council, where I help organize events and represent student interests."
+    "My name is Gema Sagara, and I’m a high school sophomore with a deep passion for science and engineering. I love building and doing things that matters and impacts people around me. In 2024 I get to represent my country in the First World Championship, the pinnacle of student robotics. Following that event, the First robotics scene in Indonesia grew exponentially, 10+ teams created, and more kids that gets to experience the magic of STEM.",
+    "Since i’m little, i’ve been a fan of spacex and its rockets, and that grew into the passion i have now for rocketry. I like to build amateur rockets from the ground up, designed and built custom airframe, motors, and flight computers. And recently i have the wonderful opportunity to have an internship in at Indonesia's Aeronautics and Space Research Organization.",
+    "Beyond competitive robotics and rockets, I applied my skills into the real world too. I’ve build equipments for local farmers to plant researcher, from autonomous crop field quality monitoring rover to an automated acclimatization incubator for Orchids, and many others. I’m too a (student) researcher myself, and I’ve wrote papers on various subjects particularly in biology.",
+    "Outside of science and engineering, I’ve served as the Student Council President, where I organize events and represent student interests."
   ],
   "skills": [
     {

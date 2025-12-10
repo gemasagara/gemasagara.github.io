@@ -22,7 +22,7 @@
   {
     "id": "team-cherapace",
     "name": "Cherapace",
-    "description": "Aquaculture AI Farming",
+    "description": "Aquaculture Automation Team",
     "logo": "./data/images/cherapacelogo.webp",
     "order": 3,
     "visibility": "published",
@@ -32,7 +32,7 @@
   {
     "id": "team-natech",
     "name": "Natech",
-    "description": "IoT Plant Monitoring",
+    "description": "Orchid Acclimatization Incubator",
     "logo": "./data/images/natechlogo.webp",
     "order": 4,
     "visibility": "published",
