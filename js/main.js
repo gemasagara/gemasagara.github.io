@@ -47,7 +47,7 @@ class App {
       // Hide loading state
       this.hideGlobalLoading();
 
-      // Initialize carousel AFTER teams data is rendered
+      // Initialize carousels AFTER all data is rendered
       this.initCarousel();
 
       // Initialize interactions (scroll animations, etc.)
@@ -64,13 +64,14 @@ class App {
   }
 
   initCarousel() {
-    const carousel = new Carousel('.featured-grid');
-    carousel.init();
+    // Initialize featured carousel
+    const featuredCarousel = new Carousel('.featured-grid');
+    featuredCarousel.init();
     
     // Expose for debugging
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-      window.portfolioCarousel = carousel;
-      logInfo('Carousel initialized and exposed via window.portfolioCarousel');
+      window.portfolioCarousel = featuredCarousel;
+      logInfo('Carousels initialized and exposed via window.portfolioCarousel and window.expCarousel');
     }
   }
 

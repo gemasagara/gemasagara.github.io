@@ -649,28 +649,28 @@ body.dark-mode nav {
 
 /* Skills & Experiences Section */
 .exp-grid {
-  display: flex;
-  overflow-x: auto;
-  gap: 30px;
-  padding: 20px 0;
-  scroll-behavior: smooth;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  position: relative;
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 10%,
-    black 90%,
-    transparent
-  );
-  mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 10%,
-    black 90%,
-    transparent
-  );
+   display: flex;
+   overflow-x: auto;
+   gap: 30px;
+   padding: 20px 0;
+   scroll-behavior: smooth;
+   -ms-overflow-style: none;
+   scrollbar-width: none;
+   position: relative;
+   -webkit-mask-image: linear-gradient(
+     to right,
+     transparent,
+     black 10%,
+     black 90%,
+     transparent
+   );
+   mask-image: linear-gradient(
+     to right,
+     transparent,
+     black 10%,
+     black 90%,
+     transparent
+   );
 }
 
 .exp-grid::-webkit-scrollbar {
@@ -684,15 +684,15 @@ body.dark-mode nav {
 }
 
 .exp-card {
-  overflow: hidden;
-  flex: 0 0 auto;
-  width: 300px;
-  border-radius: 15px;
-  background: var(--bg-secondary);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  border: 1px solid var(--border-primary);
-  position: relative;
+   overflow: hidden;
+   flex: 0 0 auto;
+   width: 300px;
+   border-radius: 15px;
+   background: var(--bg-secondary);
+   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+   border: 1px solid var(--border-primary);
+   position: relative;
 }
 
 .exp-card::before {
@@ -713,9 +713,9 @@ body.dark-mode nav {
 }
 
 .exp-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 20px 40px rgba(0, 102, 204, 0.2);
-  border-color: var(--accent-primary);
+   transform: translateY(-12px);
+   box-shadow: 0 20px 40px rgba(0, 102, 204, 0.2);
+   border-color: var(--accent-primary);
 }
 
 .exp-card:hover::before {

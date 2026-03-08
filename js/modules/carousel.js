@@ -19,64 +19,68 @@ class Carousel {
   }
 
   /**
-   * Initialize carousel
-   */
-  init() {
-    if (!this.container || this.isInitialized) return;
+    * Initialize carousel
+    */
+   init() {
+     if (!this.container || this.isInitialized) return;
 
-    const cards = this.container.querySelectorAll('.featured-card');
-    if (cards.length === 0) {
-      logInfo('Carousel: No cards found, skipping initialization');
-      return;
-    }
+     // Support both featured-card and exp-card
+     const cardSelector = '.featured-card, .exp-card';
+     const cards = this.container.querySelectorAll(cardSelector);
+     if (cards.length === 0) {
+       logInfo(`Carousel: No cards found for selector "${cardSelector}", skipping initialization`);
+       return;
+     }
 
-    this.originalCardsCount = cards.length;
-    logInfo(`Carousel: Initializing with ${this.originalCardsCount} cards`);
+     this.originalCardsCount = cards.length;
+     logInfo(`Carousel: Initializing with ${this.originalCardsCount} cards`);
 
-    this.setupCloning();
-    this.setupEventListeners();
-    this.startAutoScroll();
+     this.setupCloning();
+     this.setupEventListeners();
+     this.startAutoScroll();
 
-    this.isInitialized = true;
-  }
+     this.isInitialized = true;
+   }
 
   /**
-   * Clone cards for infinite effect
-   */
-  setupCloning() {
-    const originalCards = Array.from(
-      this.container.querySelectorAll('.featured-card:not(.cloned-card)')
-    );
+    * Clone cards for infinite effect
+    */
+   setupCloning() {
+     // Find all cards - support both featured-card and exp-card
+     const cardSelector = '.featured-card, .exp-card';
+     const originalCards = Array.from(
+       this.container.querySelectorAll(cardSelector + ':not(.cloned-card)')
+     );
 
-    // Clear existing clones
-    this.container.querySelectorAll('.cloned-card').forEach(card => card.remove());
+     // Clear existing clones
+     this.container.querySelectorAll('.cloned-card').forEach(card => card.remove());
 
-    // Calculate how many clones we need
-    const containerWidth = this.container.parentElement.offsetWidth;
-    const firstCard = originalCards[0];
-    if (!firstCard) return;
+     // Calculate how many clones we need
+     const containerWidth = this.container.parentElement.offsetWidth;
+     const firstCard = originalCards[0];
+     if (!firstCard) return;
 
-    const cardStyle = window.getComputedStyle(firstCard);
-    const cardWidth =
-      firstCard.offsetWidth +
-      parseInt(cardStyle.marginRight) +
-      parseInt(cardStyle.marginLeft);
-    const gap = parseInt(window.getComputedStyle(this.container).gap || 0);
-    const totalCardWidth = cardWidth + gap;
-    const cardsNeeded = Math.ceil(containerWidth / totalCardWidth) + 3;
+     const cardStyle = window.getComputedStyle(firstCard);
+     const cardWidth =
+       firstCard.offsetWidth +
+       parseInt(cardStyle.marginRight) +
+       parseInt(cardStyle.marginLeft);
+     const gap = parseInt(window.getComputedStyle(this.container).gap || 0);
+     const totalCardWidth = cardWidth + gap;
+     const cardsNeeded = Math.ceil(containerWidth / totalCardWidth) + 3;
 
-    // Clone cards
-    for (let i = 0; i < cardsNeeded; i++) {
-      originalCards.forEach(card => {
-        const clone = card.cloneNode(true);
-        clone.classList.add('cloned-card');
-        this.container.appendChild(clone);
-      });
-    }
+     // Clone cards
+     for (let i = 0; i < cardsNeeded; i++) {
+       originalCards.forEach(card => {
+         const clone = card.cloneNode(true);
+         clone.classList.add('cloned-card');
+         this.container.appendChild(clone);
+       });
+     }
 
-    this.maxScrollLeft =
-      totalCardWidth * this.originalCardsCount * 2;
-  }
+     this.maxScrollLeft =
+       totalCardWidth * this.originalCardsCount * 2;
+   }
 
   /**
    * Setup hover and resize listeners

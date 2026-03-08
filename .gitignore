@@ -1,9 +1,12 @@
+cool_scroll_animation/
 node_modules/
 LEGACY/
 .DS_Store
 .env
 *.log
 TODO.md
+test-server.js
+preview.html
 
 # Local Netlify folder
 .netlify
